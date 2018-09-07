@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="../css/app.css" />
+	<title></title>
+</head>
+<body>
+
+<h1>任选和值走势图</h1>
+<div id="detailed-panel">
+<table border="1">
+<thead>
+<tr>
+	<th rowspan="2">期号</th>
+	<th rowspan="2" colspan="5">开奖号码</th>
+	<th colspan="31">和值走势</th>
+	<th rowspan="2">和值</th>
+	<th rowspan="2">和尾</th>
+</tr>
+<tr>
+	<th>15</th>
+	<th>16</th>
+	<th>17</th>
+	<th>18</th>
+	<th>19</th>
+	<th>20</th>
+	<th>21</th>
+	<th>22</th>
+	<th>23</th>
+	<th>24</th>
+	<th>25</th>
+	<th>26</th>
+	<th>27</th>
+	<th>28</th>
+	<th>29</th>
+	<th>30</th>
+	<th>31</th>
+	<th>32</th>
+	<th>33</th>
+	<th>34</th>
+	<th>35</th>
+	<th>36</th>
+	<th>37</th>
+	<th>38</th>
+	<th>39</th>
+	<th>40</th>
+	<th>41</th>
+	<th>42</th>
+	<th>43</th>
+	<th>44</th>
+	<th>45</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+</div>
+
+<div id="statistics-panel">
+
+<table border="1">
+<thead>
+<tr>
+	<th rowspan="2">统计类型</th>
+	<th colspan="31">和值走势</th>
+	<th rowspan="2">和值</th>
+	<th rowspan="2">和尾</th>
+</tr>
+<tr>
+	<th>15</th>
+	<th>16</th>
+	<th>17</th>
+	<th>18</th>
+	<th>19</th>
+	<th>20</th>
+	<th>21</th>
+	<th>22</th>
+	<th>23</th>
+	<th>24</th>
+	<th>25</th>
+	<th>26</th>
+	<th>27</th>
+	<th>28</th>
+	<th>29</th>
+	<th>30</th>
+	<th>31</th>
+	<th>32</th>
+	<th>33</th>
+	<th>34</th>
+	<th>35</th>
+	<th>36</th>
+	<th>37</th>
+	<th>38</th>
+	<th>39</th>
+	<th>40</th>
+	<th>41</th>
+	<th>42</th>
+	<th>43</th>
+	<th>44</th>
+	<th>45</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</div>
+
+	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../lib/app.js"></script>
+	
+	<script type="text/javascript">
+		
+		$(function()
+		{
+			app.showLoading();
+			$.getJSON("../service/11x5.jsp?mode=1", function(response)
+			{
+				if(response.status == 1)
+				{
+					
+
+					var rows = response.resource.data;
+					var $detailed = $("#detailed-panel table tbody");
+					var content = '';
+					$.each(rows, function(i, row)
+					{
+						var codes = row["ZJHM"].split(",")
+
+						content += '<tr>';
+						content += '<td>'+row["QH"]+'</td>';
+						content += '<td>'+codes[0]+'</td>';
+						content += '<td>'+codes[1]+'</td>';
+						content += '<td>'+codes[2]+'</td>';
+						content += '<td>'+codes[3]+'</td>';
+						content += '<td>'+codes[4]+'</td>';
+						
+						var total = 0
+						$.each(codes, function(i, code)
+						{
+							code = parseInt(code)
+							total += code;
+						});
+						content += '<td class="T15">'+(total == 15 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T16">'+(total == 16 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T17">'+(total == 17 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T18">'+(total == 18 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T19">'+(total == 19 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T20">'+(total == 20 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T21">'+(total == 21 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T22">'+(total == 22 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T23">'+(total == 23 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T24">'+(total == 24 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T25">'+(total == 25 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T26">'+(total == 26 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T27">'+(total == 27 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T28">'+(total == 28 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T29">'+(total == 29 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T30">'+(total == 30 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T31">'+(total == 31 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T32">'+(total == 32 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T33">'+(total == 33 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T34">'+(total == 34 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T35">'+(total == 35 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T36">'+(total == 36 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T37">'+(total == 37 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T38">'+(total == 38 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T39">'+(total == 39 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T40">'+(total == 40 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T41">'+(total == 41 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T42">'+(total == 42 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T43">'+(total == 43 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T44">'+(total == 44 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td class="T45">'+(total == 45 ? '<span>'+total+'</span>' : '')+'</td>';
+						content += '<td>'+total+'</td>';
+						content += '<td>'+(total % 10)+'</td>';
+
+						content += '</tr>';
+
+					});
+					$detailed.html(content);
+
+
+					var $statistics = $("#statistics-panel table tbody");
+					var tempstatisticsmap = {};
+					var statisticsmap = {};
+					var $rows = $detailed.find("tr");
+					$.each($rows, function(i, row)
+					{
+						var $cells = $(row).find("td");
+						$.each($cells, function(j, cell)
+						{
+							var $cell = $(cell);
+							var classname = "L"+$cell.attr("class");
+							var isBingo = ($cell.find("span").length != 0);
+
+							if(tempstatisticsmap[classname] == null)
+							{
+								tempstatisticsmap[classname] = 0;
+							}
+
+							if(isBingo)
+							{
+								tempstatisticsmap[classname] += 1;
+							}
+
+							if(!isBingo || (i == $rows.length - 1))
+							{
+								statisticsmap[classname] = Math.max((statisticsmap[classname] || 0), (tempstatisticsmap[classname] || 0));
+								tempstatisticsmap[classname] = 0;
+							}
+
+							classname = "Y"+$cell.attr("class");
+							if(tempstatisticsmap[classname] == null)
+							{
+								tempstatisticsmap[classname] = 0;
+							}
+
+							if(!isBingo)
+							{
+								tempstatisticsmap[classname] += 1;
+							}
+							
+							if(isBingo || (i == $rows.length - 1))
+							{
+								statisticsmap[classname] = Math.max((statisticsmap[classname] || 0), (tempstatisticsmap[classname] || 0));
+								tempstatisticsmap[classname] = 0;
+							}
+						});						
+					});
+
+
+					content = "";
+
+					content += '<tr>';
+					content += '<td>出现总次数</td>';
+					content += '<td>'+($(".T15 span").length)+'</td>';
+					content += '<td>'+($(".T16 span").length)+'</td>';
+					content += '<td>'+($(".T17 span").length)+'</td>';
+					content += '<td>'+($(".T18 span").length)+'</td>';
+					content += '<td>'+($(".T19 span").length)+'</td>';
+					content += '<td>'+($(".T20 span").length)+'</td>';
+					content += '<td>'+($(".T21 span").length)+'</td>';
+					content += '<td>'+($(".T22 span").length)+'</td>';
+					content += '<td>'+($(".T23 span").length)+'</td>';
+					content += '<td>'+($(".T24 span").length)+'</td>';
+					content += '<td>'+($(".T25 span").length)+'</td>';
+					content += '<td>'+($(".T26 span").length)+'</td>';
+					content += '<td>'+($(".T27 span").length)+'</td>';
+					content += '<td>'+($(".T28 span").length)+'</td>';
+					content += '<td>'+($(".T29 span").length)+'</td>';
+					content += '<td>'+($(".T30 span").length)+'</td>';
+					content += '<td>'+($(".T31 span").length)+'</td>';
+					content += '<td>'+($(".T32 span").length)+'</td>';
+					content += '<td>'+($(".T33 span").length)+'</td>';
+					content += '<td>'+($(".T34 span").length)+'</td>';
+					content += '<td>'+($(".T35 span").length)+'</td>';
+					content += '<td>'+($(".T36 span").length)+'</td>';
+					content += '<td>'+($(".T37 span").length)+'</td>';
+					content += '<td>'+($(".T38 span").length)+'</td>';
+					content += '<td>'+($(".T39 span").length)+'</td>';
+					content += '<td>'+($(".T40 span").length)+'</td>';
+					content += '<td>'+($(".T41 span").length)+'</td>';
+					content += '<td>'+($(".T42 span").length)+'</td>';
+					content += '<td>'+($(".T43 span").length)+'</td>';
+					content += '<td>'+($(".T44 span").length)+'</td>';
+					content += '<td>'+($(".T45 span").length)+'</td>';
+					content += '<td></td>';
+					content += '<td></td>';
+					content += '</tr>';
+
+					content += '<tr>';
+					content += '<td>最大遗漏值</td>';
+
+					content += '<td>'+statisticsmap["YT15"]+'</td>';
+					content += '<td>'+statisticsmap["YT16"]+'</td>';
+					content += '<td>'+statisticsmap["YT17"]+'</td>';
+					content += '<td>'+statisticsmap["YT18"]+'</td>';
+					content += '<td>'+statisticsmap["YT19"]+'</td>';
+					content += '<td>'+statisticsmap["YT20"]+'</td>';
+					content += '<td>'+statisticsmap["YT21"]+'</td>';
+					content += '<td>'+statisticsmap["YT22"]+'</td>';
+					content += '<td>'+statisticsmap["YT23"]+'</td>';
+					content += '<td>'+statisticsmap["YT24"]+'</td>';
+					content += '<td>'+statisticsmap["YT25"]+'</td>';
+					content += '<td>'+statisticsmap["YT26"]+'</td>';
+					content += '<td>'+statisticsmap["YT27"]+'</td>';
+					content += '<td>'+statisticsmap["YT28"]+'</td>';
+					content += '<td>'+statisticsmap["YT29"]+'</td>';
+					content += '<td>'+statisticsmap["YT30"]+'</td>';
+					content += '<td>'+statisticsmap["YT31"]+'</td>';
+					content += '<td>'+statisticsmap["YT32"]+'</td>';
+					content += '<td>'+statisticsmap["YT33"]+'</td>';
+					content += '<td>'+statisticsmap["YT34"]+'</td>';
+					content += '<td>'+statisticsmap["YT35"]+'</td>';
+					content += '<td>'+statisticsmap["YT36"]+'</td>';
+					content += '<td>'+statisticsmap["YT37"]+'</td>';
+					content += '<td>'+statisticsmap["YT38"]+'</td>';
+					content += '<td>'+statisticsmap["YT39"]+'</td>';
+					content += '<td>'+statisticsmap["YT40"]+'</td>';
+					content += '<td>'+statisticsmap["YT41"]+'</td>';
+					content += '<td>'+statisticsmap["YT42"]+'</td>';
+					content += '<td>'+statisticsmap["YT43"]+'</td>';
+					content += '<td>'+statisticsmap["YT44"]+'</td>';
+					content += '<td>'+statisticsmap["YT45"]+'</td>';
+
+					content += '<td></td>';
+					content += '<td></td>';
+					content += '</tr>';
+
+					content += '<tr>';
+					content += '<td>最大连出值</td>';
+					content += '<td>'+statisticsmap["LT15"]+'</td>';
+					content += '<td>'+statisticsmap["LT16"]+'</td>';
+					content += '<td>'+statisticsmap["LT17"]+'</td>';
+					content += '<td>'+statisticsmap["LT18"]+'</td>';
+					content += '<td>'+statisticsmap["LT19"]+'</td>';
+					content += '<td>'+statisticsmap["LT20"]+'</td>';
+					content += '<td>'+statisticsmap["LT21"]+'</td>';
+					content += '<td>'+statisticsmap["LT22"]+'</td>';
+					content += '<td>'+statisticsmap["LT23"]+'</td>';
+					content += '<td>'+statisticsmap["LT24"]+'</td>';
+					content += '<td>'+statisticsmap["LT25"]+'</td>';
+					content += '<td>'+statisticsmap["LT26"]+'</td>';
+					content += '<td>'+statisticsmap["LT27"]+'</td>';
+					content += '<td>'+statisticsmap["LT28"]+'</td>';
+					content += '<td>'+statisticsmap["LT29"]+'</td>';
+					content += '<td>'+statisticsmap["LT30"]+'</td>';
+					content += '<td>'+statisticsmap["LT31"]+'</td>';
+					content += '<td>'+statisticsmap["LT32"]+'</td>';
+					content += '<td>'+statisticsmap["LT33"]+'</td>';
+					content += '<td>'+statisticsmap["LT34"]+'</td>';
+					content += '<td>'+statisticsmap["LT35"]+'</td>';
+					content += '<td>'+statisticsmap["LT36"]+'</td>';
+					content += '<td>'+statisticsmap["LT37"]+'</td>';
+					content += '<td>'+statisticsmap["LT38"]+'</td>';
+					content += '<td>'+statisticsmap["LT39"]+'</td>';
+					content += '<td>'+statisticsmap["LT40"]+'</td>';
+					content += '<td>'+statisticsmap["LT41"]+'</td>';
+					content += '<td>'+statisticsmap["LT42"]+'</td>';
+					content += '<td>'+statisticsmap["LT43"]+'</td>';
+					content += '<td>'+statisticsmap["LT44"]+'</td>';
+					content += '<td>'+statisticsmap["LT45"]+'</td>';
+					content += '<td></td>';
+					content += '<td></td>';
+					content += '</tr>';
+
+
+					$statistics.html(content);
+
+					app.hideLoading();
+
+				}
+				else
+				{
+					app.hideLoading();
+					app.message(response.messages);
+				}
+			});
+		});
+
+	</script>
+
+</body>
+</html>

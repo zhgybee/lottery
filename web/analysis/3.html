@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="../css/app.css" />
+	<title></title>
+</head>
+<body>
+
+<h1>任选跨度走势图</h1>
+<div id="detailed-panel">
+<table border="1">
+<thead>
+<tr>
+	<th rowspan="2">期号</th>
+	<th rowspan="2" colspan="5">开奖号码</th>
+	<th colspan="11">开奖号码分布</th>
+	<th colspan="7">跨度走势</th>
+	<th colspan="4">跨度形态</th>
+	<th colspan="3">跨度012路</th>
+</tr>
+<tr>
+	<th>01</th>
+	<th>02</th>
+	<th>03</th>
+	<th>04</th>
+	<th>05</th>
+	<th>06</th>
+	<th>07</th>
+	<th>08</th>
+	<th>09</th>
+	<th>10</th>
+	<th>11</th>
+	<th>4</th>
+	<th>5</th>
+	<th>6</th>
+	<th>7</th>
+	<th>8</th>
+	<th>9</th>
+	<th>10</th>
+	<th>奇</th>
+	<th>偶</th>
+	<th>质</th>
+	<th>合</th>
+	<th>0路</th>
+	<th>1路</th>
+	<th>2路</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+</div>
+
+<div id="statistics-panel">
+
+<table border="1">
+<thead>
+<tr>
+	<th rowspan="2">统计类型</th>
+	<th colspan="11">开奖号码分布</th>
+	<th colspan="7">跨度走势</th>
+	<th colspan="4">跨度形态</th>
+	<th colspan="3">跨度012路</th>
+</tr>
+<tr>
+	<th>01</th>
+	<th>02</th>
+	<th>03</th>
+	<th>04</th>
+	<th>05</th>
+	<th>06</th>
+	<th>07</th>
+	<th>08</th>
+	<th>09</th>
+	<th>10</th>
+	<th>11</th>
+	<th>4</th>
+	<th>5</th>
+	<th>6</th>
+	<th>7</th>
+	<th>8</th>
+	<th>9</th>
+	<th>10</th>
+	<th>奇</th>
+	<th>偶</th>
+	<th>质</th>
+	<th>合</th>
+	<th>0路</th>
+	<th>1路</th>
+	<th>2路</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</div>
+
+	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../lib/app.js"></script>
+	
+	<script type="text/javascript">
+		
+		$(function()
+		{
+			app.showLoading();
+			$.getJSON("../service/11x5.jsp?mode=1", function(response)
+			{
+				if(response.status == 1)
+				{
+					var rows = response.resource.data;
+					var $detailed = $("#detailed-panel table tbody");
+					var content = '';
+					$.each(rows, function(i, row)
+					{
+						var codes = row["ZJHM"].split(",")
+						content += '<tr>';
+						content += '<td>'+row["QH"]+'</td>';
+						content += '<td>'+codes[0]+'</td>';
+						content += '<td>'+codes[1]+'</td>';
+						content += '<td>'+codes[2]+'</td>';
+						content += '<td>'+codes[3]+'</td>';
+						content += '<td>'+codes[4]+'</td>';
+						content += '<td class="K01">'+(codes.indexOf('01') == -1 ? '' : '<span>01</span>')+'</td>';
+						content += '<td class="K02">'+(codes.indexOf('02') == -1 ? '' : '<span>02</span>')+'</td>';
+						content += '<td class="K03">'+(codes.indexOf('03') == -1 ? '' : '<span>03</span>')+'</td>';
+						content += '<td class="K04">'+(codes.indexOf('04') == -1 ? '' : '<span>04</span>')+'</td>';
+						content += '<td class="K05">'+(codes.indexOf('05') == -1 ? '' : '<span>05</span>')+'</td>';
+						content += '<td class="K06">'+(codes.indexOf('06') == -1 ? '' : '<span>06</span>')+'</td>';
+						content += '<td class="K07">'+(codes.indexOf('07') == -1 ? '' : '<span>07</span>')+'</td>';
+						content += '<td class="K08">'+(codes.indexOf('08') == -1 ? '' : '<span>08</span>')+'</td>';
+						content += '<td class="K09">'+(codes.indexOf('09') == -1 ? '' : '<span>09</span>')+'</td>';
+						content += '<td class="K10">'+(codes.indexOf('10') == -1 ? '' : '<span>10</span>')+'</td>';
+						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span>11</span>')+'</td>';
+
+						var max = null;
+						var min = null;
+						$.each(codes, function(i, code)
+						{
+							code = parseInt(code)
+							max = Math.max(code, (max || code));
+							min = Math.min(code, (min || code));
+						});
+
+						var length = max - min;
+
+						content += '<td class="ZS04">'+(length == 4 ? '<span>4</span>' : '')+'</td>';
+						content += '<td class="ZS05">'+(length == 5 ? '<span>5</span>' : '')+'</td>';
+						content += '<td class="ZS06">'+(length == 6 ? '<span>6</span>' : '')+'</td>';
+						content += '<td class="ZS07">'+(length == 7 ? '<span>7</span>' : '')+'</td>';
+						content += '<td class="ZS08">'+(length == 8 ? '<span>8</span>' : '')+'</td>';
+						content += '<td class="ZS09">'+(length == 9 ? '<span>9</span>' : '')+'</td>';
+						content += '<td class="ZS10">'+(length == 10 ? '<span>10</span>' : '')+'</td>';
+
+
+						content += '<td class="XT1">'+(app.isOdd(length) ? '<span>奇</span>' : '')+'</td>';
+						content += '<td class="XT2">'+(!app.isOdd(length) ? '<span>偶</span>' : '')+'</td>';
+						content += '<td class="XT3">'+(app.isPrime(length) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="XT4">'+(!app.isPrime(length) ? '<span>合</span>' : '')+'</td>';
+
+						content += '<td class="L0121">'+(length % 3 == 0 ? '<span>0路</span>' : '')+'</td>';
+						content += '<td class="L0122">'+(length % 3 == 1 ? '<span>1路</span>' : '')+'</td>';
+						content += '<td class="L0123">'+(length % 3 == 2 ? '<span>2路</span>' : '')+'</td>';
+
+
+						content += '</tr>';
+					});
+					$detailed.html(content);
+
+
+
+
+
+
+
+
+
+					var $statistics = $("#statistics-panel table tbody");
+					var tempstatisticsmap = {};
+					var statisticsmap = {};
+					var $rows = $detailed.find("tr");
+					$.each($rows, function(i, row)
+					{
+						var $cells = $(row).find("td");
+						$.each($cells, function(j, cell)
+						{
+							var $cell = $(cell);
+							var classname = "L"+$cell.attr("class");
+							var isBingo = ($cell.find("span").length != 0);
+
+							if(tempstatisticsmap[classname] == null)
+							{
+								tempstatisticsmap[classname] = 0;
+							}
+
+							if(isBingo)
+							{
+								tempstatisticsmap[classname] += 1;
+							}
+
+							if(!isBingo || (i == $rows.length - 1))
+							{
+								statisticsmap[classname] = Math.max((statisticsmap[classname] || 0), (tempstatisticsmap[classname] || 0));
+								tempstatisticsmap[classname] = 0;
+							}
+
+							classname = "Y"+$cell.attr("class");
+							if(tempstatisticsmap[classname] == null)
+							{
+								tempstatisticsmap[classname] = 0;
+							}
+
+							if(!isBingo)
+							{
+								tempstatisticsmap[classname] += 1;
+							}
+							
+							if(isBingo || (i == $rows.length - 1))
+							{
+								statisticsmap[classname] = Math.max((statisticsmap[classname] || 0), (tempstatisticsmap[classname] || 0));
+								tempstatisticsmap[classname] = 0;
+							}
+						});						
+					});
+
+
+					content = "";
+
+					content += '<tr>';
+					content += '<td>出现总次数</td>';
+					content += '<td>'+($(".K01 span").length)+'</td>';
+					content += '<td>'+($(".K02 span").length)+'</td>';
+					content += '<td>'+($(".K03 span").length)+'</td>';
+					content += '<td>'+($(".K04 span").length)+'</td>';
+					content += '<td>'+($(".K05 span").length)+'</td>';
+					content += '<td>'+($(".K06 span").length)+'</td>';
+					content += '<td>'+($(".K07 span").length)+'</td>';
+					content += '<td>'+($(".K08 span").length)+'</td>';
+					content += '<td>'+($(".K09 span").length)+'</td>';
+					content += '<td>'+($(".K10 span").length)+'</td>';
+					content += '<td>'+($(".K11 span").length)+'</td>';
+					content += '<td>'+($(".ZS04 span").length)+'</td>';
+					content += '<td>'+($(".ZS05 span").length)+'</td>';
+					content += '<td>'+($(".ZS06 span").length)+'</td>';
+					content += '<td>'+($(".ZS07 span").length)+'</td>';
+					content += '<td>'+($(".ZS08 span").length)+'</td>';
+					content += '<td>'+($(".ZS09 span").length)+'</td>';
+					content += '<td>'+($(".ZS10 span").length)+'</td>';
+					content += '<td>'+($(".XT1 span").length)+'</td>';
+					content += '<td>'+($(".XT2 span").length)+'</td>';
+					content += '<td>'+($(".XT3 span").length)+'</td>';
+					content += '<td>'+($(".XT4 span").length)+'</td>';
+					content += '<td>'+($(".L0121 span").length)+'</td>';
+					content += '<td>'+($(".L0122 span").length)+'</td>';
+					content += '<td>'+($(".L0123 span").length)+'</td>';
+					content += '</tr>';
+
+					content += '<tr>';
+					content += '<td>最大遗漏值</td>';
+
+					content += '<td>'+statisticsmap["YK01"]+'</td>';
+					content += '<td>'+statisticsmap["YK02"]+'</td>';
+					content += '<td>'+statisticsmap["YK03"]+'</td>';
+					content += '<td>'+statisticsmap["YK04"]+'</td>';
+					content += '<td>'+statisticsmap["YK05"]+'</td>';
+					content += '<td>'+statisticsmap["YK06"]+'</td>';
+					content += '<td>'+statisticsmap["YK07"]+'</td>';
+					content += '<td>'+statisticsmap["YK08"]+'</td>';
+					content += '<td>'+statisticsmap["YK09"]+'</td>';
+					content += '<td>'+statisticsmap["YK10"]+'</td>';
+					content += '<td>'+statisticsmap["YK11"]+'</td>';
+					content += '<td>'+statisticsmap["YZS04"]+'</td>';
+					content += '<td>'+statisticsmap["YZS05"]+'</td>';
+					content += '<td>'+statisticsmap["YZS06"]+'</td>';
+					content += '<td>'+statisticsmap["YZS07"]+'</td>';
+					content += '<td>'+statisticsmap["YZS08"]+'</td>';
+					content += '<td>'+statisticsmap["YZS09"]+'</td>';
+					content += '<td>'+statisticsmap["YZS10"]+'</td>';
+					content += '<td>'+statisticsmap["YXT1"]+'</td>';
+					content += '<td>'+statisticsmap["YXT2"]+'</td>';
+					content += '<td>'+statisticsmap["YXT3"]+'</td>';
+					content += '<td>'+statisticsmap["YXT4"]+'</td>';
+					content += '<td>'+statisticsmap["YL0121"]+'</td>';
+					content += '<td>'+statisticsmap["YL0122"]+'</td>';
+					content += '<td>'+statisticsmap["YL0123"]+'</td>';
+					content += '</tr>';
+
+					content += '<tr>';
+					content += '<td>最大连出值</td>';
+					content += '<td>'+statisticsmap["LK01"]+'</td>';
+					content += '<td>'+statisticsmap["LK02"]+'</td>';
+					content += '<td>'+statisticsmap["LK03"]+'</td>';
+					content += '<td>'+statisticsmap["LK04"]+'</td>';
+					content += '<td>'+statisticsmap["LK05"]+'</td>';
+					content += '<td>'+statisticsmap["LK06"]+'</td>';
+					content += '<td>'+statisticsmap["LK07"]+'</td>';
+					content += '<td>'+statisticsmap["LK08"]+'</td>';
+					content += '<td>'+statisticsmap["LK09"]+'</td>';
+					content += '<td>'+statisticsmap["LK10"]+'</td>';
+					content += '<td>'+statisticsmap["LK11"]+'</td>';
+					content += '<td>'+statisticsmap["LZS04"]+'</td>';
+					content += '<td>'+statisticsmap["LZS05"]+'</td>';
+					content += '<td>'+statisticsmap["LZS06"]+'</td>';
+					content += '<td>'+statisticsmap["LZS07"]+'</td>';
+					content += '<td>'+statisticsmap["LZS08"]+'</td>';
+					content += '<td>'+statisticsmap["LZS09"]+'</td>';
+					content += '<td>'+statisticsmap["LZS10"]+'</td>';
+					content += '<td>'+statisticsmap["LXT1"]+'</td>';
+					content += '<td>'+statisticsmap["LXT2"]+'</td>';
+					content += '<td>'+statisticsmap["LXT3"]+'</td>';
+					content += '<td>'+statisticsmap["LXT4"]+'</td>';
+					content += '<td>'+statisticsmap["LL0121"]+'</td>';
+					content += '<td>'+statisticsmap["LL0122"]+'</td>';
+					content += '<td>'+statisticsmap["LL0123"]+'</td>';
+					content += '</tr>';
+
+
+					$statistics.html(content);
+
+
+
+
+
+
+
+
+
+
+
+					
+					app.hideLoading();
+
+
+				}
+				else
+				{
+					app.hideLoading();
+					app.message(response.messages);
+				}
+			});
+		});
+
+	</script>
+
+</body>
+</html>

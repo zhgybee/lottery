@@ -1,0 +1,39 @@
+html{}
+
+a{text-decoration:none;}
+
+body{font-family:"微软雅黑"; font-size:13px; color:#333333; margin:0px;}
+
+input{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
+
+textarea{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
+
+select{font-size:13px; color:#333333; margin:0px; box-sizing:border-box; outline:none}
+
+ul, ol, menu, p, h1, h2, h3, h4, h5, h6, hr, dl, dt, dd, form{padding:0px; margin:0px;}
+
+li{padding:0px; margin:0px; list-style-type:none}
+
+.clearfix::after{clear:both; content:""; display:block;}
+
+.green{background-color:#5DC4BF!important}
+
+.red{background-color:#cd5050!important}
+
+.blue{background-color:#009CEA!important}
+
+.left{float:left}
+
+.right{float:right}
+
+.button{border:none; background-color:#4ab6ef; font-size:13px; color:#ffffff; box-sizing:border-box; border-width:0px; outline:none; cursor:pointer; padding:0px 4px}
+
+#loading-panel{}
+
+#loading-panel .loading-mask{position:fixed; width:100%; height:100%; top:0px; left:0px;right:0px; bottom:0px; background-color:#333333; filter:alpha(opacity=10); opacity:0.1;}
+
+#loading-panel .loading-toast{position:absolute; width:100px; background-color:#ffffff; height:100px; opacity:0.7; border:1px solid #dddddd}
+
+#loading-panel .loading-toast img{display:block; margin:0px auto;}
+
+#messages-panel{box-sizing:border-box; display:none; position:absolute; top:0px; left:0px; background-color:#fefbdf; width:100%; padding:30px; color:#333333; filter:alpha(opacity=90); opacity:0.9;}
