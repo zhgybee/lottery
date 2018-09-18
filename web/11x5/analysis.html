@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="../css/app.css" />
+	<title></title>
+</head>
+<body>
+<div id="codes-panel">
+	<textarea rows="6"></textarea>
+</div>
+<button id="starting-button">分析</button>
+
+
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../lib/app.js"></script>
+
+<script type="text/javascript">
+
+$(function()
+{
+	$("#starting-button").on("click", function()
+	{
+		var parameter = {};
+		parameter["codes"] = $("#codes-panel textarea").val();
+
+
+		//app.showLoading();
+		$.post("service/analysis.jsp?mode=1", parameter, function(response)
+		{
+			//app.hideLoading();
+			if(response.status == 1)
+			{
+			}
+			else
+			{
+				app.message(response.messages);
+			}
+		}, "json");
+
+	});
+});
+
+</script>
+
+</body>
+</html>

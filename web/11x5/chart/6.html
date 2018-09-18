@@ -3,12 +3,12 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<link rel="stylesheet" href="../css/app.css" />
+	<link rel="stylesheet" href="../../css/app.css" />
 	<title></title>
 </head>
 <body>
 
-<h1>任选奇偶走势图</h1>
+<h1>任选质合走势图</h1>
 <div id="detailed-panel">
 <table border="1">
 <thead>
@@ -21,7 +21,7 @@
 	<th colspan="2">第三位</th>
 	<th colspan="2">第四位</th>
 	<th colspan="2">第五位</th>
-	<th colspan="6">奇偶比走势</th>
+	<th colspan="6">质合比走势</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -35,16 +35,16 @@
 	<th>09</th>
 	<th>10</th>
 	<th>11</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
 	<th>0:5</th>
 	<th>1:4</th>
 	<th>2:3</th>
@@ -71,7 +71,7 @@
 	<th colspan="2">第三位</th>
 	<th colspan="2">第四位</th>
 	<th colspan="2">第五位</th>
-	<th colspan="6">奇偶比走势</th>
+	<th colspan="6">质合比走势</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -85,16 +85,16 @@
 	<th>09</th>
 	<th>10</th>
 	<th>11</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
-	<th>奇</th>
-	<th>偶</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
+	<th>质</th>
+	<th>合</th>
 	<th>0:5</th>
 	<th>1:4</th>
 	<th>2:3</th>
@@ -109,14 +109,14 @@
 </div>
 
 	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../lib/app.js"></script>
+	<script src="../../lib/app.js"></script>
 	
 	<script type="text/javascript">
 		
 		$(function()
 		{
 			app.showLoading();
-			$.getJSON("../service/11x5.jsp?mode=1", function(response)
+			$.getJSON("../service/data.jsp?mode=1", function(response)
 			{
 				if(response.status == 1)
 				{
@@ -148,23 +148,23 @@
 						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span>11</span>')+'</td>';
 
 
-						content += '<td class="D1">'+(app.isOdd(codes[0]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X1">'+(!app.isOdd(codes[0]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D2">'+(app.isOdd(codes[1]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X2">'+(!app.isOdd(codes[1]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D3">'+(app.isOdd(codes[2]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X3">'+(!app.isOdd(codes[2]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D4">'+(app.isOdd(codes[3]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X4">'+(!app.isOdd(codes[3]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D5">'+(app.isOdd(codes[4]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X5">'+(!app.isOdd(codes[4]) ? '<span>偶</span>' : '')+'</td>';
+						content += '<td class="D1">'+(app.isPrime(codes[0]) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="X1">'+(!app.isPrime(codes[0]) ? '<span>合</span>' : '')+'</td>';
+						content += '<td class="D2">'+(app.isPrime(codes[1]) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="X2">'+(!app.isPrime(codes[1]) ? '<span>合</span>' : '')+'</td>';
+						content += '<td class="D3">'+(app.isPrime(codes[2]) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="X3">'+(!app.isPrime(codes[2]) ? '<span>合</span>' : '')+'</td>';
+						content += '<td class="D4">'+(app.isPrime(codes[3]) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="X4">'+(!app.isPrime(codes[3]) ? '<span>合</span>' : '')+'</td>';
+						content += '<td class="D5">'+(app.isPrime(codes[4]) ? '<span>质</span>' : '')+'</td>';
+						content += '<td class="X5">'+(!app.isPrime(codes[4]) ? '<span>合</span>' : '')+'</td>';
 
 						var scount = 0;
 						var bcount = 0;
 						$.each(codes, function(i, code)
 						{
 							code = parseInt(code)
-							if(app.isOdd(code))
+							if(app.isPrime(code))
 							{
 								bcount += 1;
 							}
