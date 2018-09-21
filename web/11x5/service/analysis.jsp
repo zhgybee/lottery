@@ -23,7 +23,6 @@
 		if(mode.equals("1"))
 		{
 			String codes = request.getParameter("codes");
-			codes = "02 04 06 07 09\n";
 			
 			String[] combinations = codes.split("\n");
 			
@@ -63,10 +62,9 @@
 					}
 				}
 			}
-			
-			out.println(titles);
-			out.println(values);
 
+			message.resource("values", values);
+			message.resource("titles", titles);
 		}
 	}
 	else

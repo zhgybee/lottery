@@ -146,4 +146,19 @@ var app = {};
 
 		return true;
 	}
+
+
+	app.repeatcount = function(array1, array2)
+	{
+		var count = 0;
+		for(var i = 0 ; i < array1.length ; i++)
+		{
+			var code = array1[i];
+			if(array2.indexOf(code) != -1)
+			{
+				count++;
+			}
+		}
+		return count;
+	}
 })(app);

@@ -83,7 +83,9 @@
 			combinations = lotter.filter(combinations, evencount, comcount, smcount, concount);
 			
 			
-			message.resource("data", lotter.toString(combinations));
+			message.resource("combinations", lotter.toString(combinations));
+			
+			session.setAttribute("sessioncodes", lotter.toString(combinations));
 		}
 	}
 	else

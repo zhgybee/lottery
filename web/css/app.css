@@ -8,7 +8,9 @@ input{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
 
 textarea{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
 
-select{font-size:13px; color:#333333; margin:0px; box-sizing:border-box; outline:none}
+select{font-size:13px; color:#333333; margin:0px; box-sizing:border-box; outline:none; box-shadow: none;}
+
+h1, h2, h3, h4, h5, h6{font-weight:400; font-size:13px;}
 
 ul, ol, menu, p, h1, h2, h3, h4, h5, h6, hr, dl, dt, dd, form{padding:0px; margin:0px;}
 
@@ -28,6 +30,8 @@ li{padding:0px; margin:0px; list-style-type:none}
 
 .button{border:none; background-color:#4ab6ef; font-size:13px; color:#ffffff; box-sizing:border-box; border-width:0px; outline:none; cursor:pointer; padding:0px 4px}
 
+hr{border-top:1px solid #eaeaea; border-bottom:none}
+
 #loading-panel{}
 
 #loading-panel .loading-mask{position:fixed; width:100%; height:100%; top:0px; left:0px;right:0px; bottom:0px; background-color:#333333; filter:alpha(opacity=10); opacity:0.1;}
@@ -37,3 +41,42 @@ li{padding:0px; margin:0px; list-style-type:none}
 #loading-panel .loading-toast img{display:block; margin:0px auto;}
 
 #messages-panel{box-sizing:border-box; display:none; position:absolute; top:0px; left:0px; background-color:#fefbdf; width:100%; padding:30px; color:#333333; filter:alpha(opacity=90); opacity:0.9;}
+
+
+#chart-page{}
+#chart-page table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border-width:0px; border-top:1px solid #ffffff; background-color:#f7f7f7; font-size:12px}
+#chart-page table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
+#chart-page table thead{background-color:#e0f3ff;}
+#chart-page table thead th{font-weight:400; text-align:center; height:30px; width:25px}
+#chart-page table tbody td{text-align:center; height:25px;}
+#chart-page #statistics-panel table{border-top:none}
+
+#chart-page table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
+#chart-page table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .redrect{background-color:#ba2636; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .bluerect{background-color:#a3b5d4; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .purplerect{background-color:#c2a9c8; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .seagreenrect{background-color:#97bf94; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-page table .bluerow{background-color:#e8f0f9}
+#chart-page table .redcode{color:#ba2636}
+#chart-page table .greycode{color:#cccccc}
+
+#do-page{margin:20px}
+#do-page .row{padding:10px 5px; position:relative}
+#do-page label{display:inline-block; position:relative; padding-left:25px; margin-right:8px}
+#do-page label.title{width:100px; padding-left:5px}
+#do-page label.subtitle{margin:0px 8px 0px 30px; padding-left:0px}
+#do-page label .checkbox{display:inline-block; position:absolute; top:1px; left:2px; background-position:0px 0px; background-image:url('../images/box.png'); background-repeat:no-repeat; width:18px; height:18px; margin-right:4px}
+#do-page label .checked{background-position:-40px 0px}
+#do-page hr{margin:7px 0px}
+#do-page .clear-panel{right:10px; top:9px; position:absolute}
+#do-page .clear-panel button{width:22px; height:20px; text-align:center; line-height:22px; border-radius:5px;}
+#do-page #create-button{margin-top:40px; width:150px; height:60px; font-size:18px; border-radius:5px;}
+#do-page #create-button i{font-size:23px; margin-right:4px; vertical-align:middle}
+#do-page #analysis-button{margin-top:40px; width:150px; height:60px; font-size:18px; border-radius:5px;}
+#do-page #analysis-button i{font-size:23px; margin-right:4px; vertical-align:middle}
+#do-page #codes-panel textarea{width:100%; height:200px; border:1px solid #cccccc; padding:5px; font-size:14px}
+#do-page #combination-count{padding:20px 0px 5px 0px;}
+#do-page #combination-count h4{font-weight:400; font-size:15px; float:left}
+#do-page #combination-count strong{font-weight:400; font-size:15px; float:right}

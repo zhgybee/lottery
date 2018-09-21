@@ -6,21 +6,23 @@
 	<link rel="stylesheet" href="../../css/app.css" />
 	<title></title>
 </head>
-<body>
+<body id="chart-page">
 <h1>任选基本走势图</h1>
 <div id="detailed-panel">
-<table border="1">
+<table>
 <thead>
 <tr>
-	<th rowspan="2">期号</th>
-	<th rowspan="2" colspan="5">开奖号码</th>
-	<th colspan="11">开奖号码分布</th>
-	<th rowspan="2">和值</th>
-	<th rowspan="2">跨度</th>
-	<th rowspan="2">奇偶比</th>
-	<th rowspan="2">质合比</th>
-	<th colspan="6">奇数个数（偶数）</th>
-	<th colspan="6">质数个数（合数）</th>
+	<th rowspan="2" style="width:100px">期号</th>
+	<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
+	<th colspan="11" style="width:275px">开奖号码分布</th>
+	<th rowspan="2" style="width:60px">重号数</th>
+	<th rowspan="2" style="width:60px">连号数</th>
+	<th rowspan="2" style="width:60px">和值</th>
+	<th rowspan="2" style="width:60px">跨度</th>
+	<th rowspan="2" style="width:60px">奇偶比</th>
+	<th rowspan="2" style="width:60px">质合比</th>
+	<th colspan="6" style="width:150px">奇数个数</th>
+	<th colspan="6" style="width:150px">质数个数</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -55,18 +57,19 @@
 </div>
 
 <div id="statistics-panel">
-
-<table border="1">
+<table>
 <thead>
 <tr>
-	<th rowspan="2">统计类型</th>
-	<th colspan="11">开奖号码分布</th>
-	<th rowspan="2">和值</th>
-	<th rowspan="2">跨度</th>
-	<th rowspan="2">奇偶比</th>
-	<th rowspan="2">质合比</th>
-	<th colspan="6">奇数个数（偶数）</th>
-	<th colspan="6">质数个数（合数）</th>
+	<th rowspan="2" style="width:226px">统计类型</th>
+	<th colspan="11" style="width:275px">开奖号码分布</th>
+	<th rowspan="2" style="width:60px">重号数</th>
+	<th rowspan="2" style="width:60px">连号数</th>
+	<th rowspan="2" style="width:60px">和值</th>
+	<th rowspan="2" style="width:60px">跨度</th>
+	<th rowspan="2" style="width:60px">奇偶比</th>
+	<th rowspan="2" style="width:60px">质合比</th>
+	<th colspan="6" style="width:150px">奇数个数（偶数）</th>
+	<th colspan="6" style="width:150px">质数个数（合数）</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -119,24 +122,37 @@
 						var codes = row["ZJHM"].split(",")
 						content += '<tr>';
 						content += '<td>'+row["QH"]+'</td>';
-						content += '<td>'+codes[0]+'</td>';
-						content += '<td>'+codes[1]+'</td>';
-						content += '<td>'+codes[2]+'</td>';
-						content += '<td>'+codes[3]+'</td>';
-						content += '<td>'+codes[4]+'</td>';
+						content += '<td class="redcode">'+codes[0]+'</td>';
+						content += '<td class="redcode">'+codes[1]+'</td>';
+						content += '<td class="redcode">'+codes[2]+'</td>';
+						content += '<td class="redcode">'+codes[3]+'</td>';
+						content += '<td class="redcode">'+codes[4]+'</td>';
 
 
-						content += '<td class="K01">'+(codes.indexOf('01') == -1 ? '' : '<span>01</span>')+'</td>';
-						content += '<td class="K02">'+(codes.indexOf('02') == -1 ? '' : '<span>02</span>')+'</td>';
-						content += '<td class="K03">'+(codes.indexOf('03') == -1 ? '' : '<span>03</span>')+'</td>';
-						content += '<td class="K04">'+(codes.indexOf('04') == -1 ? '' : '<span>04</span>')+'</td>';
-						content += '<td class="K05">'+(codes.indexOf('05') == -1 ? '' : '<span>05</span>')+'</td>';
-						content += '<td class="K06">'+(codes.indexOf('06') == -1 ? '' : '<span>06</span>')+'</td>';
-						content += '<td class="K07">'+(codes.indexOf('07') == -1 ? '' : '<span>07</span>')+'</td>';
-						content += '<td class="K08">'+(codes.indexOf('08') == -1 ? '' : '<span>08</span>')+'</td>';
-						content += '<td class="K09">'+(codes.indexOf('09') == -1 ? '' : '<span>09</span>')+'</td>';
-						content += '<td class="K10">'+(codes.indexOf('10') == -1 ? '' : '<span>10</span>')+'</td>';
-						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span>11</span>')+'</td>';
+						content += '<td class="K01">'+(codes.indexOf('01') == -1 ? '' : '<span class="redball">01</span>')+'</td>';
+						content += '<td class="K02">'+(codes.indexOf('02') == -1 ? '' : '<span class="redball">02</span>')+'</td>';
+						content += '<td class="K03">'+(codes.indexOf('03') == -1 ? '' : '<span class="redball">03</span>')+'</td>';
+						content += '<td class="K04">'+(codes.indexOf('04') == -1 ? '' : '<span class="redball">04</span>')+'</td>';
+						content += '<td class="K05">'+(codes.indexOf('05') == -1 ? '' : '<span class="redball">05</span>')+'</td>';
+						content += '<td class="K06">'+(codes.indexOf('06') == -1 ? '' : '<span class="redball">06</span>')+'</td>';
+						content += '<td class="K07">'+(codes.indexOf('07') == -1 ? '' : '<span class="redball">07</span>')+'</td>';
+						content += '<td class="K08">'+(codes.indexOf('08') == -1 ? '' : '<span class="redball">08</span>')+'</td>';
+						content += '<td class="K09">'+(codes.indexOf('09') == -1 ? '' : '<span class="redball">09</span>')+'</td>';
+						content += '<td class="K10">'+(codes.indexOf('10') == -1 ? '' : '<span class="redball">10</span>')+'</td>';
+						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span class="redball">11</span>')+'</td>';
+
+						var repcount = 0;
+						if(i != 0)
+						{
+							var precodes = rows[i - 1]["ZJHM"].split(",");
+							if(precodes != null)
+							{
+								repcount = app.repeatcount(codes, precodes);
+							}
+						}
+
+						content += '<td class="CHS1">'+repcount+'</td>';
+						content += '<td class="LHS1">'+concount(codes)+'</td>';
 
 
 						var total = 0
@@ -166,18 +182,18 @@
 						content += '<td>'+(max - min)+'</td>';
 						content += '<td>'+oddcount+':'+(5 - oddcount)+'</td>';
 						content += '<td>'+primecount+':'+(5 - primecount)+'</td>';
-						content += '<td class="J0">'+(oddcount == 0 ?   '<span>0</span>' : '')+'</td>';
-						content += '<td class="J1">'+(oddcount == 1 ?   '<span>1</span>' : '')+'</td>';
-						content += '<td class="J2">'+(oddcount == 2 ?   '<span>2</span>' : '')+'</td>';
-						content += '<td class="J3">'+(oddcount == 3 ?   '<span>3</span>' : '')+'</td>';
-						content += '<td class="J4">'+(oddcount == 4 ?   '<span>4</span>' : '')+'</td>';
-						content += '<td class="J5">'+(oddcount == 5 ?   '<span>5</span>' : '')+'</td>';
-						content += '<td class="Z0">'+(primecount == 0 ? '<span>0</span>' : '')+'</td>';
-						content += '<td class="Z1">'+(primecount == 1 ? '<span>1</span>' : '')+'</td>';
-						content += '<td class="Z2">'+(primecount == 2 ? '<span>2</span>' : '')+'</td>';
-						content += '<td class="Z3">'+(primecount == 3 ? '<span>3</span>' : '')+'</td>';
-						content += '<td class="Z4">'+(primecount == 4 ? '<span>4</span>' : '')+'</td>';
-						content += '<td class="Z5">'+(primecount == 5 ? '<span>5</span>' : '')+'</td>';
+						content += '<td class="J0">'+(oddcount == 0 ?   '<span class="yellowrect">0</span>' : '')+'</td>';
+						content += '<td class="J1">'+(oddcount == 1 ?   '<span class="yellowrect">1</span>' : '')+'</td>';
+						content += '<td class="J2">'+(oddcount == 2 ?   '<span class="yellowrect">2</span>' : '')+'</td>';
+						content += '<td class="J3">'+(oddcount == 3 ?   '<span class="yellowrect">3</span>' : '')+'</td>';
+						content += '<td class="J4">'+(oddcount == 4 ?   '<span class="yellowrect">4</span>' : '')+'</td>';
+						content += '<td class="J5">'+(oddcount == 5 ?   '<span class="yellowrect">5</span>' : '')+'</td>';
+						content += '<td class="Z0">'+(primecount == 0 ? '<span class="greenrect">0</span>' : '')+'</td>';
+						content += '<td class="Z1">'+(primecount == 1 ? '<span class="greenrect">1</span>' : '')+'</td>';
+						content += '<td class="Z2">'+(primecount == 2 ? '<span class="greenrect">2</span>' : '')+'</td>';
+						content += '<td class="Z3">'+(primecount == 3 ? '<span class="greenrect">3</span>' : '')+'</td>';
+						content += '<td class="Z4">'+(primecount == 4 ? '<span class="greenrect">4</span>' : '')+'</td>';
+						content += '<td class="Z5">'+(primecount == 5 ? '<span class="greenrect">5</span>' : '')+'</td>';
 						content += '</tr>';
 					});
 					$detailed.html(content);
@@ -253,6 +269,8 @@
 					content += '<td></td>';
 					content += '<td></td>';
 					content += '<td></td>';
+					content += '<td></td>';
+					content += '<td></td>';
 					content += '<td>'+($(".J0 span").length)+'</td>';
 					content += '<td>'+($(".J1 span").length)+'</td>';
 					content += '<td>'+($(".J2 span").length)+'</td>';
@@ -267,7 +285,7 @@
 					content += '<td>'+($(".Z5 span").length)+'</td>';
 					content += '</tr>';
 
-					content += '<tr>';
+					content += '<tr class="bluerow">';
 					content += '<td>最大遗漏值</td>';
 					content += '<td>'+statisticsmap["YK01"]+'</td>';
 					content += '<td>'+statisticsmap["YK02"]+'</td>';
@@ -280,6 +298,8 @@
 					content += '<td>'+statisticsmap["YK09"]+'</td>';
 					content += '<td>'+statisticsmap["YK10"]+'</td>';
 					content += '<td>'+statisticsmap["YK11"]+'</td>';
+					content += '<td></td>';
+					content += '<td></td>';
 					content += '<td></td>';
 					content += '<td></td>';
 					content += '<td></td>';
@@ -315,6 +335,8 @@
 					content += '<td></td>';
 					content += '<td></td>';
 					content += '<td></td>';
+					content += '<td></td>';
+					content += '<td></td>';
 					content += '<td>'+statisticsmap["LJ0"]+'</td>';
 					content += '<td>'+statisticsmap["LJ1"]+'</td>';
 					content += '<td>'+statisticsmap["LJ2"]+'</td>';
@@ -343,6 +365,24 @@
 				}
 			});
 		});
+
+		function concount(codes)
+		{
+			codes.sort();
+			var count = 0;
+			for(var i = 0 ; i < codes.length ; i++)
+			{
+				if(i < codes.length - 1)
+				{
+					var code = codes[i];
+					if(parseInt(code) + 1 == parseInt(codes[i + 1]))
+					{
+						count++;
+					}
+				}
+			}
+			return count;
+		}
 
 	</script>
 

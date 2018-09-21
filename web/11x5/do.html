@@ -4,196 +4,198 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="../css/app.css" />
+	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<title></title>
 </head>
-<body>
+<body id="do-page">
 
 <div>
-	
-	<div>
-		<label>基础号码</label>　
-		<label><input type="checkbox" value="1" checked="checked" class="basecodes">01</label>
-		<label><input type="checkbox" value="2" checked="checked" class="basecodes">02</label>
-		<label><input type="checkbox" value="3" checked="checked" class="basecodes">03</label>
-		<label><input type="checkbox" value="4" checked="checked" class="basecodes">04</label>
-		<label><input type="checkbox" value="5" checked="checked" class="basecodes">05</label>
-		<label><input type="checkbox" value="6" checked="checked" class="basecodes">06</label>
-		<label><input type="checkbox" value="7" checked="checked" class="basecodes">07</label>
-		<label><input type="checkbox" value="8" checked="checked" class="basecodes">08</label>
-		<label><input type="checkbox" value="9" checked="checked" class="basecodes">09</label>
-		<label><input type="checkbox" value="10" checked="checked" class="basecodes">10</label>
-		<label><input type="checkbox" value="11" checked="checked" class="basecodes">11</label>
+	<div class="row">
+		<label class="title">基础号码</label>
+		<label><i class="checkbox basecodes checked" value="1"></i>01</label>
+		<label><i class="checkbox basecodes checked" value="2"></i>02</label>
+		<label><i class="checkbox basecodes checked" value="3"></i>03</label>
+		<label><i class="checkbox basecodes checked" value="4"></i>04</label>
+		<label><i class="checkbox basecodes checked" value="5"></i>05</label>
+		<label><i class="checkbox basecodes checked" value="6"></i>06</label>
+		<label><i class="checkbox basecodes checked" value="7"></i>07</label>
+		<label><i class="checkbox basecodes checked" value="8"></i>08</label>
+		<label><i class="checkbox basecodes checked" value="9"></i>09</label>
+		<label><i class="checkbox basecodes checked" value="10"></i>10</label>
+		<label><i class="checkbox basecodes checked" value="11"></i>11</label>
 	</div>
-
 	<hr/>
-
-	<div>
-		<label>一号胆</label>　
-		<label><input type="checkbox" value="1" class="codes1">01</label>
-		<label><input type="checkbox" value="2" class="codes1">02</label>
-		<label><input type="checkbox" value="3" class="codes1">03</label>
-		<label><input type="checkbox" value="4" class="codes1">04</label>
-		<label><input type="checkbox" value="5" class="codes1">05</label>
-		<label><input type="checkbox" value="6" class="codes1">06</label>
-		<label><input type="checkbox" value="7" class="codes1">07</label>
-		<label><input type="checkbox" value="8" class="codes1">08</label>
-		<label><input type="checkbox" value="9" class="codes1">09</label>
-		<label><input type="checkbox" value="10" class="codes1">10</label>
-		<label><input type="checkbox" value="11" class="codes1">11</label>
-		<label><input type="checkbox">全选</label>
-		<label>出现</label>　
-		<label><input type="checkbox" value="0" class="codes1count">0</label>
-		<label><input type="checkbox" value="1" class="codes1count">1</label>
-		<label><input type="checkbox" value="2" class="codes1count">2</label>
-		<label><input type="checkbox" value="3" class="codes1count">3</label>
-		<label><input type="checkbox" value="4" class="codes1count">4</label>
-		<label><input type="checkbox" value="5" class="codes1count">5</label>
-		<a>清</a>
+	<div class="row">
+		<label class="title">一号胆</label>
+		<label><i class="checkbox codes1" value="1"></i>01</label>
+		<label><i class="checkbox codes1" value="2"></i>02</label>
+		<label><i class="checkbox codes1" value="3"></i>03</label>
+		<label><i class="checkbox codes1" value="4"></i>04</label>
+		<label><i class="checkbox codes1" value="5"></i>05</label>
+		<label><i class="checkbox codes1" value="6"></i>06</label>
+		<label><i class="checkbox codes1" value="7"></i>07</label>
+		<label><i class="checkbox codes1" value="8"></i>08</label>
+		<label><i class="checkbox codes1" value="9"></i>09</label>
+		<label><i class="checkbox codes1" value="10"></i>10</label>
+		<label><i class="checkbox codes1" value="11"></i>11</label>
+		<label><i class="checkbox" id="selectall-code1"></i>全选</label>
+		<label class="subtitle">出现</label>
+		<label><i class="checkbox codes1count" value="0"></i>0</label>
+		<label><i class="checkbox codes1count" value="1"></i>1</label>
+		<label><i class="checkbox codes1count" value="2"></i>2</label>
+		<label><i class="checkbox codes1count" value="3"></i>3</label>
+		<label><i class="checkbox codes1count" value="4"></i>4</label>
+		<label><i class="checkbox codes1count" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-code1">清</button></label>
 	</div> 
-	<div>
-		<label>二号胆</label>　
-		<label><input type="checkbox" value="1" class="codes2">01</label>
-		<label><input type="checkbox" value="2" class="codes2">02</label>
-		<label><input type="checkbox" value="3" class="codes2">03</label>
-		<label><input type="checkbox" value="4" class="codes2">04</label>
-		<label><input type="checkbox" value="5" class="codes2">05</label>
-		<label><input type="checkbox" value="6" class="codes2">06</label>
-		<label><input type="checkbox" value="7" class="codes2">07</label>
-		<label><input type="checkbox" value="8" class="codes2">08</label>
-		<label><input type="checkbox" value="9" class="codes2">09</label>
-		<label><input type="checkbox" value="10" class="codes2">10</label>
-		<label><input type="checkbox" value="11" class="codes2">11</label>
-		<label><input type="checkbox">全选</label>
-		<label>出现</label>　
-		<label><input type="checkbox" value="0" class="codes2count">0</label>
-		<label><input type="checkbox" value="1" class="codes2count">1</label>
-		<label><input type="checkbox" value="2" class="codes2count">2</label>
-		<label><input type="checkbox" value="3" class="codes2count">3</label>
-		<label><input type="checkbox" value="4" class="codes2count">4</label>
-		<label><input type="checkbox" value="5" class="codes2count">5</label>
-		<a>清</a>
+	<div class="row" style="background-color:#f7f7f7">
+		<label class="title">二号胆</label>
+		<label><i class="checkbox codes2" value="1"></i>01</label>
+		<label><i class="checkbox codes2" value="2"></i>02</label>
+		<label><i class="checkbox codes2" value="3"></i>03</label>
+		<label><i class="checkbox codes2" value="4"></i>04</label>
+		<label><i class="checkbox codes2" value="5"></i>05</label>
+		<label><i class="checkbox codes2" value="6"></i>06</label>
+		<label><i class="checkbox codes2" value="7"></i>07</label>
+		<label><i class="checkbox codes2" value="8"></i>08</label>
+		<label><i class="checkbox codes2" value="9"></i>09</label>
+		<label><i class="checkbox codes2" value="10"></i>10</label>
+		<label><i class="checkbox codes2" value="11"></i>11</label>
+		<label><i class="checkbox" id="selectall-code2"></i>全选</label>
+		<label class="subtitle">出现</label>
+		<label><i class="checkbox codes2count" value="0"></i>0</label>
+		<label><i class="checkbox codes2count" value="1"></i>1</label>
+		<label><i class="checkbox codes2count" value="2"></i>2</label>
+		<label><i class="checkbox codes2count" value="3"></i>3</label>
+		<label><i class="checkbox codes2count" value="4"></i>4</label>
+		<label><i class="checkbox codes2count" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-code2">清</button></label>
 	</div>
-	<div>
-		<label>三号胆</label>　
-		<label><input type="checkbox" value="1" class="codes3">01</label>
-		<label><input type="checkbox" value="2" class="codes3">02</label>
-		<label><input type="checkbox" value="3" class="codes3">03</label>
-		<label><input type="checkbox" value="4" class="codes3">04</label>
-		<label><input type="checkbox" value="5" class="codes3">05</label>
-		<label><input type="checkbox" value="6" class="codes3">06</label>
-		<label><input type="checkbox" value="7" class="codes3">07</label>
-		<label><input type="checkbox" value="8" class="codes3">08</label>
-		<label><input type="checkbox" value="9" class="codes3">09</label>
-		<label><input type="checkbox" value="10" class="codes3">10</label>
-		<label><input type="checkbox" value="11" class="codes3">11</label>
-		<label><input type="checkbox">全选</label>
-		<label>出现</label>　
-		<label><input type="checkbox" value="0" class="codes3count">0</label>
-		<label><input type="checkbox" value="1" class="codes3count">1</label>
-		<label><input type="checkbox" value="2" class="codes3count">2</label>
-		<label><input type="checkbox" value="3" class="codes3count">3</label>
-		<label><input type="checkbox" value="4" class="codes3count">4</label>
-		<label><input type="checkbox" value="5" class="codes3count">5</label>
-		<a>清</a>
+	<div class="row">
+		<label class="title">三号胆</label>
+		<label><i class="checkbox codes3" value="1"></i>01</label>
+		<label><i class="checkbox codes3" value="2"></i>02</label>
+		<label><i class="checkbox codes3" value="3"></i>03</label>
+		<label><i class="checkbox codes3" value="4"></i>04</label>
+		<label><i class="checkbox codes3" value="5"></i>05</label>
+		<label><i class="checkbox codes3" value="6"></i>06</label>
+		<label><i class="checkbox codes3" value="7"></i>07</label>
+		<label><i class="checkbox codes3" value="8"></i>08</label>
+		<label><i class="checkbox codes3" value="9"></i>09</label>
+		<label><i class="checkbox codes3" value="10"></i>10</label>
+		<label><i class="checkbox codes3" value="11"></i>11</label>
+		<label><i class="checkbox" id="selectall-code3"></i>全选</label>
+		<label class="subtitle">出现</label>
+		<label><i class="checkbox codes3count" value="0"></i>0</label>
+		<label><i class="checkbox codes3count" value="1"></i>1</label>
+		<label><i class="checkbox codes3count" value="2"></i>2</label>
+		<label><i class="checkbox codes3count" value="3"></i>3</label>
+		<label><i class="checkbox codes3count" value="4"></i>4</label>
+		<label><i class="checkbox codes3count" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-code3">清</button></label>
 	</div>
-	<div>
-		<label>四号胆</label>　
-		<label><input type="checkbox" value="1" class="codes4">01</label>
-		<label><input type="checkbox" value="2" class="codes4">02</label>
-		<label><input type="checkbox" value="3" class="codes4">03</label>
-		<label><input type="checkbox" value="4" class="codes4">04</label>
-		<label><input type="checkbox" value="5" class="codes4">05</label>
-		<label><input type="checkbox" value="6" class="codes4">06</label>
-		<label><input type="checkbox" value="7" class="codes4">07</label>
-		<label><input type="checkbox" value="8" class="codes4">08</label>
-		<label><input type="checkbox" value="9" class="codes4">09</label>
-		<label><input type="checkbox" value="10" class="codes4">10</label>
-		<label><input type="checkbox" value="11" class="codes4">11</label>
-		<label><input type="checkbox">全选</label>
-		<label>出现</label>　
-		<label><input type="checkbox" value="0" class="codes4count">0</label>
-		<label><input type="checkbox" value="1" class="codes4count">1</label>
-		<label><input type="checkbox" value="2" class="codes4count">2</label>
-		<label><input type="checkbox" value="3" class="codes4count">3</label>
-		<label><input type="checkbox" value="4" class="codes4count">4</label>
-		<label><input type="checkbox" value="5" class="codes4count">5</label>
-		<a>清</a>
+	<div class="row" style="background-color:#f7f7f7">
+		<label class="title">四号胆</label>
+		<label><i class="checkbox codes4" value="1"></i>01</label>
+		<label><i class="checkbox codes4" value="2"></i>02</label>
+		<label><i class="checkbox codes4" value="3"></i>03</label>
+		<label><i class="checkbox codes4" value="4"></i>04</label>
+		<label><i class="checkbox codes4" value="5"></i>05</label>
+		<label><i class="checkbox codes4" value="6"></i>06</label>
+		<label><i class="checkbox codes4" value="7"></i>07</label>
+		<label><i class="checkbox codes4" value="8"></i>08</label>
+		<label><i class="checkbox codes4" value="9"></i>09</label>
+		<label><i class="checkbox codes4" value="10"></i>10</label>
+		<label><i class="checkbox codes4" value="11"></i>11</label>
+		<label><i class="checkbox" id="selectall-code4"></i>全选</label>
+		<label class="subtitle">出现</label>
+		<label><i class="checkbox codes4count" value="0"></i>0</label>
+		<label><i class="checkbox codes4count" value="1"></i>1</label>
+		<label><i class="checkbox codes4count" value="2"></i>2</label>
+		<label><i class="checkbox codes4count" value="3"></i>3</label>
+		<label><i class="checkbox codes4count" value="4"></i>4</label>
+		<label><i class="checkbox codes4count" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-code4">清</button></label>
 	</div>
-	<div>
-		<label>五号胆</label>　
-		<label><input type="checkbox" value="1" class="codes5">01</label>
-		<label><input type="checkbox" value="2" class="codes5">02</label>
-		<label><input type="checkbox" value="3" class="codes5">03</label>
-		<label><input type="checkbox" value="4" class="codes5">04</label>
-		<label><input type="checkbox" value="5" class="codes5">05</label>
-		<label><input type="checkbox" value="6" class="codes5">06</label>
-		<label><input type="checkbox" value="7" class="codes5">07</label>
-		<label><input type="checkbox" value="8" class="codes5">08</label>
-		<label><input type="checkbox" value="9" class="codes5">09</label>
-		<label><input type="checkbox" value="10" class="codes5">10</label>
-		<label><input type="checkbox" value="11" class="codes5">11</label>
-		<label><input type="checkbox">全选</label>
-		<label>出现</label>　
-		<label><input type="checkbox" value="0" class="codes5count">0</label>
-		<label><input type="checkbox" value="1" class="codes5count">1</label>
-		<label><input type="checkbox" value="2" class="codes5count">2</label>
-		<label><input type="checkbox" value="3" class="codes5count">3</label>
-		<label><input type="checkbox" value="4" class="codes5count">4</label>
-		<label><input type="checkbox" value="5" class="codes5count">5</label>
-		<a>清</a>
-	</div>
-
-
-	<div class="clearfix">
-		<div class="left">
-			<label>偶数个数</label>
-			<label><input type="checkbox" value="0" class="evencount">0</label>
-			<label><input type="checkbox" value="1" class="evencount">1</label>
-			<label><input type="checkbox" value="2" class="evencount">2</label>
-			<label><input type="checkbox" value="3" class="evencount">3</label>
-			<label><input type="checkbox" value="4" class="evencount">4</label>
-			<label><input type="checkbox" value="5" class="evencount">5</label>
-		</div>
-		<div class="left">
-			<label>合数个数</label>
-			<label><input type="checkbox" value="0" class="comcount">0</label>
-			<label><input type="checkbox" value="1" class="comcount">1</label>
-			<label><input type="checkbox" value="2" class="comcount">2</label>
-			<label><input type="checkbox" value="3" class="comcount">3</label>
-			<label><input type="checkbox" value="4" class="comcount">4</label>
-			<label><input type="checkbox" value="5" class="comcount">5</label>
-		</div>
-		<div class="left">
-			<label>小数个数</label>
-			<label><input type="checkbox" value="0" class="smcount">0</label>
-			<label><input type="checkbox" value="1" class="smcount">1</label>
-			<label><input type="checkbox" value="2" class="smcount">2</label>
-			<label><input type="checkbox" value="3" class="smcount">3</label>
-			<label><input type="checkbox" value="4" class="smcount">4</label>
-			<label><input type="checkbox" value="5" class="smcount">5</label>
-		</div>
-		<div class="left">
-			<label>连号个数</label>
-			<label><input type="checkbox" value="0" class="concount">0</label>
-			<label><input type="checkbox" value="1" class="concount">1</label>
-			<label><input type="checkbox" value="2" class="concount">2</label>
-			<label><input type="checkbox" value="3" class="concount">3</label>
-			<label><input type="checkbox" value="4" class="concount">4</label>
-		</div>
-		<div class="left"><a>清</a></div>
+	<div class="row">
+		<label class="title">五号胆</label>
+		<label><i class="checkbox codes5" value="1"></i>01</label>
+		<label><i class="checkbox codes5" value="2"></i>02</label>
+		<label><i class="checkbox codes5" value="3"></i>03</label>
+		<label><i class="checkbox codes5" value="4"></i>04</label>
+		<label><i class="checkbox codes5" value="5"></i>05</label>
+		<label><i class="checkbox codes5" value="6"></i>06</label>
+		<label><i class="checkbox codes5" value="7"></i>07</label>
+		<label><i class="checkbox codes5" value="8"></i>08</label>
+		<label><i class="checkbox codes5" value="9"></i>09</label>
+		<label><i class="checkbox codes5" value="10"></i>10</label>
+		<label><i class="checkbox codes5" value="11"></i>11</label>
+		<label><i class="checkbox" id="selectall-code5"></i>全选</label>
+		<label class="subtitle">出现</label>
+		<label><i class="checkbox codes5count" value="0"></i>0</label>
+		<label><i class="checkbox codes5count" value="1"></i>1</label>
+		<label><i class="checkbox codes5count" value="2"></i>2</label>
+		<label><i class="checkbox codes5count" value="3"></i>3</label>
+		<label><i class="checkbox codes5count" value="4"></i>4</label>
+		<label><i class="checkbox codes5count" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-code5">清</button></label>
 	</div>
 
 
+	<div class="row" style="background-color:#f7f7f7">
+		<label class="title">偶数个数</label>
+		<label><i class="checkbox evencount" value="0"></i>0</label>
+		<label><i class="checkbox evencount" value="1"></i>1</label>
+		<label><i class="checkbox evencount" value="2"></i>2</label>
+		<label><i class="checkbox evencount" value="3"></i>3</label>
+		<label><i class="checkbox evencount" value="4"></i>4</label>
+		<label><i class="checkbox evencount" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-even">清</button></label>
+	</div>
+	<div class="row">
+		<label class="title">合数个数</label>
+		<label><i class="checkbox comcount" value="0"></i>0</label>
+		<label><i class="checkbox comcount" value="1"></i>1</label>
+		<label><i class="checkbox comcount" value="2"></i>2</label>
+		<label><i class="checkbox comcount" value="3"></i>3</label>
+		<label><i class="checkbox comcount" value="4"></i>4</label>
+		<label><i class="checkbox comcount" value="5"></i>5</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-com">清</button></label>
+	</div>
+	<div class="row" style="background-color:#f7f7f7">
+		<label class="title">小数个数</label>
+		<label><i class="checkbox smcount" value="0"></i>0</label>
+		<label><i class="checkbox smcount" value="1"></i>1</label>
+		<label><i class="checkbox smcount" value="2"></i>2</label>
+		<label><i class="checkbox smcount" value="3"></i>3</label>
+		<label><i class="checkbox smcount" value="4"></i>4</label>
+		<label><i class="checkbox smcount" value="5"></i>5</label>
+		<label  class="clear-panel"><button class="button red" id="unselectall-sm">清</button></label>
+	</div>
+	<div class="row">
+		<label class="title">连号个数</label>
+		<label><i class="checkbox concount" value="0"></i>0</label>
+		<label><i class="checkbox concount" value="1"></i>1</label>
+		<label><i class="checkbox concount" value="2"></i>2</label>
+		<label><i class="checkbox concount" value="3"></i>3</label>
+		<label><i class="checkbox concount" value="4"></i>4</label>
+		<label class="clear-panel"><button class="button red" id="unselectall-con">清</button></label>
+	</div>
+
+	<div style="text-align:center">
+		<button id="create-button" class="button"><i class="fa fa-pencil-square-o"></i>生成号码</button>
+		<button id="analysis-button" class="button"><i class="fa fa-recycle"></i>智能分析</button>
+	</div>
+
+	<div id="combination-count" class="clearfix">
+		<h4>号码</h4><strong></strong>
+	</div>
+	<div id="codes-panel">
+		<textarea rows="6"></textarea>
+	</div>
 </div>
 
-<div><button id="create-button">生成号码</button></div>
 
-<div>
-	<label>号码<span id="combination-count"></span></label>
-</div>
-<div id="codes-panel">
-	<textarea rows="6"></textarea>
-</div>
 
 
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
@@ -207,90 +209,149 @@ $(function()
 	{
 		creator();
 	});
+
+	$("#analysis-button").on("click", function()
+	{
+		window.open('analysis.html');
+	});
+
+	$(".checkbox").on("click", function()
+	{
+		var classname = $(this).attr("class");
+		if(classname.indexOf("checked") != -1)
+		{
+			$(this).removeClass("checked");
+		}
+		else
+		{
+			$(this).addClass("checked");
+		}
+	});
+
+	$("#unselectall-even").on("click", function()
+	{
+		unselectall($('.evencount'));
+	});
+	$("#unselectall-com").on("click", function()
+	{
+		unselectall($('.comcount'));
+	});
+	$("#unselectall-sm").on("click", function()
+	{
+		unselectall($('.smcount'));
+	});
+	$("#unselectall-con").on("click", function()
+	{
+		unselectall($('.concount'));
+	});
+	
+	for(var i = 1 ; i <= 5 ; i++)
+	{
+		$("#selectall-code"+i).on("click", {index:i}, function(event)
+		{
+			var index = event.data.index;
+			var classname = $(this).attr("class");
+			if(classname.indexOf("checked") != -1)
+			{
+				selectall($('.codes'+index));
+			}
+			else
+			{
+				unselectall($('.codes'+index));
+			}
+		});
+
+		$("#unselectall-code"+i).on("click", {index:i}, function(event)
+		{
+			var index = event.data.index;
+			unselectall($('.codes'+index+', .codes'+index+'count, #selectall-code'+index+''));
+		});
+	}
+
 });
 
 function creator()
 {
 	var basecodes = [];
-	$('.basecodes:checked').each(function(i, element)
+	$('.basecodes.checked').each(function(i, element)
 	{
-		basecodes.push( $(element).val() );
+		basecodes.push( $(element).attr("value") );
 	});
 
 	var codes1 = [];
-	$('.codes1:checked').each(function(i, element)
+	$('.codes1.checked').each(function(i, element)
 	{
-		codes1.push( $(element).val() );
+		codes1.push( $(element).attr("value") );
 	});
 	var codes1count = [];
-	$('.codes1count:checked').each(function(i, element)
+	$('.codes1count.checked').each(function(i, element)
 	{
-		codes1count.push( $(element).val() );
+		codes1count.push( $(element).attr("value") );
 	});
 
 	var codes2 = [];
-	$('.codes2:checked').each(function(i, element)
+	$('.codes2.checked').each(function(i, element)
 	{
-		codes2.push( $(element).val() );
+		codes2.push( $(element).attr("value") );
 	});
 	var codes2count = [];
-	$('.codes2count:checked').each(function(i, element)
+	$('.codes2count.checked').each(function(i, element)
 	{
-		codes2count.push( $(element).val() );
+		codes2count.push( $(element).attr("value") );
 	});
 
 	var codes3 = [];
-	$('.codes3:checked').each(function(i, element)
+	$('.codes3.checked').each(function(i, element)
 	{
-		codes3.push( $(element).val() );
+		codes3.push( $(element).attr("value") );
 	});
 	var codes3count = [];
-	$('.codes3count:checked').each(function(i, element)
+	$('.codes3count.checked').each(function(i, element)
 	{
-		codes3count.push( $(element).val() );
+		codes3count.push( $(element).attr("value") );
 	});
 
 	var codes4 = [];
-	$('.codes4:checked').each(function(i, element)
+	$('.codes4.checked').each(function(i, element)
 	{
-		codes4.push( $(element).val() );
+		codes4.push( $(element).attr("value") );
 	});
 	var codes4count = [];
-	$('.codes4count:checked').each(function(i, element)
+	$('.codes4count.checked').each(function(i, element)
 	{
-		codes4count.push( $(element).val() );
+		codes4count.push( $(element).attr("value") );
 	});
 
 	var codes5 = [];
-	$('.codes5:checked').each(function(i, element)
+	$('.codes5.checked').each(function(i, element)
 	{
-		codes5.push( $(element).val() );
+		codes5.push( $(element).attr("value") );
 	});
 	var codes5count = [];
-	$('.codes5count:checked').each(function(i, element)
+	$('.codes5count.checked').each(function(i, element)
 	{
-		codes5count.push( $(element).val() );
+		codes5count.push( $(element).attr("value") );
 	});
 
 	var evencount = [];
-	$('.evencount:checked').each(function(i, element)
+	$('.evencount.checked').each(function(i, element)
 	{
-		evencount.push( $(element).val() );
+		evencount.push( $(element).attr("value") );
 	});
 	var comcount = [];
-	$('.comcount:checked').each(function(i, element)
+	$('.comcount.checked').each(function(i, element)
 	{
-		comcount.push( $(element).val() );
+		comcount.push( $(element).attr("value") );
 	});
 	var smcount = [];
-	$('.smcount:checked').each(function(i, element)
+	$('.smcount.checked').each(function(i, element)
 	{
-		smcount.push( $(element).val() );
+		smcount.push( $(element).attr("value") );
 	});
 	var concount = [];
-	$('.concount:checked').each(function(i, element)
+	$('.concount.checked').each(function(i, element)
 	{
-		concount.push( $(element).val() );
+		concount.push( $(element).attr("value") );
 	});
 
 
@@ -319,19 +380,35 @@ function creator()
 		if(response.status == 1)
 		{
 			var codes = "";
-			var combinations = response.resource.data; 
+			var combinations = response.resource.combinations; 
 			$.each(combinations, function(i, combination)
 			{
 				codes += combination+'\n';
 			});
 			$("#codes-panel textarea").val(codes);
-			$("#combination-count").html(combinations.length);
+			$("#combination-count strong").html("共"+combinations.length+"注");
 		}
 		else
 		{
 			app.message(response.messages);
 		}
 	}, "json");
+}
+
+function selectall($checkboxs)
+{
+	$.each($checkboxs, function(i, checkbox)
+	{
+		$(checkbox).addClass("checked");
+	});
+}
+
+function unselectall($checkboxs)
+{
+	$.each($checkboxs, function(i, checkbox)
+	{
+		$(checkbox).removeClass("checked");
+	});
 }
 
 </script>

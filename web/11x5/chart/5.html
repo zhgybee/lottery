@@ -6,22 +6,22 @@
 	<link rel="stylesheet" href="../../css/app.css" />
 	<title></title>
 </head>
-<body>
+<body id="chart-page">
 
 <h1>任选奇偶走势图</h1>
 <div id="detailed-panel">
-<table border="1">
+<table>
 <thead>
 <tr>
-	<th rowspan="2">期号</th>
-	<th rowspan="2" colspan="5">开奖号码</th>
-	<th colspan="11">开奖号码分布</th>
-	<th colspan="2">第一位</th>
-	<th colspan="2">第二位</th>
-	<th colspan="2">第三位</th>
-	<th colspan="2">第四位</th>
-	<th colspan="2">第五位</th>
-	<th colspan="6">奇偶比走势</th>
+	<th rowspan="2" style="width:100px">期号</th>
+	<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
+	<th colspan="11" style="width:275px">开奖号码分布</th>
+	<th colspan="2" style="width:60px">第一位</th>
+	<th colspan="2" style="width:60px">第二位</th>
+	<th colspan="2" style="width:60px">第三位</th>
+	<th colspan="2" style="width:60px">第四位</th>
+	<th colspan="2" style="width:60px">第五位</th>
+	<th colspan="6" style="width:180px">奇偶比走势</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -61,17 +61,17 @@
 
 <div id="statistics-panel">
 
-<table border="1">
+<table>
 <thead>
 <tr>
-	<th rowspan="2">统计类型</th>
-	<th colspan="11">开奖号码分布</th>
-	<th colspan="2">第一位</th>
-	<th colspan="2">第二位</th>
-	<th colspan="2">第三位</th>
-	<th colspan="2">第四位</th>
-	<th colspan="2">第五位</th>
-	<th colspan="6">奇偶比走势</th>
+	<th rowspan="2" style="width:226px">统计类型</th>
+	<th colspan="11" style="width:275px">开奖号码分布</th>
+	<th colspan="2" style="width:60px">第一位</th>
+	<th colspan="2" style="width:60px">第二位</th>
+	<th colspan="2" style="width:60px">第三位</th>
+	<th colspan="2" style="width:60px">第四位</th>
+	<th colspan="2" style="width:60px">第五位</th>
+	<th colspan="6" style="width:180px">奇偶比走势</th>
 </tr>
 <tr>
 	<th>01</th>
@@ -128,36 +128,36 @@
 						var codes = row["ZJHM"].split(",")
 						content += '<tr>';
 						content += '<td>'+row["QH"]+'</td>';
-						content += '<td>'+codes[0]+'</td>';
-						content += '<td>'+codes[1]+'</td>';
-						content += '<td>'+codes[2]+'</td>';
-						content += '<td>'+codes[3]+'</td>';
-						content += '<td>'+codes[4]+'</td>';
+						content += '<td class="redcode">'+codes[0]+'</td>';
+						content += '<td class="redcode">'+codes[1]+'</td>';
+						content += '<td class="redcode">'+codes[2]+'</td>';
+						content += '<td class="redcode">'+codes[3]+'</td>';
+						content += '<td class="redcode">'+codes[4]+'</td>';
 
 
-						content += '<td class="K01">'+(codes.indexOf('01') == -1 ? '' : '<span>01</span>')+'</td>';
-						content += '<td class="K02">'+(codes.indexOf('02') == -1 ? '' : '<span>02</span>')+'</td>';
-						content += '<td class="K03">'+(codes.indexOf('03') == -1 ? '' : '<span>03</span>')+'</td>';
-						content += '<td class="K04">'+(codes.indexOf('04') == -1 ? '' : '<span>04</span>')+'</td>';
-						content += '<td class="K05">'+(codes.indexOf('05') == -1 ? '' : '<span>05</span>')+'</td>';
-						content += '<td class="K06">'+(codes.indexOf('06') == -1 ? '' : '<span>06</span>')+'</td>';
-						content += '<td class="K07">'+(codes.indexOf('07') == -1 ? '' : '<span>07</span>')+'</td>';
-						content += '<td class="K08">'+(codes.indexOf('08') == -1 ? '' : '<span>08</span>')+'</td>';
-						content += '<td class="K09">'+(codes.indexOf('09') == -1 ? '' : '<span>09</span>')+'</td>';
-						content += '<td class="K10">'+(codes.indexOf('10') == -1 ? '' : '<span>10</span>')+'</td>';
-						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span>11</span>')+'</td>';
+						content += '<td class="K01">'+(codes.indexOf('01') == -1 ? '' : '<span class="redball">01</span>')+'</td>';
+						content += '<td class="K02">'+(codes.indexOf('02') == -1 ? '' : '<span class="redball">02</span>')+'</td>';
+						content += '<td class="K03">'+(codes.indexOf('03') == -1 ? '' : '<span class="redball">03</span>')+'</td>';
+						content += '<td class="K04">'+(codes.indexOf('04') == -1 ? '' : '<span class="redball">04</span>')+'</td>';
+						content += '<td class="K05">'+(codes.indexOf('05') == -1 ? '' : '<span class="redball">05</span>')+'</td>';
+						content += '<td class="K06">'+(codes.indexOf('06') == -1 ? '' : '<span class="redball">06</span>')+'</td>';
+						content += '<td class="K07">'+(codes.indexOf('07') == -1 ? '' : '<span class="redball">07</span>')+'</td>';
+						content += '<td class="K08">'+(codes.indexOf('08') == -1 ? '' : '<span class="redball">08</span>')+'</td>';
+						content += '<td class="K09">'+(codes.indexOf('09') == -1 ? '' : '<span class="redball">09</span>')+'</td>';
+						content += '<td class="K10">'+(codes.indexOf('10') == -1 ? '' : '<span class="redball">10</span>')+'</td>';
+						content += '<td class="K11">'+(codes.indexOf('11') == -1 ? '' : '<span class="redball">11</span>')+'</td>';
 
 
-						content += '<td class="D1">'+(app.isOdd(codes[0]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X1">'+(!app.isOdd(codes[0]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D2">'+(app.isOdd(codes[1]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X2">'+(!app.isOdd(codes[1]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D3">'+(app.isOdd(codes[2]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X3">'+(!app.isOdd(codes[2]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D4">'+(app.isOdd(codes[3]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X4">'+(!app.isOdd(codes[3]) ? '<span>偶</span>' : '')+'</td>';
-						content += '<td class="D5">'+(app.isOdd(codes[4]) ? '<span>奇</span>' : '')+'</td>';
-						content += '<td class="X5">'+(!app.isOdd(codes[4]) ? '<span>偶</span>' : '')+'</td>';
+						content += '<td class="D1">'+(app.isOdd(codes[0]) ? '<span class="greenrect">奇</span>' : '')+'</td>';
+						content += '<td class="X1">'+(!app.isOdd(codes[0]) ? '<span class="greenrect">偶</span>' : '')+'</td>';
+						content += '<td class="D2">'+(app.isOdd(codes[1]) ? '<span class="yellowrect">奇</span>' : '')+'</td>';
+						content += '<td class="X2">'+(!app.isOdd(codes[1]) ? '<span class="yellowrect">偶</span>' : '')+'</td>';
+						content += '<td class="D3">'+(app.isOdd(codes[2]) ? '<span class="bluerect">奇</span>' : '')+'</td>';
+						content += '<td class="X3">'+(!app.isOdd(codes[2]) ? '<span class="bluerect">偶</span>' : '')+'</td>';
+						content += '<td class="D4">'+(app.isOdd(codes[3]) ? '<span class="purplerect">奇</span>' : '')+'</td>';
+						content += '<td class="X4">'+(!app.isOdd(codes[3]) ? '<span class="purplerect">偶</span>' : '')+'</td>';
+						content += '<td class="D5">'+(app.isOdd(codes[4]) ? '<span class="seagreenrect">奇</span>' : '')+'</td>';
+						content += '<td class="X5">'+(!app.isOdd(codes[4]) ? '<span class="seagreenrect">偶</span>' : '')+'</td>';
 
 						var scount = 0;
 						var bcount = 0;
@@ -176,12 +176,12 @@
 
 						var sb = bcount + ":" + scount;
 
-						content += '<td class="B05">'+(sb == "0:5" ? '<span>0:5</span>' : '')+'</td>';
-						content += '<td class="B14">'+(sb == "1:4" ? '<span>1:4</span>' : '')+'</td>';
-						content += '<td class="B23">'+(sb == "2:3" ? '<span>2:3</span>' : '')+'</td>';
-						content += '<td class="B32">'+(sb == "3:2" ? '<span>3:2</span>' : '')+'</td>';
-						content += '<td class="B41">'+(sb == "4:1" ? '<span>4:1</span>' : '')+'</td>';
-						content += '<td class="B50">'+(sb == "5:0" ? '<span>5:0</span>' : '')+'</td>';
+						content += '<td class="B05">'+(sb == "0:5" ? '<span class="greenrect">0:5</span>' : '')+'</td>';
+						content += '<td class="B14">'+(sb == "1:4" ? '<span class="greenrect">1:4</span>' : '')+'</td>';
+						content += '<td class="B23">'+(sb == "2:3" ? '<span class="greenrect">2:3</span>' : '')+'</td>';
+						content += '<td class="B32">'+(sb == "3:2" ? '<span class="greenrect">3:2</span>' : '')+'</td>';
+						content += '<td class="B41">'+(sb == "4:1" ? '<span class="greenrect">4:1</span>' : '')+'</td>';
+						content += '<td class="B50">'+(sb == "5:0" ? '<span class="greenrect">5:0</span>' : '')+'</td>';
 
 
 
@@ -274,7 +274,7 @@
 					content += '<td>'+($(".B50  span").length)+'</td>';
 					content += '</tr>';
 
-					content += '<tr>';
+					content += '<tr class="bluerow">';
 					content += '<td>最大遗漏值</td>';
 					content += '<td>'+statisticsmap["YK01"]+'</td>';
 					content += '<td>'+statisticsmap["YK02"]+'</td>';
