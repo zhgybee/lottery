@@ -18,7 +18,6 @@
 
 
 
-<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="lib/app.js"></script>
 
 <script type="text/javascript">

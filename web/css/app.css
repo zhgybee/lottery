@@ -72,7 +72,7 @@ nav a:hover{color:#ffffff}
 #master-module #navigation .toolbar-panel{float:right; padding-right:15px;}
 #master-module .module{padding:15px; box-sizing:border-box}
 
-#chart-page #chart-panel{overflow:scroll; border:1px solid #eeeeee; padding:1px}
+#chart-page #chart-panel{overflow:auto; border:1px solid #eeeeee; padding:1px}
 #chart-page table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
 #chart-page table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
 #chart-page table thead{background-color:#e0f3ff;}
@@ -88,7 +88,7 @@ nav a:hover{color:#ffffff}
 #chart-page table .bluerow{background-color:#e8f0f9}
 #chart-page table .redcode{color:#ba2636}
 #chart-page table .greycode{color:#cccccc}
-
+#chart-page #master-module .module{padding:15px; box-sizing:border-box}
 
 
 

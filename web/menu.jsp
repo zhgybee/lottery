@@ -2,7 +2,8 @@
 <%@page import="com.nest.lottery.system.SessionUser"%>
 <%@page contentType="text/html; charset=utf-8"%>
 
-<div class="left" style="width:260px; background-color:#323232; height:1200px">
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<div class="left" id="menu-module" style="width:260px; background-color:#323232">
 	<%
 		SessionUser sessionuser = SessionUser.getSessionUser(session);	
 		String usericon = sessionuser.getString("ICON");
@@ -37,4 +38,10 @@
 			<li><a href="/lottery/member/manager.jsp" target="_blank"><i class="fa fa-user"></i>个人中心</a></li>
 		</ul>
 	</nav>
-</div>
+</div>	
+<script type="text/javascript">		
+$(function()
+{
+	$("#menu-module").height( Math.max($(window).height(), $("#menu-module").height()) );
+});
+</script>
