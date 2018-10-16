@@ -7,69 +7,60 @@
 <%@page import="org.apache.commons.lang3.StringUtils"%>
 <%@page import="com.nest.lottery.Cai11Xuan5"%>
 <%@page import="com.nest.lottery.system.datasource.Data"%>
-<%@page import="com.nest.lottery.system.SessionUser"%>
 <%@page import="com.nest.lottery.system.utils.ServiceMessage"%>
 
 <%@page contentType="text/html; charset=utf-8"%>
 
 <%
 	ServiceMessage message = new ServiceMessage();
-
-	SessionUser sessionuser = SessionUser.getSessionUser(session);
-	if(sessionuser != null)
+	String mode = request.getParameter("mode");
+	
+	if(mode.equals("1"))
 	{
-		String mode = request.getParameter("mode");
+		String codes = request.getParameter("codes");
+		String type = request.getParameter("type");
 		
-		if(mode.equals("1"))
+		String[] combinations = codes.split("\n");
+		
+		
+		Cai11Xuan5 cai11Xuan5 = new Cai11Xuan5();
+		Data data = cai11Xuan5.getData(type, 100);
+		
+		List<String> titles = new ArrayList<String>();
+		List<Integer> values = new ArrayList<Integer>();
+		
+		int count = 0;
+		for(int i = 0 ; i < data.size() ; i++)
 		{
-			String codes = request.getParameter("codes");
+			Datum datum = data.get(i);
+			String phase = datum.getString("PHASE");
+			String code = datum.getString("CODE");
+			code = LotteryUtils.sort(code);
 			
-			String[] combinations = codes.split("\n");
-			
-			
-			Cai11Xuan5 cai11Xuan5 = new Cai11Xuan5();
-			Data data =  cai11Xuan5.getData();
-			
-			List<String> titles = new ArrayList<String>();
-			List<Integer> values = new ArrayList<Integer>();
-			
-			int count = 0;
-			for(int i = 0 ; i < data.size() ; i++)
+			if(ArrayUtils.contains(combinations, code))
 			{
-				Datum datum = data.get(i);
-				String phase = datum.getString("QH");
-				String code = datum.getString("ZJHM");
-				code = LotteryUtils.sort(code);
-				
-				if(ArrayUtils.contains(combinations, code))
+				if(count != 0)
 				{
-					if(count != 0)
-					{
-						titles.add("遗漏期数");
-						values.add(count);
-					}
-					titles.add(phase);
-					values.add(0);
-					count = 0;
+					titles.add("遗漏期数");
+					values.add(count);
 				}
-				else
+				titles.add(phase);
+				values.add(0);
+				count = 0;
+			}
+			else
+			{
+				count++;
+				if(i == data.size() - 1)
 				{
-					count++;
-					if(i == data.size() - 1)
-					{
-						titles.add("遗漏期数");
-						values.add(count);
-					}
+					titles.add("遗漏期数");
+					values.add(count);
 				}
 			}
-
-			message.resource("values", values);
-			message.resource("titles", titles);
 		}
-	}
-	else
-	{
-		message.message(ServiceMessage.FAILURE, "登录用户失效，请重新登录。");
+
+		message.resource("values", values);
+		message.resource("titles", titles);
 	}
 	
 	out.println(message);

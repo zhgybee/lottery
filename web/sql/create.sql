@@ -1,4 +1,5 @@
-
+DROP TABLE "T_USER";
+DROP TABLE "T_11X5";
 
 
 CREATE TABLE T_USER
@@ -9,9 +10,22 @@ CREATE TABLE T_USER
  NAME                           VARCHAR(16),
  LOGINNAME                      VARCHAR(16),
  PASSWORD                       VARCHAR(16),
+ PHONE                          VARCHAR(32),
  ROLE                           VARCHAR(32),
  CREATE_DATE                    DATETIME,
  CONSTRAINT T_USER_PK PRIMARY KEY(ID)
 );
 
-INSERT INTO T_USER(ID, CODE, ICON, NAME, LOGINNAME, PASSWORD, ROLE, CREATE_DATE) VALUES('1', '', '', '管理员', 'admin', '1', '', CURRENT_TIMESTAMP);
+INSERT INTO T_USER(ID, CODE, ICON, NAME, LOGINNAME, PASSWORD, ROLE, CREATE_DATE) VALUES('1', '001', '', '张大山', '', '', '10000000', CURRENT_TIMESTAMP);
+
+
+CREATE TABLE T_11X5
+(
+ ID                             VARCHAR(32),
+ TYPE                           VARCHAR(32),
+ PHASE                          VARCHAR(12),
+ CODE                           VARCHAR(64),
+ TIME                           VARCHAR(64),
+ CREATE_DATE                    DATETIME,
+ CONSTRAINT T_11X5_PK PRIMARY KEY(ID)
+);

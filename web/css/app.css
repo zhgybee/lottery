@@ -4,9 +4,9 @@ a{text-decoration:none;}
 
 body{font-family:"微软雅黑"; font-size:13px; color:#333333; margin:0px;}
 
-input{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
+input{font-family:"微软雅黑"; font-size:13px; color:#333333; box-sizing:border-box; outline:none}
 
-textarea{font-size:13px; color:#333333; box-sizing:border-box; outline:none}
+textarea{font-family:"微软雅黑"; font-size:13px; color:#333333; box-sizing:border-box; outline:none; resize:none}
 
 select{font-size:13px; color:#333333; margin:0px; box-sizing:border-box; outline:none; box-shadow: none;}
 
@@ -42,15 +42,42 @@ hr{border-top:1px solid #eaeaea; border-bottom:none}
 
 #messages-panel{box-sizing:border-box; display:none; position:absolute; top:0px; left:0px; background-color:#fefbdf; width:100%; padding:30px; color:#333333; filter:alpha(opacity=90); opacity:0.9;}
 
+.lottery-type-field{width:360px; height:34px; padding:6px 12px; font-size:14px; border:1px solid #cccccc; border-radius:3px;}
 
-#chart-page{}
-#chart-page table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border-width:0px; border-top:1px solid #ffffff; background-color:#f7f7f7; font-size:12px}
+#user-panel {padding:45px 15px 25px 15px}
+#user-panel #usericon img{width:70px; height:70px;}
+#user-panel #useritem h5{color:#a7b1c2; font-size:16px; padding:5px 0px 7px 10px}
+#user-panel #useritem h5 span{color:#a7b1c2; font-size:12px; margin-left:5px}
+#user-panel #useritem p{color:#a7b1c2; font-size:13px; padding:0px 0px 6px 10px}
+#user-panel #useritem time{color:#a7b1c2; font-size:13px; padding:0px 0px 6px 10px}
+
+nav li{padding:20px 0px 20px 15px; box-sizing:border-box; border-bottom:1px solid #3b3b3b}
+nav a{color:#a7b1c2; font-size:16px}
+nav a i{margin-right:8px}
+nav a:hover{color:#ffffff}
+
+
+.form-panel{padding:20px; background-color:#f0f0f0; border-radius:5px} 
+.form-panel input{color:#444444; margin-top:5px; width:100%; margin-right:10px; border:none; border-radius:2px; height:30px; line-height:31px; padding:0px 5px}	
+.form-panel textarea{color:#444444; margin-top:5px; width:100%; margin-right:10px; border:none; border-radius:2px; height:50px; padding:5px}	
+.form-panel ul li{margin-top:10px; overflow:hidden}
+.form-panel ul li .field-panel{padding-right:10px; box-sizing:border-box}
+.form-panel ul li.button-panel{text-align:center; margin-top:20px}
+.form-panel ul li.button-panel button{padding:10px 50px; font-size:20px; font-weight:100; border-radius:5px}
+.form-panel ul li.button-panel button i{font-size:17px; margin-right:5px}
+
+#master-module{margin-left:260px; position:relative}
+#master-module #navigation{background-color:#f3f3f3; height:60px; line-height:60px; border-bottom:8px solid #e7e7e7}
+#master-module #navigation h4{float:left; font-size:20px; font-weight:200; padding-left:15px}
+#master-module #navigation .toolbar-panel{float:right; padding-right:15px;}
+#master-module .module{padding:15px; box-sizing:border-box}
+
+#chart-page #chart-panel{overflow:scroll; border:1px solid #eeeeee; padding:1px}
+#chart-page table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
 #chart-page table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
 #chart-page table thead{background-color:#e0f3ff;}
 #chart-page table thead th{font-weight:400; text-align:center; height:30px; width:25px}
 #chart-page table tbody td{text-align:center; height:25px;}
-#chart-page #statistics-panel table{border-top:none}
-
 #chart-page table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
 #chart-page table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
 #chart-page table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
@@ -62,7 +89,9 @@ hr{border-top:1px solid #eaeaea; border-bottom:none}
 #chart-page table .redcode{color:#ba2636}
 #chart-page table .greycode{color:#cccccc}
 
-#do-page{margin:20px}
+
+
+
 #do-page .row{padding:10px 5px; position:relative}
 #do-page label{display:inline-block; position:relative; padding-left:25px; margin-right:8px}
 #do-page label.title{width:100px; padding-left:5px}
@@ -77,6 +106,6 @@ hr{border-top:1px solid #eaeaea; border-bottom:none}
 #do-page #analysis-button{margin-top:40px; width:150px; height:60px; font-size:18px; border-radius:5px;}
 #do-page #analysis-button i{font-size:23px; margin-right:4px; vertical-align:middle}
 #do-page #codes-panel textarea{width:100%; height:200px; border:1px solid #cccccc; padding:5px; font-size:14px}
-#do-page #combination-count{padding:20px 0px 5px 0px;}
+#do-page #combination-count{padding:20px 0px 5px 0px; overflow:hidden}
 #do-page #combination-count h4{font-weight:400; font-size:15px; float:left}
 #do-page #combination-count strong{font-weight:400; font-size:15px; float:right}
