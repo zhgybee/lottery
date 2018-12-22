@@ -2,7 +2,7 @@ html{}
 
 a{text-decoration:none;}
 
-body{font-family:"微软雅黑"; font-size:13px; color:#333333; margin:0px;}
+body{font-family:"微软雅黑"; font-size:13px; color:#333333; margin:0px; overflow:hidden}
 
 input{font-family:"微软雅黑"; font-size:13px; color:#333333; box-sizing:border-box; outline:none}
 
@@ -43,6 +43,7 @@ hr{border-top:1px solid #eaeaea; border-bottom:none}
 #messages-panel{box-sizing:border-box; display:none; position:absolute; top:0px; left:0px; background-color:#fefbdf; width:100%; padding:30px; color:#333333; filter:alpha(opacity=90); opacity:0.9;}
 
 .lottery-type-field{width:360px; height:34px; padding:6px 12px; font-size:14px; border:1px solid #cccccc; border-radius:3px;}
+.lottery-refresh-button{width:80px; height:32px; padding:6px 12px; font-size:14px; border-radius:3px;}
 
 #user-panel {padding:45px 15px 25px 15px}
 #user-panel #usericon img{width:70px; height:70px;}
@@ -67,30 +68,39 @@ nav a:hover{color:#ffffff}
 .form-panel ul li.button-panel button i{font-size:17px; margin-right:5px}
 
 #master-module{margin-left:260px; position:relative}
-#master-module #navigation{background-color:#f3f3f3; height:60px; line-height:60px; border-bottom:8px solid #e7e7e7}
+#master-module #navigation{background-color:#f3f3f3; height:68px; line-height:60px; border-bottom:8px solid #e7e7e7; box-sizing:border-box}
 #master-module #navigation h4{float:left; font-size:20px; font-weight:200; padding-left:15px}
 #master-module #navigation .toolbar-panel{float:right; padding-right:15px;}
-#master-module .module{padding:15px; box-sizing:border-box}
+#master-module .sub-module{padding:15px; box-sizing:border-box; overflow:auto}
+#master-module .chart-module{padding:0px}
 
-#chart-page #chart-panel{overflow:auto; border:1px solid #eeeeee; padding:1px}
-#chart-page table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
-#chart-page table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
-#chart-page table thead{background-color:#e0f3ff;}
-#chart-page table thead th{font-weight:400; text-align:center; height:30px; width:25px}
-#chart-page table tbody td{text-align:center; height:25px;}
-#chart-page table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
-#chart-page table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .redrect{background-color:#ba2636; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .bluerect{background-color:#a3b5d4; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .purplerect{background-color:#c2a9c8; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .seagreenrect{background-color:#97bf94; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
-#chart-page table .bluerow{background-color:#e8f0f9}
-#chart-page table .redcode{color:#ba2636}
-#chart-page table .greycode{color:#cccccc}
-#chart-page #master-module .module{padding:15px; box-sizing:border-box}
+#chart-panel{overflow:auto; border:1px solid #eeeeee; padding:1px}
+#chart-panel table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
+#chart-panel table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
+#chart-panel table thead{background-color:#e0f3ff;}
+#chart-panel table thead th{font-weight:400; text-align:center; height:30px}
+#chart-panel table tbody td{text-align:center; height:25px;}
+#chart-panel table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
+#chart-panel table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .redrect{background-color:#ba2636; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .bluerect{background-color:#a3b5d4; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .purplerect{background-color:#c2a9c8; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .seagreenrect{background-color:#97bf94; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .bluerow{background-color:#e8f0f9}
+#chart-panel table .redcode{color:#ba2636}
+#chart-panel table .greycode{color:#cccccc}
+#chart-panel #master-module .module{padding:15px; box-sizing:border-box}
 
 
+#recommend-panel #chart-panel table thead th{height:40px}
+#recommend-panel #chart-panel table tbody td{height:35px; font-size:14px}
+#recommend-panel #chart-panel table tbody td .redball{background-color:#ba2636; display:inline-block; margin-right:3px; width:25px; height:25px; padding-top:3px}
+#recommend-panel #chart-panel table tbody td .yellowrect{display:inline-block; margin-right:3px; padding-top:3px}
+#recommend-panel #chart-panel table tbody td .greenrect{display:inline-block; margin-right:3px; padding-top:3px}
+#recommend-panel #chart-panel table tbody td .purplerect{width:120px; display:inline-block; margin-right:3px; padding-top:3px}
+#recommend-panel #recommend-type{padding:5px; box-sizing:border-box;}
+#recommend-panel #recommend-type .button{padding:10px; margin-right:10px}
 
 #do-page .row{padding:10px 5px; position:relative}
 #do-page label{display:inline-block; position:relative; padding-left:25px; margin-right:8px}
@@ -108,4 +118,4 @@ nav a:hover{color:#ffffff}
 #do-page #codes-panel textarea{width:100%; height:200px; border:1px solid #cccccc; padding:5px; font-size:14px}
 #do-page #combination-count{padding:20px 0px 5px 0px; overflow:hidden}
 #do-page #combination-count h4{font-weight:400; font-size:15px; float:left}
-#do-page #combination-count strong{font-weight:400; font-size:15px; float:right}
+#do-page #combination-count strong{font-weight:400; font-size:15px; float:left; color:red; margin-left:5px}

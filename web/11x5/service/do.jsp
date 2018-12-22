@@ -8,7 +8,7 @@
 <%@page contentType="text/html; charset=utf-8"%>
 
 <%
-ServiceMessage message = new ServiceMessage();
+	ServiceMessage message = new ServiceMessage();
 	String mode = request.getParameter("mode");
 	
 	if(mode.equals("1"))
@@ -36,42 +36,27 @@ ServiceMessage message = new ServiceMessage();
 		
 		if(codes1 != null && codes1count != null)
 		{
-			for(int count : codes1count)
-			{
-				combinations = lotter.filter(combinations, codes1, count);
-			}
+			combinations = lotter.filter(combinations, codes1, codes1count);
 		}
 		
 		if(codes2 != null && codes2count != null)
 		{
-			for(int count : codes2count)
-			{
-				combinations = lotter.filter(combinations, codes2, count);
-			}
+			combinations = lotter.filter(combinations, codes2, codes2count);
 		}
 		
 		if(codes3 != null && codes3count != null)
 		{
-			for(int count : codes3count)
-			{
-				combinations = lotter.filter(combinations, codes3, count);
-			}
+			combinations = lotter.filter(combinations, codes3, codes3count);
 		}
 		
 		if(codes4 != null && codes4count != null)
 		{
-			for(int count : codes4count)
-			{
-				combinations = lotter.filter(combinations, codes4, count);
-			}
+			combinations = lotter.filter(combinations, codes4, codes4count);
 		}
 		
 		if(codes5 != null && codes5count != null)
 		{
-			for(int count : codes5count)
-			{
-				combinations = lotter.filter(combinations, codes5, count);
-			}
+			combinations = lotter.filter(combinations, codes5, codes5count);
 		}
 
 		combinations = lotter.filter(combinations, evencount, comcount, smcount, concount);

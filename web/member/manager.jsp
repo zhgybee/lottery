@@ -17,7 +17,7 @@
 
 <div id="master-module">
 	<div id="navigation"><h4>会员中心</h4></div>
-	<div class="module">
+	<div class="sub-module">
 		<div class="form-panel">
 
 			<ul>

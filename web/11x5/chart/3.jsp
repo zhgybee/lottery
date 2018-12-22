@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../../lib/selection/selection.css" />
 	<title></title>
 </head>
-<body id="chart-page">
+<body>
 
 <jsp:include page="../../menu.jsp" flush="true"></jsp:include>
 
@@ -17,10 +17,11 @@
 	<div id="navigation" class="clearfix">
 		<h4>跨度走势图</h4>
 		<div class="toolbar-panel">
-			<input id="11x5-type" class="lottery-type-field" value="SH11X5" title="上海11选5"/>
+			<input id="11x5-type" class="lottery-type-field" value="ah11x5" title="安徽11选5"/>
+			<button class="button lottery-refresh-button" onclick="window.location.reload()">刷新</button>
 		</div>
 	</div>
-	<div class="module">
+	<div class="sub-module chart-module">
 		<div id="chart-panel">
 			<div id="detailed-panel">
 				<table>
@@ -113,6 +114,7 @@
 	
 	<script type="text/javascript">
 		
+		var type = app.getParameter("type");
 		$(function()
 		{
 			$("#11x5-type").selection
@@ -121,9 +123,14 @@
 				ismultiple: false,
 				clickitem:function()
 				{
-					initialise();
+					window.location.href = '3.jsp?type='+$("#11x5-type").val();
 				}
 			});
+
+			if(type != null)
+			{
+				$("#11x5-type").selection("setId", type);
+			}
 			initialise();
 		});
 

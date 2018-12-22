@@ -28,6 +28,8 @@
 			<li><a href="/lottery/app.jsp"><i class="fa fa-home"></i>首页</a></li>
 			<li><a href="/lottery/11x5/do.jsp" target="_blank"><i class="fa fa-pencil-square"></i>做号</a></li>
 			<li><a href="/lottery/11x5/analysis.jsp" target="_blank"><i class="fa fa-cog"></i>智能分析</a></li>
+			<li><a href="/lottery/11x5/recommend.jsp" target="_blank"><i class="fa fa-cog"></i>智能推荐</a></li>
+			<li><a href="/lottery/11x5/recgroup.jsp" target="_blank"><i class="fa fa-cog"></i>智能组码</a></li>
 			<li><a href="/lottery/11x5/chart/1.jsp" target="_blank"><i class="fa fa-area-chart"></i>基本走势图</a></li>
 			<li><a href="/lottery/11x5/chart/2.jsp" target="_blank"><i class="fa fa-area-chart"></i>和值走势图</a></li>
 			<li><a href="/lottery/11x5/chart/3.jsp" target="_blank"><i class="fa fa-area-chart"></i>跨度走势图</a></li>
@@ -42,6 +44,7 @@
 <script type="text/javascript">		
 $(function()
 {
-	$("#menu-module").height( Math.max($(window).height(), $("#menu-module").height()) );
+	$("#menu-module").height($(window).height());
+	$("#master-module .sub-module").height( $(window).height() - $("#navigation").outerHeight());
 });
 </script>

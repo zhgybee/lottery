@@ -29,3 +29,14 @@ CREATE TABLE T_11X5
  CREATE_DATE                    DATETIME,
  CONSTRAINT T_11X5_PK PRIMARY KEY(ID)
 );
+
+CREATE TABLE T_11X5_RECOMMEND
+(
+ ID                             VARCHAR(32),
+ TYPE                           VARCHAR(32),
+ PHASE                          VARCHAR(12),
+ CONTENT                        VARCHAR(2048),
+ TIME                           VARCHAR(64),
+ CREATE_DATE                    DATETIME,
+ CONSTRAINT T_11X5_RECOMMEND_PK PRIMARY KEY(ID)
+);

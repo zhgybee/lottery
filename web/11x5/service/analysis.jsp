@@ -1,3 +1,8 @@
+<%@page import="java.util.Comparator"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.nest.lottery.system.datasource.DataSource"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.commons.lang3.ArrayUtils"%>
@@ -23,8 +28,45 @@
 		String[] combinations = codes.split("\n");
 		
 		
-		Cai11Xuan5 cai11Xuan5 = new Cai11Xuan5();
-		Data data = cai11Xuan5.getData(type, 100);
+		Data data = null;		
+		Connection connection = null;
+		try
+		{						
+			connection = DataSource.connection();
+			DataSource dataSource = new DataSource(connection);
+			data = dataSource.find("select top 100 * from T_11X5 where TYPE = ? order by PHASE desc", type);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} 
+		finally
+		{
+			if(connection != null)
+			{
+				try
+				{
+					if(!connection.isClosed())
+					{
+						connection.close();
+					}
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+		if(data != null)
+		{
+		    Collections.sort(data, new Comparator<Datum>() 
+		    {
+		        public int compare(Datum d1, Datum d2) 
+		        {
+		            return new Integer(d1.getInt("PHASE")).compareTo(d2.getInt("PHASE"));
+		        }
+		    });
+		}
 		
 		List<String> titles = new ArrayList<String>();
 		List<Integer> values = new ArrayList<Integer>();

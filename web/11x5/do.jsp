@@ -15,7 +15,7 @@
 
 <div id="master-module">
 	<div id="navigation"><h4>彩票做号</h4></div>
-	<div class="module">
+	<div class="sub-module">
 		<div class="row">
 			<label class="title">基础号码</label>
 			<label><i class="checkbox basecodes checked" value="1"></i>01</label>
@@ -270,6 +270,11 @@ $(function()
 			unselectall($('.codes'+index+', .codes'+index+'count, #selectall-code'+index+''));
 		});
 	}
+
+	$("#codes-panel textarea").on("mouseover", function(e)
+	{
+		$(this).select();
+	});
 
 });
 
