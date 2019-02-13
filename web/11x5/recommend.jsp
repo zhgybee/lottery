@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../lib/selection/selection.css" />
-	<title></title>
+	<title>智能推荐</title>
 	<style>
 	
 	#analysis-panel p{margin-bottom:10px; font-size:14px}
@@ -53,7 +53,7 @@
 
 <script type="text/javascript">
 
-	var type = app.getParameter("type");
+	var type = app.getParameter("type") || 'ah11x5';
 	var size = app.getParameter("size") || 1;
 
 	$(function()
@@ -70,7 +70,8 @@
 
 		if(type != null)
 		{
-			$("#11x5-type").selection("setId", type);
+			var titles = $("#11x5-type").selection("setId", type);
+			$("title").html($("title").html() + "-" + titles[0]);
 		}
 
 		initialise();

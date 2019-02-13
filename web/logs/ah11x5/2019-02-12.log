@@ -1,0 +1,84 @@
+2019-02-12 11:26:58：
+数据插入数据库时错误（事务(进程 ID 54)与另一个进程被死锁在 锁 资源上，并且已被选作死锁牺牲品。请重新运行该事务。），插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021208","opencode":"03,09,01,08,10","opentime":"2019-02-12 11:21:30","opentimestamp":1549941690}]}。
+2019-02-12 11:27:08：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021208","opencode":"03,09,01,08,10","opentime":"2019-02-12 11:21:30","opentimestamp":1549941690}]}。
+2019-02-12 11:45:23：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:45:38：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:45:53：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:46:08：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:46:23：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:46:38：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:47:08：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021209","opencode":"07,06,03,09,08","opentime":"2019-02-12 11:41:30","opentimestamp":1549942890}]}。
+2019-02-12 11:47:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:47:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:47:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:48:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:48:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:48:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:48:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:49:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:49:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:49:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:49:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:50:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:50:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:50:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:50:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:51:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:51:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:51:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:51:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:52:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:52:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:52:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:52:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:53:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:53:29：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:53:44：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:53:59：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 11:54:14：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 13:00:54：
+url访问错误，访问地址：http://f.apiplus.net/ah11x5-1.json。
+2019-02-12 13:01:09：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021212","opencode":"02,04,08,10,03","opentime":"2019-02-12 12:41:30","opentimestamp":1549946490}]}。
+2019-02-12 13:07:54：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021213","opencode":"05,02,03,09,01","opentime":"2019-02-12 13:01:30","opentimestamp":1549947690}]}。
+2019-02-12 13:26:54：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021214","opencode":"05,06,10,09,11","opentime":"2019-02-12 13:21:30","opentimestamp":1549948890}]}。
+2019-02-12 13:46:54：
+插入数据：{"rows":1,"code":"ah11x5","info":"免费接口随机延迟3-6分钟，实时接口请访问www.opencai.net查询、购买或续费","data":[{"expect":"2019021215","opencode":"09,06,02,07,04","opentime":"2019-02-12 13:41:30","opentimestamp":1549950090}]}。

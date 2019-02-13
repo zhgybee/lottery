@@ -19,7 +19,7 @@
 	if(mode.equals("1"))
 	{
 		String type = request.getParameter("type");
-		int length = NumberUtils.toInt(request.getParameter("length"), 0);
+		int length = NumberUtils.toInt(request.getParameter("length"), 100);
 
 		Data codes = null;		
 		Connection connection = null;

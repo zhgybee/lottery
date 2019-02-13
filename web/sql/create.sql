@@ -12,6 +12,8 @@ CREATE TABLE T_USER
  PASSWORD                       VARCHAR(16),
  PHONE                          VARCHAR(32),
  ROLE                           VARCHAR(32),
+ SECRETKEY                      VARCHAR(128),
+ DESCRIPTION                    VARCHAR(1024),
  CREATE_DATE                    DATETIME,
  CONSTRAINT T_USER_PK PRIMARY KEY(ID)
 );

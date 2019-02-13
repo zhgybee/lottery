@@ -1,4 +1,5 @@
 
+<%@page import="com.nest.lottery.system.datasource.Datum"%>
 <%@page import="org.apache.commons.lang3.StringUtils"%>
 <%@page import="com.nest.lottery.system.utils.ThrowableUtils"%>
 <%@page import="java.sql.SQLException"%>
@@ -18,15 +19,18 @@
 	if(mode.equals("1"))
 	{	
 		String name = StringUtils.defaultString(request.getParameter("name"), "");
-		String phone = StringUtils.defaultString(request.getParameter("phone"), "");		
+		String phone = StringUtils.defaultString(request.getParameter("phone"), "");	
+		String description = StringUtils.defaultString(request.getParameter("description"), "");		
 		Connection connection = null;
 		try
 		{
 			connection = DataSource.connection();			
 			DataSource dataSource = new DataSource(connection);			
 			SessionUser sessionuser = SessionUser.getSessionUser(session);			
-			dataSource.execute("update T_USER set NAME = ?, PHONE = ? where ID = ?", name, phone, sessionuser.getString("ID"));			
+			dataSource.execute("update T_USER set NAME = ?, PHONE = ?, DESCRIPTION = ? where ID = ?", name, phone, description, sessionuser.getString("ID"));			
 			connection.commit();
+			Datum user = dataSource.get("select * from T_USER where ID = ?", sessionuser.getString("ID"));
+			sessionuser.putAll(user);
 		}
 		catch (SQLException e)
 		{

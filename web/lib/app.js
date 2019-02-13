@@ -8,7 +8,7 @@ var app = {};
 		{
 			var content = '<div id="loading-panel" style="display:none">';
 			content += '<div class="loading-mask"></div>';
-			content += '<div class="loading-toast"><img src="'+app.getContextPath()+'/images/loading.gif"/></div>';
+			content += '<div class="loading-toast"><img src="/images/loading.gif"/></div>';
 			content += '</div>';
 			$("body").append(content);
 			$loading = $("#loading-panel");

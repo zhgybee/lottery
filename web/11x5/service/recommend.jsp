@@ -23,7 +23,7 @@
 		{						
 			connection = DataSource.connection();
 			DataSource dataSource = new DataSource(connection);
-			codes = dataSource.find("select T_11X5_RECOMMEND.*, T_11X5.CODE  from T_11X5_RECOMMEND left join T_11X5 on T_11X5_RECOMMEND.PHASE = T_11X5.PHASE and T_11X5_RECOMMEND.TYPE = T_11X5.TYPE where T_11X5_RECOMMEND.TYPE = ? order by T_11X5_RECOMMEND.PHASE desc", 
+			codes = dataSource.find("select top 100 T_11X5_RECOMMEND.*, T_11X5.CODE  from T_11X5_RECOMMEND left join T_11X5 on T_11X5_RECOMMEND.PHASE = T_11X5.PHASE and T_11X5_RECOMMEND.TYPE = T_11X5.TYPE where T_11X5_RECOMMEND.TYPE = ? order by T_11X5_RECOMMEND.PHASE desc", 
 					type);
 		}
 		catch (SQLException e)

@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<title></title>
+	<title>彩票做号</title>
 </head>
 <body id="do-page">
 
@@ -15,7 +15,7 @@
 
 <div id="master-module">
 	<div id="navigation"><h4>彩票做号</h4></div>
-	<div class="sub-module">
+	<div class="sub-module" style="width:100%">
 		<div class="row">
 			<label class="title">基础号码</label>
 			<label><i class="checkbox basecodes checked" value="1"></i>01</label>

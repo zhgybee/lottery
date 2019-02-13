@@ -1,0 +1,86 @@
+2019-02-12 11:27:03：
+数据插入数据库时错误（事务(进程 ID 56)与另一个进程被死锁在 锁 资源上，并且已被选作死锁牺牲品。请重新运行该事务。），插入数据：{"rows":1,"code":"sd11x5","remain":"8211hrs","data":[{"expect":"2019021208","opencode":"01,07,09,04,05","opentime":"2019-02-12 11:22:08","opentimestamp":1549941728}]}。
+2019-02-12 11:27:10：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8211hrs","data":[{"expect":"2019021208","opencode":"01,07,09,04,05","opentime":"2019-02-12 11:22:08","opentimestamp":1549941728}]}。
+2019-02-12 11:42:23：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8211hrs","data":[{"expect":"2019021209","opencode":"05,03,10,02,09","opentime":"2019-02-12 11:42:16","opentimestamp":1549942936}]}。
+2019-02-12 11:45:23：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:45:38：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:45:53：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:46:08：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:46:23：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:46:38：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:47:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:47:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:47:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:48:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:48:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:48:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:48:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:49:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:49:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:49:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:49:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:50:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:50:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:50:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:50:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:51:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:51:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:51:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:51:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:52:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:52:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:52:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:52:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:53:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:53:29：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:53:44：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:53:59：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 11:54:14：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 13:00:54：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。
+2019-02-12 13:01:09：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8209hrs","data":[{"expect":"2019021212","opencode":"08,03,06,11,07","opentime":"2019-02-12 12:42:20","opentimestamp":1549946540}]}。
+2019-02-12 13:02:24：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8209hrs","data":[{"expect":"2019021213","opencode":"01,02,07,11,03","opentime":"2019-02-12 13:02:19","opentimestamp":1549947739}]}。
+2019-02-12 13:22:09：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8209hrs","data":[{"expect":"2019021214","opencode":"03,08,05,11,02","opentime":"2019-02-12 13:22:04","opentimestamp":1549948924}]}。
+2019-02-12 13:42:25：
+插入数据：{"rows":1,"code":"sd11x5","remain":"8209hrs","data":[{"expect":"2019021215","opencode":"04,10,09,11,05","opentime":"2019-02-12 13:42:15","opentimestamp":1549950135}]}。
+2019-02-12 14:00:16：
+url访问错误，访问地址：http://wd.apiplus.net/newly.do?token=tc5bd64535eff80b1k&code=sd11x5&format=json&rows=1。

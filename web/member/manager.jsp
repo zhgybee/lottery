@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<title></title>
+	<title>会员中心</title>
 </head>
 <body>
 <jsp:include page="../menu.jsp" flush="true"></jsp:include>
@@ -26,7 +26,7 @@
 				<div class="left field-panel" style="width:50%;">手机号<input type="text" id="phone" value="<%=sessionuser.getString("PHONE")%>"/></div>
 			</li>
 			<li class="clearfix">
-				<div class="left field-panel" style="width:100%;">备注<textarea id="description"></textarea></div>
+				<div class="left field-panel" style="width:100%;">备注<textarea id="description"><%=sessionuser.getString("DESCRIPTION")%></textarea></div>
 			</li>
 			<li class="button-panel">
 				<button id="save-button" class="button"><i class="fa fa-pencil-square-o"></i>保存</button>
@@ -51,6 +51,7 @@ $(function()
 		var parameter = {};
 		parameter.name = $("#name").val();
 		parameter.phone = $("#phone").val();
+		parameter.description = $("#description").val();
 		$.post("../service/member.jsp?mode=1", parameter, function(response)
 		{
 			if(response.status == 1)

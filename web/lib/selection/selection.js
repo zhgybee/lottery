@@ -302,6 +302,7 @@
 					{
 						$field.val(values.join(","));
 					}
+					return values;
 				}
 			}
 		};

@@ -24,6 +24,7 @@
 	ServiceMessage message = new ServiceMessage();
 	String type = request.getParameter("type");
 	String mode = StringUtils.defaultString(request.getParameter("mode"), "1");
+	int length = NumberUtils.toInt(request.getParameter("length"), 100);
 	
 	Data items = null;
 	Connection connection = null;
@@ -31,7 +32,7 @@
 	{						
 		connection = DataSource.connection();
 		DataSource dataSource = new DataSource(connection);
-		items = dataSource.find("select top 100 * from T_11X5 where TYPE = ? order by PHASE desc", type);
+		items = dataSource.find("select top "+length+" * from T_11X5 where TYPE = ? order by PHASE desc", type);
 		
 	}
 	catch (SQLException e)

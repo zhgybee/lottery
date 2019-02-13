@@ -13,6 +13,7 @@
 <%@page import="com.nest.lottery.Cai11Xuan5"%>
 <%@page import="com.nest.lottery.system.datasource.Data"%>
 <%@page import="com.nest.lottery.system.utils.ServiceMessage"%>
+<%@page import="org.apache.commons.lang3.math.NumberUtils"%>
 
 <%@page contentType="text/html; charset=utf-8"%>
 
@@ -24,6 +25,7 @@
 	{
 		String codes = request.getParameter("codes");
 		String type = request.getParameter("type");
+		int length = NumberUtils.toInt(request.getParameter("length"), 100);
 		
 		String[] combinations = codes.split("\n");
 		
@@ -34,7 +36,7 @@
 		{						
 			connection = DataSource.connection();
 			DataSource dataSource = new DataSource(connection);
-			data = dataSource.find("select top 100 * from T_11X5 where TYPE = ? order by PHASE desc", type);
+			data = dataSource.find("select top "+length+" * from T_11X5 where TYPE = ? order by PHASE desc", type);
 		}
 		catch (SQLException e)
 		{
@@ -101,6 +103,18 @@
 			}
 		}
 
+		
+		int max = 0;
+		int sum = 0;
+
+		for(int value : values)
+		{
+			max = Math.max(value, max);
+			sum += value;
+		}
+
+		message.resource("max", max);
+		message.resource("sum", sum);
 		message.resource("values", values);
 		message.resource("titles", titles);
 	}

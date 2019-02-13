@@ -42,8 +42,10 @@ hr{border-top:1px solid #eaeaea; border-bottom:none}
 
 #messages-panel{box-sizing:border-box; display:none; position:absolute; top:0px; left:0px; background-color:#fefbdf; width:100%; padding:30px; color:#333333; filter:alpha(opacity=90); opacity:0.9;}
 
-.lottery-type-field{width:360px; height:34px; padding:6px 12px; font-size:14px; border:1px solid #cccccc; border-radius:3px;}
-.lottery-refresh-button{width:80px; height:32px; padding:6px 12px; font-size:14px; border-radius:3px;}
+.lottery-type-field{height:34px; padding:6px 10px; font-size:14px; border:1px solid #dddddd}
+.lottery-button{height:32px; padding:6px 12px; font-size:14px;}
+.lottery-disabled-button{background-color:#cccccc; height:32px; padding:6px 12px; font-size:14px;}
+.lottery-refresh-button{width:80px; height:32px; padding:6px 12px; font-size:14px;}
 
 #user-panel {padding:45px 15px 25px 15px}
 #user-panel #usericon img{width:70px; height:70px;}
@@ -74,12 +76,15 @@ nav a:hover{color:#ffffff}
 #master-module .sub-module{padding:15px; box-sizing:border-box; overflow:auto}
 #master-module .chart-module{padding:0px}
 
-#chart-panel{overflow:auto; border:1px solid #eeeeee; padding:1px}
+#chart-panel{border:1px solid #eeeeee; padding:1px}
+
+#chart-panel #chart-buttons{margin:5px}
+
 #chart-panel table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
 #chart-panel table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
 #chart-panel table thead{background-color:#e0f3ff;}
 #chart-panel table thead th{font-weight:400; text-align:center; height:30px}
-#chart-panel table tbody td{text-align:center; height:25px;}
+#chart-panel table tbody td{text-align:center; height:25px; min-width:25px}
 #chart-panel table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
 #chart-panel table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
 #chart-panel table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
@@ -92,6 +97,9 @@ nav a:hover{color:#ffffff}
 #chart-panel table .greycode{color:#cccccc}
 #chart-panel #master-module .module{padding:15px; box-sizing:border-box}
 
+#detailed-panel tbody tr:nth-of-type(odd){}
+#detailed-panel tbody tr:nth-of-type(even){background-color:#e0f3ff}
+#detailed-panel table tr:hover{background-color:#ffe0e0}
 
 #recommend-panel #chart-panel table thead th{height:40px}
 #recommend-panel #chart-panel table tbody td{height:35px; font-size:14px}
@@ -102,13 +110,13 @@ nav a:hover{color:#ffffff}
 #recommend-panel #recommend-type{padding:5px; box-sizing:border-box;}
 #recommend-panel #recommend-type .button{padding:10px; margin-right:10px}
 
-#do-page .row{padding:10px 5px; position:relative}
+#do-page .row{padding:10px 5px; position:relative; width:1150px}
 #do-page label{display:inline-block; position:relative; padding-left:25px; margin-right:8px}
 #do-page label.title{width:100px; padding-left:5px}
 #do-page label.subtitle{margin:0px 8px 0px 30px; padding-left:0px}
 #do-page label .checkbox{display:inline-block; position:absolute; top:1px; left:2px; background-position:0px 0px; background-image:url('../images/box.png'); background-repeat:no-repeat; width:18px; height:18px; margin-right:4px}
 #do-page label .checked{background-position:-40px 0px}
-#do-page hr{margin:7px 0px}
+#do-page hr{margin:7px 0px; width:1150px}
 #do-page .clear-panel{right:10px; top:9px; position:absolute}
 #do-page .clear-panel button{width:22px; height:20px; text-align:center; line-height:22px; border-radius:5px;}
 #do-page #create-button{margin-top:40px; width:150px; height:60px; font-size:18px; border-radius:5px;}

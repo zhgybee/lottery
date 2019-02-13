@@ -7,7 +7,7 @@
 		<filter-class>com.nest.lottery.system.filter.SessionFilter</filter-class>
 		<init-param>
 		<param-name>exclusions</param-name>
-		<param-value>/login.do,/encode.do,/system/page/</param-value>
+		<param-value>/index.jsp,/encode.do,/system/page/,/platform/,/web/</param-value>
 		</init-param>
 	</filter>
 	<filter>
@@ -45,17 +45,9 @@
 		<load-on-startup>0</load-on-startup>
 	</servlet>
 	<servlet>
-		<servlet-name>Login</servlet-name>
-		<servlet-class>com.nest.lottery.system.Login</servlet-class>
-	</servlet>
-	<servlet>
 		<servlet-name>Encode</servlet-name>
 		<servlet-class>com.nest.lottery.system.Encode</servlet-class>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/login.do</url-pattern>
-	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Encode</servlet-name>
 		<url-pattern>/encode.do</url-pattern>

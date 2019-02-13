@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../../lib/selection/selection.css" />
-	<title></title>
+	<title>和值走势图</title>
 </head>
 <body>
 
@@ -17,12 +17,24 @@
 	<div id="navigation" class="clearfix">
 		<h4>和值走势图</h4>
 		<div class="toolbar-panel">
-			<input id="11x5-type" class="lottery-type-field" value="ah11x5" title="安徽11选5"/>
 			<button class="button lottery-refresh-button" onclick="window.location.reload()">刷新</button>
 		</div>
 	</div>
 	<div class="sub-module chart-module">
 		<div id="chart-panel">
+
+			<div id="chart-buttons">
+				<a class="button lottery-button" href="0.jsp" target="_blank">号码分布</a>
+				<a class="button lottery-button" href="1.jsp" target="_blank">基本走势图</a>
+				<a class="button lottery-disabled-button" href="2.jsp" target="_blank">和值走势图</a>
+				<a class="button lottery-button" href="3.jsp" target="_blank">跨度走势图</a>
+				<a class="button lottery-button" href="4.jsp" target="_blank">大小走势图</a>
+				<a class="button lottery-button" href="5.jsp" target="_blank">奇偶走势图</a>
+				<a class="button lottery-button" href="6.jsp" target="_blank">质合走势图</a>
+				<a class="button lottery-button" href="7.jsp" target="_blank">隔期重号走势图</a>
+				<input id="11x5-length" class="lottery-type-field" style="width:80px; text-align:center"/>
+				<input id="11x5-type" class="lottery-type-field" style="width:120px; text-align:center"/>
+			</div>
 			<div id="detailed-panel">
 				<table>
 					<thead>
@@ -125,7 +137,8 @@
 	
 	<script type="text/javascript">
 		
-		var type = app.getParameter("type");
+		var type = app.getParameter("type") || 'ah11x5';
+		var length = app.getParameter("length") || '100';
 		$(function()
 		{
 			$("#11x5-type").selection
@@ -134,13 +147,29 @@
 				ismultiple: false,
 				clickitem:function()
 				{
-					window.location.href = '2.jsp?type='+$("#11x5-type").val();
+					window.location.href = '2.jsp?type='+$("#11x5-type").val()+'&length='+$("#11x5-length").val();
 				}
 			});
 
 			if(type != null)
 			{
-				$("#11x5-type").selection("setId", type);
+				var titles = $("#11x5-type").selection("setId", type);
+				$("title").html($("title").html() + "-" + titles[0]);
+			}
+
+			$("#11x5-length").selection
+			({
+				url: "../dictionary/list/length.json",
+				ismultiple: false,
+				clickitem:function()
+				{
+					window.location.href = '2.jsp?type='+$("#11x5-type").val()+'&length='+$("#11x5-length").val();
+				}
+			});
+
+			if(length != null)
+			{
+				$("#11x5-length").selection("setId", length);
 			}
 			initialise();
 		});
@@ -148,7 +177,7 @@
 		function initialise()
 		{
 			app.showLoading();
-			$.getJSON("../service/data.jsp?mode=1&length=100&type="+$("#11x5-type").val(), function(response)
+			$.getJSON("../service/data.jsp?mode=1&length="+$("#11x5-length").val()+"&type="+$("#11x5-type").val(), function(response)
 			{
 				if(response.status == 1)
 				{
