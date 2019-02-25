@@ -25,8 +25,8 @@
 		int[] codes4count = LotteryUtils.toArray(request.getParameterValues("codes4count[]"));
 		int[] codes5 = LotteryUtils.toArray(request.getParameterValues("codes5[]"));
 		int[] codes5count = LotteryUtils.toArray(request.getParameterValues("codes5count[]"));
-		int[] evencount = LotteryUtils.toArray(request.getParameterValues("evencount[]"));
-		int[] comcount = LotteryUtils.toArray(request.getParameterValues("comcount[]"));
+		int[] oddncount = LotteryUtils.toArray(request.getParameterValues("oddncount[]"));
+		int[] pricount = LotteryUtils.toArray(request.getParameterValues("pricount[]"));
 		int[] smcount = LotteryUtils.toArray(request.getParameterValues("smcount[]"));
 		int[] concount = LotteryUtils.toArray(request.getParameterValues("concount[]"));
 		
@@ -59,7 +59,7 @@
 			combinations = lotter.filter(combinations, codes5, codes5count);
 		}
 
-		combinations = lotter.filter(combinations, evencount, comcount, smcount, concount);
+		combinations = lotter.filter(combinations, oddncount, pricount, smcount, concount);
 		
 		
 		message.resource("combinations", lotter.toString(combinations));

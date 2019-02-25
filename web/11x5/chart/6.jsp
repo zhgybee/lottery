@@ -39,15 +39,15 @@
 			<table>
 				<thead>
 				<tr>
-					<th rowspan="2" style="width:100px">期号</th>
-					<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
-					<th colspan="11" style="width:275px">开奖号码分布</th>
-					<th colspan="2" style="width:60px">第一位</th>
-					<th colspan="2" style="width:60px">第二位</th>
-					<th colspan="2" style="width:60px">第三位</th>
-					<th colspan="2" style="width:60px">第四位</th>
-					<th colspan="2" style="width:60px">第五位</th>
-					<th colspan="6" style="width:180px">质合比走势</th>
+					<th rowspan="2" style="width:100px; min-width:100px">期号</th>
+					<th rowspan="2" colspan="5">开奖号码</th>
+					<th colspan="11">开奖号码分布</th>
+					<th colspan="2">第一位</th>
+					<th colspan="2">第二位</th>
+					<th colspan="2">第三位</th>
+					<th colspan="2">第四位</th>
+					<th colspan="2">第五位</th>
+					<th colspan="6">质合比走势</th>
 				</tr>
 				<tr>
 					<th>01</th>
@@ -86,14 +86,14 @@
 			<table>
 				<thead>
 				<tr>
-					<th rowspan="2" style="width:226px">统计类型</th>
-					<th colspan="11" style="width:275px">开奖号码分布</th>
-					<th colspan="2" style="width:60px">第一位</th>
-					<th colspan="2" style="width:60px">第二位</th>
-					<th colspan="2" style="width:60px">第三位</th>
-					<th colspan="2" style="width:60px">第四位</th>
-					<th colspan="2" style="width:60px">第五位</th>
-					<th colspan="6" style="width:180px">质合比走势</th>
+					<th rowspan="2" style="width:230px; min-width:230px">统计类型</th>
+					<th colspan="11">开奖号码分布</th>
+					<th colspan="2">第一位</th>
+					<th colspan="2">第二位</th>
+					<th colspan="2">第三位</th>
+					<th colspan="2">第四位</th>
+					<th colspan="2">第五位</th>
+					<th colspan="6">质合比走势</th>
 				</tr>
 				<tr>
 					<th>01</th>

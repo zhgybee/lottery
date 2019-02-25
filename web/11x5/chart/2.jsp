@@ -39,9 +39,9 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:100px">期号</th>
-						<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
-						<th colspan="31" style="width:775px">和值走势</th>
+						<th rowspan="2" style="width:100px; min-width:100px">期号</th>
+						<th rowspan="2" colspan="5">开奖号码</th>
+						<th colspan="31">和值走势</th>
 						<th rowspan="2" style="width:50px">和值</th>
 						<th rowspan="2" style="width:50px">和尾</th>
 					</tr>
@@ -87,8 +87,8 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:226px">统计类型</th>
-						<th colspan="31" style="width:775px">和值走势</th>
+						<th rowspan="2" style="width:230px; min-width:230px">统计类型</th>
+						<th colspan="31">和值走势</th>
 						<th rowspan="2" style="width:50px">和值</th>
 						<th rowspan="2" style="width:50px">和尾</th>
 					</tr>

@@ -45,9 +45,9 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:200px;">期号</th>
+						<th rowspan="2" style="width:200px; min-width:200px">期号</th>
 						<th rowspan="2" colspan="5">开奖号码</th>
-						<th colspan="11" style="width:275px">开奖号码分布</th>
+						<th colspan="11">开奖号码分布</th>
 					</tr>
 					<tr>
 						<th>01</th>
@@ -70,7 +70,7 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:455px">统计类型</th>
+						<th rowspan="2" style="width:455px; min-width:455px">统计类型</th>
 						<th colspan="11">开奖号码分布</th>
 					</tr>
 					<tr>

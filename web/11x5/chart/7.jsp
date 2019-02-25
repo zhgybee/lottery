@@ -36,21 +36,21 @@
 				<input id="11x5-type" class="lottery-type-field" style="width:120px; text-align:center"/>
 			</div>
 			<div id="detailed-panel">
-			<table style="width:1725px">
+			<table>
 				<thead>
 				<tr>
-					<th rowspan="2" style="width:100px">期号</th>
-					<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
-					<th colspan="6" style="width:150px">隔一期重号</th>
-					<th colspan="6" style="width:150px">隔二期重号</th>
-					<th colspan="6" style="width:150px">隔三期重号</th>
-					<th colspan="6" style="width:150px">隔四期重号</th>
-					<th colspan="6" style="width:150px">隔五期重号</th>
-					<th colspan="6" style="width:150px">隔六期重号</th>
-					<th colspan="6" style="width:150px">隔七期重号</th>
-					<th colspan="6" style="width:150px">隔八期重号</th>
-					<th colspan="6" style="width:150px">隔九期重号</th>
-					<th colspan="6" style="width:150px">隔十期重号</th>
+					<th rowspan="2" style="width:100px; min-width:100px">期号</th>
+					<th rowspan="2" colspan="5">开奖号码</th>
+					<th colspan="6">隔一期重号</th>
+					<th colspan="6">隔二期重号</th>
+					<th colspan="6">隔三期重号</th>
+					<th colspan="6">隔四期重号</th>
+					<th colspan="6">隔五期重号</th>
+					<th colspan="6">隔六期重号</th>
+					<th colspan="6">隔七期重号</th>
+					<th colspan="6">隔八期重号</th>
+					<th colspan="6">隔九期重号</th>
+					<th colspan="6">隔十期重号</th>
 				</tr>
 				<tr>
 					<th>0</th>
@@ -120,20 +120,20 @@
 			</div>
 
 			<div id="statistics-panel">
-			<table style="width:1726px">
+			<table>
 				<thead>
 				<tr>
-					<th rowspan="2" style="width:226px">统计类型</th>
-					<th colspan="6" style="width:150px">隔一期重号</th>
-					<th colspan="6" style="width:150px">隔二期重号</th>
-					<th colspan="6" style="width:150px">隔三期重号</th>
-					<th colspan="6" style="width:150px">隔四期重号</th>
-					<th colspan="6" style="width:150px">隔五期重号</th>
-					<th colspan="6" style="width:150px">隔六期重号</th>
-					<th colspan="6" style="width:150px">隔七期重号</th>
-					<th colspan="6" style="width:150px">隔八期重号</th>
-					<th colspan="6" style="width:150px">隔九期重号</th>
-					<th colspan="6" style="width:150px">隔十期重号</th>
+					<th rowspan="2" style="width:230px; min-width:230px">统计类型</th>
+					<th colspan="6">隔一期重号</th>
+					<th colspan="6">隔二期重号</th>
+					<th colspan="6">隔三期重号</th>
+					<th colspan="6">隔四期重号</th>
+					<th colspan="6">隔五期重号</th>
+					<th colspan="6">隔六期重号</th>
+					<th colspan="6">隔七期重号</th>
+					<th colspan="6">隔八期重号</th>
+					<th colspan="6">隔九期重号</th>
+					<th colspan="6">隔十期重号</th>
 				</tr>
 				<tr>
 					<th>0</th>

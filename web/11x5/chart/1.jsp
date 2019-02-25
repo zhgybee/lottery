@@ -40,17 +40,17 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:100px">期号</th>
-						<th rowspan="2" colspan="5" style="width:125px">开奖号码</th>
-						<th colspan="11" style="width:275px">开奖号码分布</th>
+						<th rowspan="2" style="width:100px; min-width:100px">期号</th>
+						<th rowspan="2" colspan="5">开奖号码</th>
+						<th colspan="11">开奖号码分布</th>
 						<th rowspan="2" style="width:60px">重号数</th>
 						<th rowspan="2" style="width:60px">连号数</th>
 						<th rowspan="2" style="width:60px">和值</th>
 						<th rowspan="2" style="width:60px">跨度</th>
 						<th rowspan="2" style="width:60px">奇偶比</th>
 						<th rowspan="2" style="width:60px">质合比</th>
-						<th colspan="6" style="width:150px">奇数个数</th>
-						<th colspan="6" style="width:150px">质数个数</th>
+						<th colspan="6">奇数个数</th>
+						<th colspan="6">质数个数</th>
 					</tr>
 					<tr>
 						<th>01</th>
@@ -85,16 +85,16 @@
 				<table>
 					<thead>
 					<tr>
-						<th rowspan="2" style="width:226px">统计类型</th>
-						<th colspan="11" style="width:275px">开奖号码分布</th>
+						<th rowspan="2" style="width:230px; min-width:230px">统计类型</th>
+						<th colspan="11">开奖号码分布</th>
 						<th rowspan="2" style="width:60px">重号数</th>
 						<th rowspan="2" style="width:60px">连号数</th>
 						<th rowspan="2" style="width:60px">和值</th>
 						<th rowspan="2" style="width:60px">跨度</th>
 						<th rowspan="2" style="width:60px">奇偶比</th>
 						<th rowspan="2" style="width:60px">质合比</th>
-						<th colspan="6" style="width:150px">奇数个数（偶数）</th>
-						<th colspan="6" style="width:150px">质数个数（合数）</th>
+						<th colspan="6">奇数个数（偶数）</th>
+						<th colspan="6">质数个数（合数）</th>
 					</tr>
 					<tr>
 						<th>01</th>

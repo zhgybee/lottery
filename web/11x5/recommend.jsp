@@ -27,7 +27,11 @@
 		</div>
 	</div>
 	<div class="sub-module chart-module" id="recommend-panel">
-		<div id="recommend-type"><button class="button" id="r1">任选一码</button><button class="button" id="r3">任选三码</button><button class="button" id="r5">任选五码</button></div>
+		<div id="recommend-type">
+			<button class="button" id="r1">任选一码</button>
+			<button class="button" id="r3">任选三码</button>
+			<button class="button" id="r5">任选五码</button>
+		</div>
 		<div id="chart-panel">
 			<div id="detailed-panel">
 				<table style="width:900px">
@@ -75,6 +79,8 @@
 		}
 
 		initialise();
+
+		$("#r"+size+"").css("background-color", "#ffaa00");
 
 		$("#r1").on("click", function()
 		{

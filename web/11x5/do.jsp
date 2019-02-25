@@ -149,23 +149,23 @@
 
 
 		<div class="row" style="background-color:#f7f7f7">
-			<label class="title">偶数个数</label>
-			<label><i class="checkbox evencount" value="0"></i>0</label>
-			<label><i class="checkbox evencount" value="1"></i>1</label>
-			<label><i class="checkbox evencount" value="2"></i>2</label>
-			<label><i class="checkbox evencount" value="3"></i>3</label>
-			<label><i class="checkbox evencount" value="4"></i>4</label>
-			<label><i class="checkbox evencount" value="5"></i>5</label>
+			<label class="title">奇数个数</label>
+			<label><i class="checkbox oddncount" value="0"></i>0</label>
+			<label><i class="checkbox oddncount" value="1"></i>1</label>
+			<label><i class="checkbox oddncount" value="2"></i>2</label>
+			<label><i class="checkbox oddncount" value="3"></i>3</label>
+			<label><i class="checkbox oddncount" value="4"></i>4</label>
+			<label><i class="checkbox oddncount" value="5"></i>5</label>
 			<label class="clear-panel"><button class="button red" id="unselectall-even">清</button></label>
 		</div>
 		<div class="row">
-			<label class="title">合数个数</label>
-			<label><i class="checkbox comcount" value="0"></i>0</label>
-			<label><i class="checkbox comcount" value="1"></i>1</label>
-			<label><i class="checkbox comcount" value="2"></i>2</label>
-			<label><i class="checkbox comcount" value="3"></i>3</label>
-			<label><i class="checkbox comcount" value="4"></i>4</label>
-			<label><i class="checkbox comcount" value="5"></i>5</label>
+			<label class="title">质数个数</label>
+			<label><i class="checkbox pricount" value="0"></i>0</label>
+			<label><i class="checkbox pricount" value="1"></i>1</label>
+			<label><i class="checkbox pricount" value="2"></i>2</label>
+			<label><i class="checkbox pricount" value="3"></i>3</label>
+			<label><i class="checkbox pricount" value="4"></i>4</label>
+			<label><i class="checkbox pricount" value="5"></i>5</label>
 			<label class="clear-panel"><button class="button red" id="unselectall-com">清</button></label>
 		</div>
 		<div class="row" style="background-color:#f7f7f7">
@@ -233,11 +233,11 @@ $(function()
 
 	$("#unselectall-even").on("click", function()
 	{
-		unselectall($('.evencount'));
+		unselectall($('.oddncount'));
 	});
 	$("#unselectall-com").on("click", function()
 	{
-		unselectall($('.comcount'));
+		unselectall($('.pricount'));
 	});
 	$("#unselectall-sm").on("click", function()
 	{
@@ -341,15 +341,15 @@ function creator()
 		codes5count.push( $(element).attr("value") );
 	});
 
-	var evencount = [];
-	$('.evencount.checked').each(function(i, element)
+	var oddncount = [];
+	$('.oddncount.checked').each(function(i, element)
 	{
-		evencount.push( $(element).attr("value") );
+		oddncount.push( $(element).attr("value") );
 	});
-	var comcount = [];
-	$('.comcount.checked').each(function(i, element)
+	var pricount = [];
+	$('.pricount.checked').each(function(i, element)
 	{
-		comcount.push( $(element).attr("value") );
+		pricount.push( $(element).attr("value") );
 	});
 	var smcount = [];
 	$('.smcount.checked').each(function(i, element)
@@ -375,8 +375,8 @@ function creator()
 	parameter["codes4count"] = codes4count;
 	parameter["codes5"] = codes5;
 	parameter["codes5count"] = codes5count;
-	parameter["evencount"] = evencount;
-	parameter["comcount"] = comcount;
+	parameter["oddncount"] = oddncount;
+	parameter["pricount"] = pricount;
 	parameter["smcount"] = smcount;
 	parameter["concount"] = concount;
 
