@@ -203,6 +203,7 @@
 </div>
 
 <script src="../lib/app.js"></script>
+<script type="text/javascript" src="../platform/Scyunew3.js"></script>
 
 <script type="text/javascript">
 

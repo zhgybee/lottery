@@ -42,3 +42,14 @@ CREATE TABLE T_11X5_RECOMMEND
  CREATE_DATE                    DATETIME,
  CONSTRAINT T_11X5_RECOMMEND_PK PRIMARY KEY(ID)
 );
+
+CREATE TABLE T_AGENT
+(
+ ID                             VARCHAR(32),
+ NAME                           VARCHAR(128),
+ CONTACTS                       VARCHAR(32),
+ PHONE                          VARCHAR(32),
+ ADDRESS                        VARCHAR(256),
+ CREATE_DATE                    DATETIME,
+ CONSTRAINT T_AGENT_PK PRIMARY KEY(ID)
+);

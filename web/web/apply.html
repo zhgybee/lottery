@@ -4,8 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
   <title>荧彩科技</title>
-  <link rel="stylesheet" href="../res/layui/css/layui.css">
-  <link rel="stylesheet" href="../res/static/css/index.css">
+  <link rel="stylesheet" href="res/layui/css/layui.css">
+  <link rel="stylesheet" href="res/static/css/index.css">
+  <style>
+   .panel{padding:20px 0px 40px 0px}
+   .panel input{width:100%; border:1px solid #dddddd; padding:10px; box-sizing:border-box;}
+   .panel div{padding:5px 0px; font-size:15px; color:#666666}
+   .panel .title{font-size:16px; font-weight:bold; padding:0px 0px 20px 0px}
+	button{border:none; background-color:#4ab6ef; font-size:15px; color:#ffffff; box-sizing:border-box; border:none; outline:none; cursor:pointer; padding:20px 40px;}
+  
+   .panel #message-panel{display:none; background-color:#fcf8e3; border:1px solid #faebcc; overflow:hidden; padding:10px}
+</style>
 </head>
 <body>
   <!-- nav部分 -->
@@ -14,7 +23,7 @@
       <!-- 公司logo -->
       <div class="nav-logo">
         <a href="index.html">
-          <img src="../../images/logo.png">
+          <img src="../images/logo.png">
         </a>
       </div>
       <div class="nav-list">
@@ -31,46 +40,36 @@
       </div>
     </div>
   </div>
-  <!-- main部分 -->
-  <div class="main-newsdate">
-    <div class="layui-container">
-      <p class="news"><a href="news.html">实时新闻</a> > 新闻详情</p>
-      <h1>三部门整顿彩票高频快开游戏派奖促销 16日起暂停派奖活动</h1>
-      <p class="pushtime">发布时间：<span>2019年01月16日 09:35</span></p>
-     
-	  
-	  
-	  
-<p class="introBott" style="padding:10px 0px; font-weight:600"></p>
-
-<p class="introBott" style="padding:10px 0px">
-
-1月15日，财政部、民政部、体育总局联合发布关于加强高频快开游戏派奖促销管理的通知。旨在整顿彩票市场秩序，遏制部分彩票游戏派奖促销活动中出现的强度持续加大、时间恶意延长、派奖金额远超返奖以及促销引发大额非理性购彩等问题。
-
-</p>
-<p class="introBott" style="padding:10px 0px">
-　　通知要求，自2019年1月16日起，暂停开展任何形式的派奖活动。对于正在开展的派奖活动，应当及时发布调整公告，派奖周期不得超过5天，并应当于期满后立即停止，派奖活动的最后一期派奖奖金有结余的，不再继续派奖。对于已公告但尚未开展的派奖活动，应当及时发布取消公告。
-</p>
-
-
-<p class="introBott" style="padding:10px 0px">
-　　同时，自2019年1月16日起，暂停开展任何形式的促销活动。
-</p>
-
-<p class="introBott" style="padding:10px 0px">
-　　通知要求，彩票发行机构应当加强统一管理和组织协调，增强社会责任意识，认真做好本通知的实施工作，确保各项要求落实到位，切实做好宣传告知等相关工作，进一步规范高频快开游戏市场管理，维护购彩者合法权益，保持彩票市场安全运行和健康发展。
-</p>
-<p class="introBott" style="padding:10px 0px">
-
-（文章来源：证券时报网）
-</p>
-
-
-	  
-	  
-
-    </div> 
+  <!-- banner部分 -->
+  <div class="banner news">
+    <div class="title">
+      <p>申请代理</p>
+      <p class="en">Application agent</p>
+    </div>
   </div>
+  <!-- main -->
+    <div class="panel" style="width:1000px; margin:0px auto">
+		<div class="title">代理申请</div>
+
+		<div id="message-panel"></div>
+
+		<div>代理商名称</div>
+		<div><input id="name" maxlength="64"/></div>
+
+		<div>联系人姓名</div>
+		<div><input id="contacts" maxlength="16"/></div>
+
+		<div>联系人电话</div>
+		<div><input id="phone" maxlength="11"/></div>
+
+		<div>详细地址</div>
+		<div><input id="address" maxlength="100"/></div>
+
+    </div>
+	<div style="text-align:center">
+	<button id="submit-button">提交</button>
+	</div>
+	<br/><br/><br/><br/>
   <!-- footer部分 -->
   <div class="footer">
     <div class="layui-container">
@@ -104,15 +103,70 @@
 	  -->
     </div>
   </div>
-<script src="../res/layui/layui.js"></script>
+
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../lib/app.js"></script>
+<script src="res/layui/layui.js"></script>
 <!--[if lt IE 9]>
   <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
   <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <script>
   layui.config({
-    base: '../res/static/js/' 
+    base: 'res/static/js/' 
   }).use('firm'); 
+
+
+$(function()
+{
+
+	$("#submit-button").on("click", function()
+	{
+		$("#message-panel").hide();
+		app.showLoading();
+		if($("#name").val() == "")
+		{
+			$("#message-panel").html("请填写代理商名称");
+			$("#message-panel").show();
+			return;
+		}
+		if($("#contacts").val() == "")
+		{
+			$("#message-panel").html("请填写联系人姓名");
+			$("#message-panel").show();
+			return;
+		}
+		if($("#phone").val() == "")
+		{
+			$("#message-panel").html("请填写联系人电话");
+			$("#message-panel").show();
+			return;
+		}
+		if($("#address").val() == "")
+		{
+			$("#message-panel").html("请填写详细地址");
+			$("#message-panel").show();
+			return;
+		}
+		$.post("apply.jsp?mode=1", {name:$("#name").val(), contacts:$("#contacts").val(), phone:$("#phone").val(), address:$("#address").val()}, function(response)
+		{
+			app.hideLoading();
+			if(response.status == 1)
+			{
+				console.log(123);
+				$("#message-panel").html("申请已提交");
+				$("#message-panel").show();
+			}
+			else
+			{
+				$("#message-panel").html("申请错误");
+				$("#message-panel").show();
+			}
+		}, "json");
+	});
+});
+
+
 </script>
 
 </body>

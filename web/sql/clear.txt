@@ -1,0 +1,13 @@
+delete from T_11X5 where TYPE = 'ah11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'ah11x5' order by PHASE desc)
+delete from T_11X5 where TYPE = 'sh11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'sh11x5' order by PHASE desc)
+delete from T_11X5 where TYPE = 'js11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'js11x5' order by PHASE desc)
+delete from T_11X5 where TYPE = 'gd11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'gd11x5' order by PHASE desc)
+delete from T_11X5 where TYPE = 'sd11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'sd11x5' order by PHASE desc)
+delete from T_11X5 where TYPE = 'jx11x5' and ID not in(select top 500 ID from T_11X5 where TYPE = 'jx11x5' order by PHASE desc)
+
+delete from T_11X5_RECOMMEND where TYPE = 'ah11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'ah11x5' order by PHASE desc)
+delete from T_11X5_RECOMMEND where TYPE = 'sh11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'sh11x5' order by PHASE desc)
+delete from T_11X5_RECOMMEND where TYPE = 'js11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'js11x5' order by PHASE desc)
+delete from T_11X5_RECOMMEND where TYPE = 'gd11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'gd11x5' order by PHASE desc)
+delete from T_11X5_RECOMMEND where TYPE = 'sd11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'sd11x5' order by PHASE desc)
+delete from T_11X5_RECOMMEND where TYPE = 'jx11x5' and ID not in(select top 500 ID from T_11X5_RECOMMEND where TYPE = 'jx11x5' order by PHASE desc)
