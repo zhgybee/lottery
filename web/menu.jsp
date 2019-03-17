@@ -30,6 +30,7 @@
 			<li><a href="/11x5/analysis.jsp" target="_blank"><i class="fa fa-cog"></i>智能分析</a></li>
 			<li><a href="/11x5/recommend.jsp" target="_blank"><i class="fa fa-tasks"></i>智能推荐</a></li>
 			<li><a href="/11x5/recgroup.jsp" target="_blank"><i class="fa fa-recycle"></i>科学组码</a></li>
+			<li><a href="/11x5/calculator/calculator.jsp" target="_blank"><i class="fa fa-building-o"></i>倍投计算器</a></li>
 			<li><a href="/11x5/chart/0.jsp" target="_blank"><i class="fa fa-area-chart"></i>彩票走势图</a></li>
 			<li><a href="/member/manager.jsp" target="_blank"><i class="fa fa-user"></i>个人中心</a></li>
 		</ul>
