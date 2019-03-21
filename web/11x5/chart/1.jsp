@@ -32,6 +32,7 @@
 				<a class="button lottery-button" href="5.jsp" target="_blank">奇偶走势图</a>
 				<a class="button lottery-button" href="6.jsp" target="_blank">质合走势图</a>
 				<a class="button lottery-button" href="7.jsp" target="_blank">隔期重号走势图</a>
+				<a class="button lottery-button" href="8.jsp" target="_blank">热码走势图</a>
 				<input id="11x5-length" class="lottery-type-field" style="width:80px; text-align:center"/>
 				<input id="11x5-type" class="lottery-type-field" style="width:120px; text-align:center"/>
 			</div>
