@@ -13,7 +13,7 @@
 <button onclick="startor()">生成</button>
 
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="Syunew3.js"></script>
+<script type="text/javascript" src="key.js"></script>
 <script type="text/javascript">
 
 var isConnect = 0;
