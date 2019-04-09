@@ -35,11 +35,18 @@
 						}
 						else
 						{
-							SessionUser sessionUser = new SessionUser();
-							sessionUser.putAll(user);
-							
-							session.setAttribute("user", sessionUser); 
-							response.sendRedirect(request.getContextPath()+"/app.jsp");
+							if(user.getString("STATUS").equals("1"))
+							{
+								response.sendRedirect(SystemProperty.CONTEXTPATH+"/system/page/0003.html");
+							}
+							else
+							{
+								SessionUser sessionUser = new SessionUser();
+								sessionUser.putAll(user);
+								
+								session.setAttribute("user", sessionUser); 
+								response.sendRedirect(request.getContextPath()+"/app.jsp");
+							}
 						}
 					}
 				}

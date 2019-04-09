@@ -12,6 +12,7 @@ CREATE TABLE T_USER
  PASSWORD                       VARCHAR(16),
  PHONE                          VARCHAR(32),
  ROLE                           VARCHAR(32),
+ STATUS                         VARCHAR(1),    /*  1:Ëø¶¨ */
  SECRETKEY                      VARCHAR(128),
  DESCRIPTION                    VARCHAR(1024),
  CREATE_DATE                    DATETIME,
