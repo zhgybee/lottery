@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>智能分析</title>
+
+	<link rel="stylesheet" href="lib/weui/weui.css">
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="master-module">
+	<div class="sub-module" id="analysis-panel">
+		<div class="weui-cell weui-cell_select">
+			<div class="weui-cell__bd">
+				<select class="weui-select" id="11x5-length"/></select>
+			</div>
+		</div>
+		<div class="weui-cell weui-cell_select">
+			<div class="weui-cell__bd">
+				<select class="weui-select" id="11x5-type"/></select>
+			</div>
+		</div>
+		<hr/>
+		<div style="text-align:center">
+			<button id="starting-button" class="button" style="width:140px; height:30px; border-radius:5px; margin-top:10px; font-size:16px; height:35px"><i class="fa fa-recycle" style="font-size:15px; margin-right:5px"></i>分析遗漏</button>
+		</div>
+		<p id="resource-panel" style="margin:10px 0px; text-align:center"></p>
+		<hr/>
+		<div id="codes-panel" style="margin:5px 0px">
+			<textarea style="display:block; width:100%; height:96px; font-size:12px; box-sizing:border-box; border:none; padding:0px 5px"></textarea>
+		</div>	
+		<hr/>
+	</div>
+	<div id="chart" style="height:350px; margin-top:10px"></div>
+</div>
+
+
+
+
+<script src="../lib/echarts.min.js"></script>
+<script src="../lib/app.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+var chart = echarts.init(document.getElementById('chart'));
+$(function()
+{
+
+	$.getJSON("../11x5/dictionary/list/type.json", function(items)
+	{
+		$.each(items, function(i, item)
+		{
+			$("#11x5-type").append('<option value="'+item['k']+'">'+item['v']+'</option>');
+		});
+	});
+	$.getJSON("../11x5/dictionary/list/length.json", function(items)
+	{
+		$.each(items, function(i, item)
+		{
+			$("#11x5-length").append('<option value="'+item['k']+'">'+item['v']+'</option>');
+		});
+	})
+
+
+
+	app.showLoading();
+	$.post("../11x5/service/sessioncodes.jsp?mode=1", function(response)
+	{
+		app.hideLoading();
+		if(response.status == 1)
+		{
+			var codes = "";
+			var combinations = response.resource.combinations; 
+			if(combinations != null)
+			{
+				$.each(combinations, function(i, combination)
+				{
+					codes += combination+'\n';
+				});
+				$("#codes-panel textarea").val(codes);
+			}
+		}
+		else
+		{
+			app.message(response.messages);
+		}
+	}, "json");
+
+
+
+	createChart([], []);
+	$("#starting-button").on("click", function()
+	{
+		var parameter = {};
+		parameter["codes"] = $("#codes-panel textarea").val();
+		parameter["type"] = $("#11x5-type").val();
+		parameter["length"] = $("#11x5-length").val();
+		app.showLoading();
+		$.post("../11x5/service/analysis.jsp?mode=1", parameter, function(response)
+		{
+			app.hideLoading();
+			if(response.status == 1)
+			{
+				var titles = response.resource.titles;
+				var values = response.resource.values;
+				var max = response.resource.max;
+				var sum = response.resource.sum;
+				createChart(titles, values);
+
+
+				$("#resource-panel").html('最大遗漏期数共<span style="color:#ff6600">'+max+'</span>期　总遗漏期数共<span style="color:#ff6600">'+sum+'</span>期');
+
+			}
+			else
+			{
+				app.message(response.messages);
+			}
+		}, "json");
+
+	});
+
+});
+
+function createChart(titles, values)
+{
+
+	$("#chart").width( Math.max(values.length * 15, $(window).width()));
+
+	var option = 
+	{
+        title: {
+            text: '智能数据遗漏走势图',
+			x:'center',
+            show: true,
+        },
+		grid: 
+		{  
+			left:'30px',
+			right:'50px',
+			top:'20px',
+			bottom:'85px'
+		},
+        tooltip: {},
+		xAxis: 
+		{
+			axisLabel:
+			{
+				interval:0,
+				rotate:90
+			},
+			data:titles,
+			name:'期号'
+		},
+		yAxis:{},
+		series: 
+		[{
+			type:'line',
+			data:values,
+            label: 
+			{
+                normal: 
+				{
+	                show: true,
+	                position:'top',
+                },
+            },
+
+		}]
+	};
+	chart.setOption(option);
+	chart.resize();
+}
+
+</script>
+
+</body>
+</html>

@@ -1,24 +1,57 @@
 
-/*============================================================================================*/
-
-.weui-panel::before{border-top-width:0px}
-.weui-panel{margin-top:0px}
-.weui-media-box{padding:15px 10px 10px 10px; align-items:flex-start;}
-.weui-media-box .weui-media-box__title{line-height:24px;}
-.weui-media-box::before{left:0px}
-.weui-cell::before{left:0px}
-.weui-grids .weui-grid{padding:0px; position:relative; height:110px; display:flex; flex-direction:column; justify-content:center; align-items:center;}
-.weui-grids .weui-grid .weui-grid__icon{width:50px; height:50px; margin-top:3px}
-.weui-grids .weui-grid .weui-grid__icon img{border-radius:50%}
-.weui-grids .weui-grid .weui-grid__label{font-size:13px;}
-
-.weui-25grids .weui-grid{width:25%}
-.weui-25grids .weui-grid .weui-grid__icon{ width:40px; height:40px; }
-
-/*============================================================================================*/
 html, body{height:100%; background-color:#ffffff}
 ul, ol{list-style-type:none}
 li{list-style-type:none}
-.button{border:none; display:flex; justify-content:center; align-items:center; background-color:#33cd5f; border-radius:5px; color:#ffffff; font-size:15px; width:100%; height:45px; font-size:16px}
+.button{border:none; background-color:#4ab6ef; border-radius:5px; color:#ffffff; }
 .clearfix::after{clear:both; content:""; display:block;}
+hr{border-top:1px solid #eaeaea; border-bottom:none}
 
+#loading-panel{}
+#loading-panel .loading-mask{position:fixed; width:100%; height:100%; top:0px; left:0px;right:0px; bottom:0px; background-color:#333333; filter:alpha(opacity=10); opacity:0.1;}
+#loading-panel .loading-toast{position:absolute; width:100px; background-color:#ffffff; height:100px; opacity:0.7; border:1px solid #dddddd}
+#loading-panel .loading-toast img{display:block; margin:0px auto;}
+
+#master-module{}
+#master-module #navigation{background-color:#f3f3f3; height:50px; line-height:50px; border-bottom:4px solid #e7e7e7; box-sizing:border-box}
+#master-module #navigation h4{font-size:16px; font-weight:200; padding-left:15px}
+
+
+#do-page .row{display:flex}
+#do-page .row .title{width:34px; background-color:#f2f2f2; font-size:12px; line-height:14px; display:flex; justify-content:center; align-items:center; flex-direction:column; padding:5px 0px; color:#666666}
+#do-page .row .code-checkbox{flex-grow:1; padding:8px 8px 0px 8px; font-size:14px; color:#666666 }
+#do-page .row .code-checkbox div{margin-bottom:8px}
+#do-page .row .code-checkbox label{position:relative; padding-left:25px;}
+#do-page .row .code-checkbox label.subtitle{padding-left:0px}
+#do-page .row .code-checkbox label .checkbox{display:inline-block; position:absolute; top:-2px; left:2px; background-position:0px 0px; background-image:url('../images/box.png'); background-repeat:no-repeat; width:18px; height:18px; margin-right:4px}
+#do-page .row .code-checkbox label .checked{background-position:-40px 0px}
+#do-page .clear-panel{}
+#do-page .clear-panel button{width:26px; height:15px; text-align:center; line-height:17px; font-size:10px; margin-top:2px; background-color:#f39c12; color:#ffffff}
+#do-page hr{border-top:1px solid #ececec;}
+#do-page #create-button{margin-top:10px; width:100px; height:50px; font-size:15px; border-radius:5px; background-color:#4ab6ef}
+#do-page #create-button i{font-size:20px; margin-right:4px; vertical-align:middle}
+#do-page #analysis-button{margin-top:10px; width:100px; height:50px; font-size:15px; border-radius:5px; background-color:#4ab6ef}
+#do-page #analysis-button i{font-size:20px; margin-right:4px; vertical-align:middle}
+#do-page #codes-panel textarea{width:100%; height:100px; border-top:1px solid #eeeeee; border-bottom:1px solid #eeeeee; padding:5px; font-size:12px; box-sizing:border-box; border-left:none; border-right:none}
+#do-page #combination-count{padding:10px 0px 5px 0px; overflow:hidden; text-align:center}
+#do-page #combination-count strong{font-weight:400; font-size:15px; color:red; margin-left:5px}
+
+
+
+#chart-panel{}
+#chart-panel #chart-buttons{margin:5px}
+#chart-panel table{table-layout:fixed; border-collapse:separate; border-spacing:0px; border:none; background-color:#f7f7f7; font-size:12px}
+#chart-panel table td, table th{padding:0px; margin:0px; border-style:solid; border-width:0px 1px 1px 0px; border-color:#ffffff;}
+#chart-panel table thead{background-color:#e0f3ff;}
+#chart-panel table thead th{font-weight:400; text-align:center; height:30px}
+#chart-panel table tbody td{text-align:center; height:25px; min-width:25px}
+#chart-panel table .redball{background-color:#ba2636; color:#ffffff; width:20px; height:20px; display:block; margin:0px auto; border-radius:20px; margin-top:2px; text-align:center; padding-top:1px; box-sizing:border-box;}
+#chart-panel table .yellowrect{background-color:#e2b46f; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .greenrect{background-color:#8dbcbd; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .redrect{background-color:#ba2636; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .bluerect{background-color:#a3b5d4; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .purplerect{background-color:#c2a9c8; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .seagreenrect{background-color:#97bf94; color:#ffffff; width:23px; height:23px; display:block; text-align:center; box-sizing:border-box; padding-top:4px; margin-left:1px}
+#chart-panel table .bluerow{background-color:#e8f0f9}
+#chart-panel table .redcode{color:#ba2636}
+#chart-panel table .greycode{color:#cccccc}
+#chart-panel #master-module .module{padding:15px; box-sizing:border-box}

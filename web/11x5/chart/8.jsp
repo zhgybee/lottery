@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../../lib/selection/selection.css" />
-	<title>号码分布</title>
+	<title>热码分布</title>
 	<style>
 	td{font-size:15px}
 	#chart-panel table .c1{background-color:#fafafa; color:#cccccc; width:38px; height:38px; line-height:38px; display:block; text-align:center; box-sizing:border-box; padding-top:0px; margin-left:1px}
@@ -23,7 +23,7 @@
 <jsp:include page="../../menu.jsp" flush="true"></jsp:include>
 <div id="master-module">
 	<div id="navigation" class="clearfix">
-		<h4>号码分布</h4>
+		<h4>热码分布</h4>
 		<div class="toolbar-panel">
 			<button class="button lottery-refresh-button" onclick="window.location.reload()">刷新</button>
 		</div>
@@ -74,7 +74,6 @@
 	</div>
 </div>
 
-	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../lib/app.js"></script>
 	<script src="../../lib/selection/selection.js"></script>
 	
