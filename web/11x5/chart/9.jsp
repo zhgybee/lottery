@@ -69,6 +69,29 @@
 					<tbody></tbody>
 				</table>
 			</div>
+			
+			<table>
+				<thead>
+				<tr>
+					<th rowspan="2" style="width:400px; min-width:400px">期号</th>
+					<th style="width:40px">01</th>
+					<th style="width:40px">02</th>
+					<th style="width:40px">03</th>
+					<th style="width:40px">04</th>
+					<th style="width:40px">05</th>
+					<th style="width:40px">06</th>
+					<th style="width:40px">07</th>
+					<th style="width:40px">08</th>
+					<th style="width:40px">09</th>
+					<th style="width:40px">10</th>
+					<th style="width:40px">11</th>
+				</tr>
+				<tr>
+					<th colspan="11">号码分布</th>
+				</tr>
+				</thead>
+			</table>
+
 		</div>
 	</div>
 </div>

@@ -30,6 +30,7 @@
 		<div id="recommend-type">
 			<button class="button" id="r1">任选一码</button>
 			<button class="button" id="r3">任选三码</button>
+			<button class="button" id="r4">任选四码</button>
 			<button class="button" id="r5">任选五码</button>
 		</div>
 		<div id="chart-panel">
@@ -90,6 +91,11 @@
 		$("#r3").on("click", function()
 		{
 			window.location.href = 'recommend.jsp?type='+$("#11x5-type").val()+'&size=3';
+		});
+
+		$("#r4").on("click", function()
+		{
+			window.location.href = 'recommend.jsp?type='+$("#11x5-type").val()+'&size=4';
 		});
 
 		$("#r5").on("click", function()
