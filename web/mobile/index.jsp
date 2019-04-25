@@ -5,6 +5,7 @@
 
 	if(SessionUser.getSessionUser(session) == null)
 	{
+		//需要访问后台接口
 		SessionUser sessionUser = new SessionUser();
 		sessionUser.putAll(new Datum());	
 		session.setAttribute("user", sessionUser); 
@@ -40,47 +41,51 @@
 			<p class="weui-grid__label">智能分析</p>
 		</a>
 		<a class="weui-grid" href="recgroup.html">
-			<div class="weui-grid__icon"><i class="fa fa-calculator" style="color:#393"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-cubes" style="color:#393"></i></div>
 			<p class="weui-grid__label">科学组码</p>
 		</a>
+		<a class="weui-grid" href="calculator.html">
+			<div class="weui-grid__icon"><i class="fa fa-calculator" style="color:#e51400"></i></div>
+			<p class="weui-grid__label">倍投计算器</p>
+		</a>
 		<a class="weui-grid" href="chart/0.html">
-			<div class="weui-grid__icon"><i class="fa fa-braille" style="color:#e51400"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-braille" style="color:#ffc40d"></i></div>
 			<p class="weui-grid__label">号码分布</p>
 		</a>
 		<a class="weui-grid" href="chart/1.html">					
-			<div class="weui-grid__icon"><i class="fa fa-tachometer" style="color:#ffc40d"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-tachometer" style="color:#e671b8"></i></div>
 			<p class="weui-grid__label">基本走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/2.html">
-			<div class="weui-grid__icon"><i class="fa fa-tasks" style="color:#e671b8"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-tasks" style="color:#7b4f9d"></i></div>
 			<p class="weui-grid__label">和值走势图</p>
 		</a>			
 		<a class="weui-grid" href="chart/3.html">
-			<div class="weui-grid__icon"><i class="fa fa-sitemap" style="color:#7b4f9d"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-sitemap" style="color:#8cbf26"></i></div>
 			<p class="weui-grid__label">跨度走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/4.html">
-			<div class="weui-grid__icon"><i class="fa fa-reorder" style="color:#8cbf26"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-reorder" style="color:#ff0097"></i></div>
 			<p class="weui-grid__label">大小走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/5.html">
-			<div class="weui-grid__icon"><i class="fa fa-recycle" style="color:#ff0097"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-recycle" style="color:#2e8bcc"></i></div>
 			<p class="weui-grid__label">奇偶走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/6.html">
-			<div class="weui-grid__icon"><i class="fa fa-puzzle-piece" style="color:#2e8bcc"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-puzzle-piece" style="color:#f39c12"></i></div>
 			<p class="weui-grid__label">质合走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/7.html">
-			<div class="weui-grid__icon"><i class="fa fa-plus-square" style="color:#f39c12"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-plus-square" style="color:#393"></i></div>
 			<p class="weui-grid__label">隔期走势图</p>
 		</a>
 		<a class="weui-grid" href="chart/8.html">
-			<div class="weui-grid__icon"><i class="fa fa-credit-card" style="color:#393"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-credit-card" style="color:#e51400"></i></div>
 			<p class="weui-grid__label">热码分布</p>
 		</a>
 		<a class="weui-grid" href="chart/9.html">
-			<div class="weui-grid__icon"><i class="fa fa-bullseye" style="color:#e51400"></i></div>
+			<div class="weui-grid__icon"><i class="fa fa-bullseye" style="color:#ffc40d"></i></div>
 			<p class="weui-grid__label">热码走势图</p>
 		</a>
 
