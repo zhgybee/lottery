@@ -15,6 +15,7 @@ CREATE TABLE T_USER
  STATUS                         VARCHAR(1),    /*  1:Ëø¶¨ */
  SECRETKEY                      VARCHAR(128),
  DESCRIPTION                    VARCHAR(1024),
+ OPENID                         VARCHAR(64),
  CREATE_DATE                    DATETIME,
  CONSTRAINT T_USER_PK PRIMARY KEY(ID)
 );

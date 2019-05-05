@@ -2,5 +2,10 @@
 	"lotterys":
 	{
 		"11x5":["ah11x5", "sh11x5", "js11x5", "gd11x5", "sd11x5", "jx11x5"]
+	},
+	"wechat":
+	{
+		"appid":"wx204842330e147983",
+		"appsecret":"ecc59484c196d3762ee77ef0c4ff1c19"
 	}
 }
