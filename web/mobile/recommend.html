@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>智能推荐</title>
+	<link rel="stylesheet" href="lib/weui/weui.css">
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="app.css">
+	<style>
+	#chart-panel table thead th{padding:2px 5px; box-sizing:border-box; }
+	#chart-panel table tbody td{padding:2px 5px; box-sizing:border-box; word-break:keep-all; white-space:nowrap;}
+	#recommend-panel #chart-panel table tbody td .redball{background-color:#ba2636; display:inline-block; width:20px; height:20px; margin:0px 1px}
+	#recommend-panel #chart-panel table tbody td .purplerect{width:60px}
+	#recommend-panel #chart-panel table tbody td .yellowrect{display:inline-block; width:20px; height:20px; line-height:20px; margin:0px 1px; padding:0px}
+	#recommend-panel #chart-panel table tbody td .greenrect{display:inline-block; width:20px; height:20px; line-height:20px; margin:0px 1px; padding:0px}
+	</style>
+</head>
+<body>
+<div id="master-module">
+
+	<div class="sub-module chart-module" id="recommend-panel">
+
+
+
+		<div class="weui-cell weui-cell_select">
+			<div class="weui-cell__bd">
+				<select class="weui-select" id="11x5-type"></select>
+			</div>
+		</div>
+		<div class="weui-cell weui-cell_select">
+			<div class="weui-cell__bd">
+				<select class="weui-select" id="recommend-type">
+					<option value="1">任选一码</option>
+					<option value="3">任选三码</option>
+					<option value="4">任选四码</option>
+					<option value="5">任选五码</option>
+				</select>
+			</div>
+		</div>
+
+
+		<div id="chart-panel">
+			<div id="detailed-panel">
+				<table style="min-width:100%">
+					<thead>
+					<tr>
+						<th>期号</th>
+						<th>开奖号码</th>
+						<th>推荐号码</th>
+						<th>中奖号码</th>
+						<th>推荐情况</th>
+					</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="../lib/app.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	var type = app.getParameter("type") || 'ah11x5';
+	var size = app.getParameter("size") || '1';
+
+	$(function()
+	{
+
+		$.getJSON("../11x5/dictionary/list/type.json", function(items)
+		{
+			$.each(items, function(i, item)
+			{
+				$("#11x5-type").append('<option value="'+item['k']+'">'+item['v']+'</option>');
+			});
+			$("#11x5-type").val(type)
+		});
+
+
+		$("#recommend-type").val(size)
+		initialise();
+	
+		$("#11x5-type").on("change", function()
+		{
+			window.location.href = 'recommend.html?type='+$("#11x5-type").val()+'&size='+$("#recommend-type").val();
+		});
+
+		$("#recommend-type").on("change", function()
+		{
+			window.location.href = 'recommend.html?type='+$("#11x5-type").val()+'&size='+$("#recommend-type").val();
+		});
+
+	});
+
+	function initialise()
+	{
+
+		app.showLoading();
+		$.getJSON("../11x5/service/recommend.jsp?mode=1&type="+type, function(response)
+		{
+			app.hideLoading();
+			if(response.status == 1)
+			{
+				var rows = response.resource.data;
+				var $recommends = $("#recommend-panel table tbody");
+				var content = '';
+			
+				for(var i = 0 ; i < rows.length ; i++)
+				{
+					var row = rows[i];
+					var groups = $.parseJSON(row["CONTENT"]);
+					var group = groups[size];
+
+					var opencodes = "";
+					if(row["CODE"] != null)
+					{
+						opencodes = "";
+						var arraycode = row["CODE"].split(",");
+						$.each(arraycode, function(index, opencode)
+						{
+							opencodes += '<span class="redball">'+opencode+'</span>';
+						});
+					}
+
+					var recommendcodes = "";
+					$.each(group, function(index, recommendcode)
+					{
+						recommendcodes += '<span class="yellowrect">'+recommendcode+'</span>';
+					});
+
+					var wincodes = "";
+					var description = "";
+					if(row["CODE"] != null)
+					{
+						description = "未中奖";
+						var counter = 0;
+						var winner = onwinner(rows, i, group, counter);
+						if(winner != null)
+						{
+							winner.counter = winner.counter == 0 ? '当' : winner.counter;
+							description = '<span class="purplerect">'+winner.counter+'期中出</span>';
+							var array = winner.wincodes;
+							$.each(array, function(index, item)
+							{
+								wincodes += '<span class="greenrect">'+item+'</span>';
+							});
+						}
+					}
+
+					content += '<tr>';
+					content += '<td>'+row["PHASE"]+'</td>';
+					content += '<td>'+opencodes+'</td>';
+					content += '<td>'+recommendcodes+'</td>';
+					content += '<td>'+wincodes+'</td>';
+					content += '<td>'+description+'</td>';
+					content += '</tr>';
+				}
+				$recommends.html(content);
+
+			}
+			else
+			{
+				app.message(response.messages);
+			}
+		});
+	}
+
+	function getWinCode(opencodes, recommendcodes)
+	{
+		var codes = [];
+		if(opencodes != null)
+		{
+			opencodes = opencodes.split(",");
+
+			$.each(recommendcodes, function(index, recommendcode)
+			{
+				if(opencodes.indexOf(recommendcode) != -1)
+				{
+					codes.push(recommendcode);
+				}
+			});
+
+		}
+		return codes;
+	}
+
+	function onwinner(rows, index, recommendcodes, counter)
+	{
+		if(counter < 6)
+		{
+			if(index < rows.length)
+			{
+				var row = rows[index];
+				var opencodes = row["CODE"];
+				if(opencodes != null)
+				{
+					var wincodes = getWinCode(opencodes, recommendcodes);
+					if(wincodes.length > 0)
+					{
+						return {"counter":counter, "wincodes":wincodes};
+					}
+					else
+					{
+						return onwinner(rows, index - 1, recommendcodes, counter + 1);
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+</script>
+
+</body>
+</html>

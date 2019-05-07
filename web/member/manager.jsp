@@ -28,24 +28,32 @@
 			<li class="clearfix">
 				<div class="left field-panel" style="width:100%;">备注<textarea id="description"><%=sessionuser.getString("DESCRIPTION")%></textarea></div>
 			</li>
+			<li class="clearfix">
+				<div class="left field-panel" style="width:100%;">
+					绑定手机（使用微信扫描二维码完成绑定）
+					<div style="margin:10px 0">
+						<div id="qrcode"></div>
+					</div>
+				</div>
+			</li>
 			<li class="button-panel">
 				<button id="save-button" class="button"><i class="fa fa-pencil-square-o"></i>保存</button>
 			</li>
 			</ul>
-		
 		</div>
 	</div>
 </div>
 
 
+<script type="text/javascript" src="../lib/jquery-qrcode.min.js"></script>
 <script src="../lib/app.js"></script>
 
 <script type="text/javascript">
 
 $(function()
 {
-	
 
+	create();
 	$("#save-button").on("click", function()
 	{
 		var parameter = {};
@@ -57,6 +65,7 @@ $(function()
 			if(response.status == 1)
 			{
 				app.message("保存成功");
+				create();
 			}
 			else
 			{
@@ -67,6 +76,20 @@ $(function()
 
 
 });
+
+function create()
+{
+	
+	$("#qrcode").empty();
+	if($("#name").val() == "" || $("#phone").val() == "")
+	{
+		$("#qrcode").html('<span style="color:#ffaa00">绑定前请先完善个人信息（姓名及手机号码）</span>');
+	}
+	else
+	{
+		$('#qrcode').qrcode({size:200, text:"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx204842330e147983&redirect_uri=http://www.51ycai.com/mobile/binding.jsp&response_type=code&scope=snsapi_base&state=<%=sessionuser.getString("ID")%>#wechat_redirect"}); 
+	}
+}
 
 </script>
 
