@@ -3,7 +3,7 @@
 <%@page contentType="text/html; charset=utf-8"%>
 
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<div class="left" id="menu-module" style="width:260px; background-color:#323232">
+<div class="left" id="menu-module" style="width:220px; background-color:#323232">
 	<%
 		SessionUser sessionuser = SessionUser.getSessionUser(session);	
 		String usericon = sessionuser.getString("ICON");
@@ -27,6 +27,7 @@
 		<ul>
 			<li><a href="/app.jsp"><i class="fa fa-home"></i>首页</a></li>
 			<li><a href="/11x5/do.jsp" target="_blank"><i class="fa fa-pencil-square"></i>做号</a></li>
+			<li><a href="/11x5/virtual/virtual.jsp" target="_blank"><i class="fa fa-tachometer"></i>虚拟投注</a></li>
 			<li><a href="/11x5/analysis.jsp" target="_blank"><i class="fa fa-cog"></i>智能分析</a></li>
 			<li><a href="/11x5/recommend.jsp" target="_blank"><i class="fa fa-tasks"></i>智能推荐</a></li>
 			<li><a href="/11x5/recgroup.jsp" target="_blank"><i class="fa fa-recycle"></i>科学组码</a></li>
@@ -44,6 +45,10 @@ $(function()
 	if($("#master-module .sub-module").css("padding") == "15px")
 	{
 		$("#master-module .sub-module").height( $(window).height() - $("#navigation").outerHeight() - 30);
+	}
+	if($("#master-module .sub-module").css("padding") == "7px")
+	{
+		$("#master-module .sub-module").height( $(window).height() - $("#navigation").outerHeight() - 14);
 	}
 	else
 	{

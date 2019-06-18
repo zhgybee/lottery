@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.lang3.math.NumberUtils"%>
 <%@page import="java.util.Set"%>
 <%@page import="com.nest.lottery.system.utils.LotteryUtils"%>
 <%@page import="org.apache.commons.lang3.StringUtils"%>
@@ -13,7 +14,8 @@
 	
 	if(mode.equals("1"))
 	{
-		
+		//做号
+		int size = NumberUtils.toInt(request.getParameter("size"), 5);
 		int[] basecodes = LotteryUtils.toArray(request.getParameterValues("basecodes[]"));
 		int[] codes1 = LotteryUtils.toArray(request.getParameterValues("codes1[]"));
 		int[] codes1count = LotteryUtils.toArray(request.getParameterValues("codes1count[]"));
@@ -32,7 +34,7 @@
 		
 		Cai11Xuan5 lotter = new Cai11Xuan5();
 		
-		Set<int[]> combinations = lotter.combinations(basecodes);
+		Set<int[]> combinations = lotter.combinations(size, basecodes);
 		
 		if(codes1 != null && codes1count != null)
 		{
@@ -65,6 +67,18 @@
 		message.resource("combinations", lotter.toString(combinations));
 		
 		session.setAttribute("sessioncodes", lotter.toString(combinations));
+	}
+	else if(mode.equals("2"))
+	{
+		//虚拟投注生成号码		
+		int size = NumberUtils.toInt(request.getParameter("size"), 5);
+		int[] basecodes = LotteryUtils.toArray(request.getParameterValues("basecodes[]"));	
+		if(basecodes != null)
+		{
+			Cai11Xuan5 lotter = new Cai11Xuan5();		
+			Set<int[]> combinations = lotter.combinations(size, basecodes);			
+			message.resource("combinations", lotter.toString(combinations));
+		}
 	}
 	
 	out.println(message);

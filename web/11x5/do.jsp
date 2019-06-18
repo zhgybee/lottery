@@ -8,6 +8,14 @@
 	<link rel="stylesheet" href="../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<title>彩票做号</title>
+	<style>
+		#tabs{display:flex; background-color:#aaaaaa; color:#ffffff; align-items:center; height:50px}
+		#tabs .tab{padding:0px 13px; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer}
+		#tabs .tab h5{font-size:16px}
+		#tabs .tab p{font-size:12px}
+		#tabs .tab.selected{background-color:#4ab6ef;}
+		#tabs .separation{border-left:1px solid #ffffff; height:30px}
+	</style>
 </head>
 <body id="do-page">
 
@@ -15,7 +23,26 @@
 
 <div id="master-module">
 	<div id="navigation"><h4>彩票做号</h4></div>
-	<div class="sub-module" style="width:100%">
+	<div class="sub-module" style="width:100%; background-color:#eeeeee">
+
+		<div id="tabs">
+			<div class="tab" code="2"><h5>任选二码</h5><p>奖金6金币</p></div>
+			<div class="separation"></div>
+			<div class="tab" code="3"><h5>任选三码</h5><p>奖金19金币</p></div>
+			<div class="separation"></div>
+			<div class="tab" code="4"><h5>任选四码</h5><p>奖金78金币</p></div>
+			<div class="separation"></div>
+			<div class="tab selected" code="5"><h5>任选五码</h5><p>奖金540金币</p></div>
+			<div class="separation"></div>
+			<div class="tab" code="6"><h5>任选六码</h5><p>奖金90金币</p></div>
+			<div class="separation"></div>
+			<div class="tab" code="7"><h5>任选七码</h5><p>奖金26金币</p></div>
+			<div class="separation"></div>
+			<div  class="tab" code="8"><h5>任选八码</h5><p>奖金9金币</p></div>
+		</div>
+		<div style="border-top:5px solid #4ab6ef"></div>
+
+		<div style="background-color:#ffffff; padding:20px 10px">
 		<div class="row">
 			<label class="title">基础号码</label>
 			<label><i class="checkbox basecodes checked" value="1"></i>01</label>
@@ -146,8 +173,6 @@
 			<label><i class="checkbox codes5count" value="5"></i>5</label>
 			<label class="clear-panel"><button class="button red" id="unselectall-code5">清</button></label>
 		</div>
-
-
 		<div class="row" style="background-color:#f7f7f7">
 			<label class="title">奇数个数</label>
 			<label><i class="checkbox oddncount" value="0"></i>0</label>
@@ -187,28 +212,42 @@
 			<label><i class="checkbox concount" value="4"></i>4</label>
 			<label class="clear-panel"><button class="button red" id="unselectall-con">清</button></label>
 		</div>
-
 		<div style="text-align:center">
 			<button id="create-button" class="button"><i class="fa fa-pencil-square-o"></i>生成号码</button>
 			<button id="analysis-button" class="button"><i class="fa fa-recycle"></i>智能分析</button>
 		</div>
-
 		<div id="combination-count" class="clearfix">
 			<h4>号码</h4><strong></strong>
 		</div>
 		<div id="codes-panel">
 			<textarea rows="6"></textarea>
 		</div>
+		</div>
+
 	</div>
 </div>
 
 <script src="../lib/app.js"></script>
-<script type="text/javascript" src="../platform/Scyunew3.js"></script>
+<script type="text/javascript" src="../platform/Scyunew3.js1"></script>
 
 <script type="text/javascript">
 
 $(function()
 {
+	$("#tabs .tab").on("click", function()
+	{
+		$("#tabs .tab").removeClass("selected");
+		$(this).addClass("selected");
+		if($(this).attr("code") == "5")
+		{
+			$("#analysis-button").css("background-color", "#4ab6ef");
+		}
+		else
+		{
+			$("#analysis-button").css("background-color", "#cccccc");
+		}
+	});
+
 	$("#create-button").on("click", function()
 	{
 		creator();
@@ -216,7 +255,14 @@ $(function()
 
 	$("#analysis-button").on("click", function()
 	{
-		window.open('analysis.jsp');
+		var size = $("#tabs .selected").attr("code") || '5';
+		if(size == 5)
+		{
+			window.open('analysis.jsp');
+		}
+		else
+		{
+		}
 	});
 
 	$(".checkbox").on("click", function()
@@ -363,8 +409,10 @@ function creator()
 		concount.push( $(element).attr("value") );
 	});
 
+	var size = $("#tabs .selected").attr("code") || '5';
 
 	var parameter = {};
+	parameter["size"] = size;
 	parameter["basecodes"] = basecodes;
 	parameter["codes1"] = codes1;
 	parameter["codes1count"] = codes1count;

@@ -56,19 +56,22 @@ CREATE TABLE T_AGENT
  CONSTRAINT T_AGENT_PK PRIMARY KEY(ID)
 );
 
-
+DROP TABLE "T_BET";
 CREATE TABLE T_BET
 (
  ID                             VARCHAR(32),
- MODE                           VARCHAR(2),        /* 玩法：任选2(2), 任选3(3), 任选4(4), 任选5(5), 任选6(6), 任选7(7), 任选8(8) */
+ WAY                            VARCHAR(2),        /* 玩法：任选2(2), 任选3(3), 任选4(4), 任选5(5), 任选6(6), 任选7(7), 任选8(8) */
+ TYPE                           VARCHAR(32),
  PHASE                          VARCHAR(12),       /* 期数 */
- CODE                           VARCHAR(max),      /* 号码 */
+ CODE                           VARCHAR(8000),     /* 号码 */
+ COUNT                          INT,               /* 投注注数 */
  MULTIPLE                       INT,               /* 倍数 */
  CHIP                           INT,               /* 投注金额 */
- BONUS                          INT,               /* 中奖金额 */
- TYPE                           VARCHAR(2),        /* 类型：任选(1)，做号(2) */
- RESULT                         VARCHAR(64),       /* 开奖号码 */
- BINGO                          VARCHAR(2),        /* 是否中奖 */
+ BONUS                          INT,               /* 奖金 */
+ ACTUALCODE                     VARCHAR(64),       /* 开奖号码 */
+ IS_BINGO                       VARCHAR(2),        /* 是否中奖 */
+ ACHIEVE                        INT,               /* 中奖奖金 */
+ IS_FINISHED                    VARCHAR(2),        /* 是否开奖 */
  CREATE_USER_ID                 VARCHAR(32),       /* 创建人 */
  CREATE_DATE                    DATETIME,          /* 创建时间 */
  CONSTRAINT T_BET_PK PRIMARY KEY(ID)
