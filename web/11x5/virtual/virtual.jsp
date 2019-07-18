@@ -160,7 +160,7 @@
 			<div id="previous-code"></div>
 			<div id="mycoin">
 				<div id="mycoin-icon" style=""><div>币</div></div>
-				<div id="mycoin-items"><span class="coin-count"></span><br/><span class="coin-help" title="每次登陆获得10枚金币，同一天登陆多次金币不累加。">如何获得？</span></div>
+				<div id="mycoin-items"><span class="coin-count"></span><br/><span class="coin-help" title="等待推出...">如何获得？</span></div>
 			</div>
 		</div>
 
@@ -208,7 +208,7 @@
 						<p>您可以从上方选择号码，也可直接粘贴号码</p>
 					</div>
 					<div id="code-textarea">
-						<textarea class="left" readonly="true"></textarea>
+						<textarea class="left" readonly="true" placeholder="从上方号码中选择后自动生成"></textarea>
 						<textarea class="right" placeholder="生成的号码粘贴到此编辑框中"></textarea>
 					</div>
 
@@ -373,6 +373,12 @@
 				var $selector = $("#tabs .tab.selected");
 				var codes = getCodes()
 
+				if(codes.length == 0)
+				{
+					alert('请选择投注号码');
+					return;
+				}
+
 				var parameter = {};				
 				parameter['type'] = global['type'];
 				parameter['way'] = $selector.attr("code");
@@ -497,8 +503,7 @@
 							}
 							else
 							{
-								startBet();
-								//stopBet();
+								stopBet();
 								$("#progress-text h5").text('等待开奖');
 
 							}
@@ -657,7 +662,12 @@
 		}
 		else
 		{
-			return {phase:date+""+(parseInt(phase) + 1), sameday:true};
+			var code = parseInt(phase) + 1;
+			if(code < 10)
+			{
+				code = "0"+code;
+			}
+			return {phase:date+""+code, sameday:true};
 		}
 	}
 
