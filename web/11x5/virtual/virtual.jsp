@@ -28,6 +28,7 @@
 	table tbody td > div.code-box{display:flex; justify-content:center}
 	table tbody td > div.code-box div{margin-right:3px; font-size:12px; width:20px; height:20px; background-color:#ba2636; border-radius:20px; color:#ffffff; text-align:center; line-height:20px}
 	table tbody td > div .browse-code-button{color:#ffffff; background-color:#ffaa00; padding:2px 5px; cursor:pointer}
+	table tbody td > div .delete-button{color:#ffffff; background-color:#ba2636; padding:2px 5px; cursor:pointer}
 
 	#header{background-color:#ffffff; padding:20px; box-sizing:border-box; display:flex; align-items:center}
 	#header #progress-text{margin-right:12px; text-align:center}
@@ -252,6 +253,7 @@
 								<th style="width:90px"><div>投注时间</div></th>
 								<th style="width:130px"><div>开奖号码</div></th>
 								<th style="width:80px"><div>投注号码</div></th>
+								<th style="width:80px"><div></div></th>
 							</tr>
 						</thead>
 						<tbody></tbody>
@@ -434,6 +436,26 @@
 				}
 			});
 		});
+
+		$("table").on("click", ".delete-button", function()
+		{
+			var id = $(this).closest("tr").attr("code");
+
+			app.showLoading();
+			$.getJSON("../service/virtual.jsp?mode=5&id="+id, function(response)
+			{		
+				app.hideLoading();
+				if(response.status == 1)
+				{
+					getResource();
+				}
+				else
+				{
+					app.message(response.messages);
+				}
+			});
+		});
+
 	});
 
 	function openCodePanel()
@@ -448,6 +470,7 @@
 	function getResource()
 	{
 		var current = new Date();
+		var currenttime = app.formatdate(current, "yyyyMMddhhmm");
 
 		app.showLoading();
 		$.getJSON("../service/virtual.jsp?mode=1&type="+global['type'], function(response)
@@ -576,7 +599,21 @@
 					text += '	<td><div>'+bet['ACHIEVE']+'</div></td>';
 					text += '	<td><div><span class="time">'+app.formatdate(bet['CREATE_DATE'], "hh时mm分")+'</span><br/><span class="date">'+app.formatdate(bet['CREATE_DATE'], "yyyy.MM.dd")+'</span></div></td>';
 					text += '	<td><div class="code-box">'+boxs+'</div></td>';
-					text += '	<td><div><span class="browse-code-button">查看</span></div></td>';
+					text += '	<td><div><span class="browse-code-button">查看</span></div></td>';					
+					
+					if(bet['IS_FINISHED'] == '1')
+					{
+						text += '	<td><div><span class="delete-button">删除</span></div></td>';
+					}
+					else if((currenttime - app.formatdate(bet['CREATE_DATE'], "yyyyMMddhhmm")) <= 2)
+					{
+						text += '	<td><div><span class="delete-button" title="2分钟内可撤销">撤销</span></div></td>';
+					}
+					else
+					{
+						text += '	<td><div></div></td>';
+					}
+
 					text += '</tr>';
 				});
 				$("table tbody").html(text);

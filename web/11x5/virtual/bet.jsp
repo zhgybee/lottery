@@ -220,7 +220,7 @@
 					}
 					else if((current - app.formatdate(bet['CREATE_DATE'], "yyyyMMddhhmm")) <= 2)
 					{
-						text += '	<td><div><span class="delete-button">撤销</span></div></td>';
+						text += '	<td><div><span class="delete-button" title="2分钟内可撤销">撤销</span></div></td>';
 					}
 					else
 					{
