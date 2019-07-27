@@ -6,9 +6,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="../../css/app.css" />
 	<link href="//libs.baidu.com/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../lib/selection/selection.css" />
 	<title>虚拟投注</title>
 	<style>
 
+	#navigation{background-color:#f3f3f3; height:68px; line-height:60px; border-bottom:8px solid #e7e7e7; box-sizing:border-box}
+	#navigation h4{float:left; font-size:20px; font-weight:200; padding-left:15px}
+	#navigation .toolbar-panel{float:right; padding-right:15px;}
 	table{border:none; table-layout:fixed; border-collapse:collapse; border-spacing:0px; padding:0px; margin:0px; width:100%}
 	thead{background-color:#ffffff;}
 	table thead th {border:none; margin:0px; padding:15px 0px; text-align:center; background-color:#8dd8ff}
@@ -38,6 +42,12 @@
 </head>
 <body>
 
+<div id="navigation" class="clearfix">
+	<h4 style="float:left">更多投注记录</h4>		
+	<div style="width:600px; float:right; text-align:right; padding-right:15px">
+		选择频道<input id="11x5-type" class="lottery-type-field" value="sd11x5" title="山东11选5" style="margin-left:15px;"/>
+	</div>
+</div>
 <div style="background-color:#eeeeee">
 	<table>
 		<thead>
@@ -68,6 +78,7 @@
 
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="../../lib/app.js"></script>
+<script src="../../lib/selection/selection.js"></script>
 
 <script type="text/javascript">
 
@@ -82,6 +93,17 @@
 
 	$(function()
 	{
+		$("#11x5-type").selection
+		({
+			url: "../dictionary/list/type.synchro.json",
+			ismultiple:false,
+			clickitem:function()
+			{
+				window.location.href = 'bet.jsp?type='+$("#11x5-type").val();
+			}
+		});
+		$("#11x5-type").selection("setId", global['type']);
+
 		$("#browse-code-panel").css("top", ($(window).height() - $("#browse-code-panel").height()) / 2);
 		$("#browse-code-panel").css("left", ($(window).width() - $("#browse-code-panel").width()) / 2);
 
@@ -151,6 +173,7 @@
 	function getResource()
 	{
 		var current = new Date();
+		current = app.formatdate(current, "yyyyMMddhhmm");
 
 		app.showLoading();
 		$.getJSON("../service/virtual.jsp?mode=4&type="+global['type'], function(response)
@@ -194,6 +217,10 @@
 					if(bet['IS_FINISHED'] == '1')
 					{
 						text += '	<td><div><span class="delete-button">删除</span></div></td>';
+					}
+					else if((current - app.formatdate(bet['CREATE_DATE'], "yyyyMMddhhmm")) <= 2)
+					{
+						text += '	<td><div><span class="delete-button">撤销</span></div></td>';
 					}
 					else
 					{

@@ -28,7 +28,7 @@
 			<li><a href="/app.jsp"><i class="fa fa-home"></i>首页</a></li>
 			<li><a href="/11x5/do.jsp" target="_blank"><i class="fa fa-pencil-square"></i>做号</a></li>
 			<%
-				if(sessionuser.getString("CODE").equals("000001") || sessionuser.getString("CODE").equals("000000"))
+				if(sessionuser.getString("CODE").equals("000001") || sessionuser.getString("CODE").equals("000000") || sessionuser.getString("CODE").equals("000002") || sessionuser.getString("CODE").equals("000003"))
 				{
 			%>
 			<li><a href="/11x5/virtual/virtual.jsp" target="_blank"><i class="fa fa-tachometer"></i>虚拟投注</a></li>

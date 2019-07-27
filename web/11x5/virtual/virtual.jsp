@@ -120,10 +120,10 @@
 
 <div id="master-module"style="background-color:#eeeeee">
 
-	<div id="navigation" class="clearfix">
-		<h4 style="float:left">虚拟投注平台</h4>		
-		<div style="width:600px; float:right; text-align:right; padding-right:15px">
-			选择频道<input id="11x5-type" class="lottery-type-field" value="ah11x5" title="安徽11选5" style="margin-left:15px;"/>
+	<div id="navigation" class="clearfix" style="border-bottom:none; line-height:68px">
+		<h4 style="float:left; font-weight:bold; font-size:26px">虚拟投注平台</h4>		
+		<div style="text-align:left; padding-right:15px">
+			<input id="11x5-type" class="lottery-type-field" value="sd11x5" title="山东11选5" style="margin-left:15px;"/>
 		</div>
 	</div>
 
