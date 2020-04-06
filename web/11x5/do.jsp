@@ -23,7 +23,13 @@
 
 <div id="master-module">
 	<div id="navigation"><h4>彩票做号</h4></div>
+	
+	
 	<div class="sub-module" style="width:100%; background-color:#eeeeee">
+<!--
+	<div class="system-message-panel" style="display:flex; align-items:center">
+	<p style="flex-grow:1">鉴于目前国家禁网络购彩，因此我公司必须严格遵守国家法令。但是近期市场反馈有人假借公司名义，给学员和代理商开设私彩平台帐号，让大家在上面充值投注追号等活动，甚至假借公司名义允诺他人为公司代理商。因此，公司申明：任何网络平台打彩，均非我公司行为，未经公司同意并与公司签订代理商授权合同的我公司一律不予承认。请广大客户认清，保持警惕！<br/>从即日起，所有代理商款项打入公司对公帐户，个人代收一律视为无效！软件统一价格必须严格按照公司规定6800元，有发现扰乱市场者导致软件无法使用与公司无关！举报有奖！公司微信号：yczb999999。</p><p id="system-message-button"><i class="fa fa-times"></i></p></div>
+-->	
 
 		<div id="tabs">
 			<div class="tab" code="2"><h5>任选二码</h5><p>奖金6金币</p></div>
@@ -234,6 +240,17 @@
 
 $(function()
 {
+
+	alert("鉴于目前国家禁网络购彩，因此我公司必须严格遵守国家法令。但是近期市场反馈有人假借公司名义，给学员和代理商开设私彩平台帐号，让大家在上面充值投注追号等活动，甚至假借公司名义允诺他人为公司代理商。因此，公司申明：任何网络平台打彩，均非我公司行为，未经公司同意并与公司签订代理商授权合同的我公司一律不予承认。请广大客户认清，保持警惕！\n\r从即日起，所有代理商款项打入公司对公帐户，个人代收一律视为无效！软件统一价格必须严格按照公司规定6800元，有发现扰乱市场者导致软件无法使用与公司无关！举报有奖！公司微信号：yczb999999。");
+
+
+	$("#system-message-button").on("click", function()
+	{
+		console.log(123);
+		$(".system-message-panel").remove();
+	});
+
+
 	$("#tabs .tab").on("click", function()
 	{
 		$("#tabs .tab").removeClass("selected");

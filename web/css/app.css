@@ -127,3 +127,7 @@ nav a:hover{color:#ffffff}
 #do-page #combination-count{padding:20px 0px 5px 0px; overflow:hidden}
 #do-page #combination-count h4{font-weight:400; font-size:15px; float:left}
 #do-page #combination-count strong{font-weight:400; font-size:15px; float:left; color:red; margin-left:5px}
+
+.system-message-panel{display:none1; background-color:#fcf8e3; border:1px solid #faebcc; overflow:hidden; margin-bottom:10px}
+.system-message-panel p{padding:15px; color:#6F917D}
+.system-message-panel p span{margin:0px 10px 0px 4px}

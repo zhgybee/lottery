@@ -13,14 +13,17 @@
 		.textedit{border:none; height:30px; background-color:transparent; color:#ffffff; font-size:16px; filter:alpha(opacity=80); opacity:0.8;}
 		form i{color:#ffffff; margin-right:10px; filter:alpha(opacity=60); opacity:0.6;}
 		hr{margin:2px 0px 0px 0px; border-top:1px solid #ffffff; border-left:none; border-right:none; border-bottom:none; filter:alpha(opacity=50); opacity:0.5;}
+		.system-message-panel{ background-color:#fcf8e3; border:1px solid #faebcc; overflow:hidden; width:1000px; margin:0px auto; padding:10px; line-height:20px; }
+		.system-message-panel p{padding:15px; color:#8a6d3b; font-size:15px}
+		.system-message-panel p i{margin-right:4px}
 	</style>
 </head>
 
 <body>
 
 <div style="top:0px; right:0px; bottom:0px; left:0px; height:100%; min-width:1000px; position:absolute; width:100%;">
-	<div style="height:100%; position:relative; width:100%; background:transparent url('background5.jpg') no-repeat scroll center top / cover;">
-		
+	<div style="height:100%; position:relative; width:100%; background:transparent url('background5.jpg') no-repeat scroll center top / cover; padding:20px; box-sizing:border-box">
+		<div class="system-message-panel">公司于2020年4月12日进行软件功能升级，届时可能会导致部分用户软件无法正常使用！如若不能使用请联系您上级代理商重新激活！如有疑问请联系微信 yczb999999注明荧彩科技</div>
 		<div id="login-container" style="display:none; width:350px; filter:alpha(opacity=30); opacity:0.3; position:absolute; height:520px; background-color:#ffffff"></div>
 		
 		<div id="login-panel" style="display:none; position:absolute; width:350px;">

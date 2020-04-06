@@ -87,7 +87,7 @@
 
 
 		Cai11Xuan5 lotter = new Cai11Xuan5();
-		Set<int[]> combinations = lotter.combinations(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11});
+		Set<int[]> combinations = lotter.combinations(5, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11});
 
 		if(mode.equals("1"))
 		{
